@@ -1,0 +1,27 @@
+const dataAreaCode = [
+  { value: "+56", label: "Chile +56" },
+  { value: "+54", label: "Argentina +54" },
+  { value: "+1246", label: "Barbados +1 246" },
+  { value: "+591", label: "Bolivia +591" },
+  { value: "+55", label: "Brasil +55" },
+  { value: "+1", label: "Canadá +1" },
+  { value: "+57", label: "Colombia +57" },
+  { value: "+506", label: "Costa Rica +506" },
+  { value: "+53", label: "Cuba +53" },
+  { value: "+599", label: "Curazao +599" },
+  { value: "+593", label: "Ecuador +593" },
+  { value: "+503", label: "El Salvador +503" },
+  { value: "+1", label: "Estados Unidos de América +1" },
+  { value: "+502", label: "Guatemala +502" },
+  { value: "+509", label: "Haití +509" },
+  { value: "+504", label: "Honduras +504" },
+  { value: "+52", label: "México +52" },
+  { value: "+505", label: "Nicaragua +505" },
+  { value: "+507", label: "Panamá +507" },
+  { value: "+595", label: "Paraguay +595" },
+  { value: "+51", label: "Perú +51" },
+  { value: "+598", label: "Uruguay +598" },
+  { value: "+58", label: "Venezuela +58" },
+];
+
+export default dataAreaCode;

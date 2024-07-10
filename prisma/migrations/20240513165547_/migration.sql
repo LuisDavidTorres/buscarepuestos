@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "UserQuotation" ALTER COLUMN "price" DROP NOT NULL,
+ALTER COLUMN "price" DROP DEFAULT;

@@ -1,0 +1,89 @@
+"use client";
+
+import { useRef, useState, useEffect } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
+export function MenuCloseUser() {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const Menu = ["Perfil", "Mesón Digital" ,"Mis Cotizaciones", "Cerrar Sesión"];
+
+  const menuRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        iconRef.current &&
+        !iconRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      window.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [open]);
+
+  const handleCloseSession = () => {
+    signOut(); 
+  };
+
+  return (
+    <div>
+      <div
+        className="relative cursor-pointer hover:bg-neutral-300 rounded-md p-2"
+        onClick={() => setOpen(!open)}
+        ref={iconRef}
+      >
+        <GiHamburgerMenu className="text-black size-7" />
+      </div>
+      {open && <Updown />}
+    </div>
+  );
+
+  function Updown() {
+    return (
+      <div
+        className="bg-white p-2 shadow-lg absolute z-10 right-3 rounded-md mt-5"
+        ref={menuRef}
+      >
+        <ul>
+          {Menu.map((menu) => (
+            <li
+              key={menu}
+              className="p-2 text-base cursor-pointer rounded hover:bg-zinc-300"
+              onClick={() => {
+                if (menu === "Cerrar Sesión") {
+                  handleCloseSession();
+                }
+                if (menu === "Mis Cotizaciones") {
+                  router.push("/home/mis-cotizaciones");
+                }
+                if (menu === "Perfil") {
+                  router.push("/cuenta");
+                }
+                if (menu === "Mesón Digital") {
+                  router.push("/home");
+                }
+              }}
+            >
+              {menu}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+

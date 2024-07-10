@@ -1,0 +1,180 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+    id Int @id @default(autoincrement())
+    name String
+    rut String @unique
+    businessLine String ?
+    contactName String
+    phoneNumber String
+    rubric String
+    user UserAccount ?
+    carsBrand CompanyCarBrand []
+}
+
+model CarBrand {
+    idCardBrand Int @id @default(autoincrement())
+    nameCarBrand String @unique
+    companies CompanyCarBrand []
+}
+
+model CompanyCarBrand {
+    id Int @id @default(autoincrement())
+    car CarBrand @relation(fields: [idCar], references: [idCardBrand])
+    idCar Int
+    company Company @relation(fields: [idCompany], references: [id])
+    idCompany Int
+    assignment DateTime
+}
+
+model UserType{
+    id Int @id @default(autoincrement())
+    userTypeName String
+    user UserAccount []
+}
+
+model UserAccount{
+    id Int @id @default(autoincrement())
+    company Company @relation(fields: [idCompany], references: [id])
+    idCompany Int @unique
+    email String @unique
+    password String
+    userType UserType @relation(fields: [idUserType], references: [id])
+    idUserType Int @default(1)
+    subscription UserSubscription[]
+    quotes UserQuotation []
+    hasFreePlan Boolean @default(false)
+    token Token[]
+    emailVerified Boolean @default(false)
+}
+
+model Subscription{
+    id Int @id @default(autoincrement())
+    name String
+    clicks Int
+    price Decimal @db.Decimal(10,2)
+    discountPrice Decimal @db.Decimal(10,2)
+    discountActive Boolean @default(false)
+    dicountPercentage Int @default(15)
+    userAccount UserSubscription[]
+    characteristics SubscriptionCharacteristics[]
+
+}
+
+model UserSubscription{
+    id Int @id @default(autoincrement())
+    user UserAccount @relation(fields: [idUser], references: [id])
+    idUser Int @unique
+    subscription Subscription @relation(fields: [idSubscription], references: [id])
+    idSubscription Int
+    clicks Int
+    paymentHistory PaymentDetail[]
+}
+
+model City{
+    id Int @id @default(autoincrement())
+    name String
+    postalCode String ?
+    quotation Quotation []
+
+}
+
+model Quotation{
+    idQuotation Int @id @default(autoincrement())
+    idCar String
+    city City @relation(fields: [idCity], references: [id])
+    idCity Int
+    spareName String
+    spareType String
+    contactName String
+    contactNumber String
+    carBrand Int
+    carModel Int ?
+    details String
+    dateQuotation DateTime
+    available Boolean  @default(true)
+    clicks Int @default(0) 
+    vehicleYear Int ?
+    images imagesQuotation []
+    users UserQuotation[]
+    
+}
+
+model Feature{
+    id Int @id @default(autoincrement())
+    name String
+    subscriptions SubscriptionCharacteristics[]
+}
+
+model SubscriptionCharacteristics{
+    id Int @id @default(autoincrement())
+    subscription Subscription @relation(fields: [idSubscription], references: [id])
+    idSubscription Int
+    feature Feature @relation(fields: [idFeature], references: [id])
+    idFeature Int
+
+
+}
+
+model imagesQuotation{
+    idImg Int @id @default(autoincrement())
+    quotation Quotation @relation(fields: [idQuotation], references: [idQuotation])
+    idQuotation Int
+    url String
+    weight Int ? 
+    height Int ?
+}
+
+model UserQuotation{
+    id Int @id @default(autoincrement())
+    dateAccepted DateTime
+    user UserAccount @relation(fields: [idUser], references: [id])
+    idUser Int
+    quotation Quotation @relation(fields: [idQuotation], references: [idQuotation])
+    idQuotation Int
+    price Int ?
+    sent Boolean @default(false)
+    sellerName String ?
+    sellerLastName String ?
+    sellerPhone String @default("")
+}
+
+model PaymentDetail{
+    id Int @id @default(autoincrement())
+    userSubscription UserSubscription @relation(fields: [idUserSubscription], references: [id])
+    idUserSubscription Int
+    paymentMethod String
+    paymentDate DateTime
+    paymentAmount Decimal @db.Decimal(10,2)
+    paymentDescription String
+}
+
+model Token{
+    id Int @id @default(autoincrement())
+    token String @unique
+    createdAt DateTime @default(now())
+    resetAt DateTime ?
+    user UserAccount @relation(fields: [idUser], references: [id])
+    idUser Int
+    typeToken TypeToken ? @relation(fields: [idTypeToken], references: [id])
+    idTypeToken Int ?
+}
+
+model TypeToken{
+    id Int @id @default(autoincrement())
+    tokenName String
+    tokens Token[]
+}
