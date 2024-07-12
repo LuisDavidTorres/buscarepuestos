@@ -1,7 +1,7 @@
 import { prisma } from "@/libs/prisma";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/libs/authOptions";
 import { revalidatePath } from "next/cache";
 import bcrypt from "bcrypt";
 

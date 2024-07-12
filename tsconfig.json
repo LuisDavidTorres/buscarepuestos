@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/data/dataCars.js", "src/app/api/auth/[...nextauth]/route.ts", "src/app/ui/home/ModalLoginSupplier.tsx", "src/middleware.js", "src/app/api/user/route.js", "src/app/ui/container/Image-container.jsx", "src/app/api/userSubscription/route.js", "src/app/ui/carousel/Carousel-flowbite.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/data/dataCars.js", "src/app/api/auth/[...nextauth]/route.js", "src/app/ui/home/ModalLoginSupplier.tsx", "src/middleware.js", "src/app/api/user/route.js", "src/app/ui/container/Image-container.jsx", "src/app/api/userSubscription/route.js", "src/app/ui/carousel/Carousel-flowbite.jsx"],
   "exclude": ["node_modules"]
 }

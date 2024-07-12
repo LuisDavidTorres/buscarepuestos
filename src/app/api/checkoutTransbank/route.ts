@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { NextApiResponse } from "next";
 import { headers, cookies } from 'next/headers'
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/libs/authOptions";
 import { WebpayPlus } from 'transbank-sdk';
 import { Options, Environment} from 'transbank-sdk';
 

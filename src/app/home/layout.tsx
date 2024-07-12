@@ -1,7 +1,7 @@
-import { ChildProps } from "postcss";
+import { ReactNode } from "react"; // Asegúrate de importar ReactNode
 import { DashboardHeader } from "../ui/header/Dashboard";
 
-export default function NavBarDashboardlayout({children}: {children: ChildProps}) {
+export default function NavBarDashboardLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <DashboardHeader />
@@ -9,3 +9,4 @@ export default function NavBarDashboardlayout({children}: {children: ChildProps}
     </>
   );
 }
+

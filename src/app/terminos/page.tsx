@@ -11,10 +11,7 @@ export default function PrivacyPolicies() {
       <div className="bg-white min-h-screen">
         <div className="flex flex-row items-center mb-5 space-x-2 px-5 py-5 md:px-36 md:py-10">
           <FaArrowLeft />
-          <Link
-            href="/"
-            className="no-underline hover:underline"
-          >
+          <Link href="/" className="no-underline hover:underline">
             Volver a la pagina de inicio
           </Link>
         </div>
@@ -83,21 +80,22 @@ export default function PrivacyPolicies() {
                 Los Distribuidores registrados en la plataforma, que hayan
                 ingresado sus datos y el tipo de repuestos que comercializan
                 (Original, Alternativo o Ambos), tendrán acceso a las
-                cotizaciones generadas por Cliente Buscador. Al comprar "bolsas
-                virtuales", los Distribuidores obtendrán acceso a este conjunto
-                de cotizaciones.
+                cotizaciones generadas por Cliente Buscador. Al comprar
+                &quot;bolsas virtuales&quot;, los Distribuidores obtendrán
+                acceso a este conjunto de cotizaciones.
               </p>
               <p>
                 <strong>5. Descuento de Cotizaciones:</strong> Cuando un
-                Distribuidor hace "match" con una cotización, se le descuenta
-                automáticamente una cotización de la bolsa virtual comprada.
+                Distribuidor hace &quot;match&quot; con una cotización, se le
+                descuenta automáticamente una cotización de la bolsa virtual
+                comprada.
               </p>
               <p>
                 <strong>6. Coincidencia de Cotizaciones:</strong> La plataforma
-                detecta automáticamente cuando un Distribuidor hace "match" con
-                una cotización. En ese momento, la cotización se elimina del
-                sistema y el Cliente Buscador recibe hasta 3 cotizaciones de
-                diferentes Distribuidores.
+                detecta automáticamente cuando un Distribuidor hace
+                &quot;match&quot; con una cotización. En ese momento, la
+                cotización se elimina del sistema y el Cliente Buscador recibe
+                hasta 3 cotizaciones de diferentes Distribuidores.
               </p>
               <p>
                 <strong>7. Posicionamiento en Buscadores:</strong>{" "}
@@ -534,8 +532,8 @@ export default function PrivacyPolicies() {
             <p className="mb-4">
               Adicionalmente, en caso de problemas técnicos o fallas en la
               plataforma que impidan el acceso de los Distribuidores a las
-              "bolsas virtuales" de cotizaciones que hayan adquirido, la
-              responsabilidad de BuscaRepuestos.cl se limitará únicamente a
+              &quot;bolsas virtuales&quot; de cotizaciones que hayan adquirido,
+              la responsabilidad de BuscaRepuestos.cl se limitará únicamente a
               reembolsar los montos pagados por los Distribuidores en la fecha
               específica en que ocurrió el incidente, sin extenderse a pagos
               realizados en otros días.
@@ -570,7 +568,7 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl utilizará el correo electrónico o publicaciones
               en su sitio web para enviar todas las notificaciones y
               comunicaciones dirigidas a los Distribuidores que utilicen las
-              "bolsas virtuales".
+              &quot;bolsas virtuales&quot; bolsas virtuales.
             </p>
             <p>
               No se realizarán notificaciones por otros medios, por lo que los
@@ -585,7 +583,7 @@ export default function PrivacyPolicies() {
               16. Cesión de Acceso a Bolsas Virtuales
             </h1>
             <p className="mb-4">
-              El acceso a las "bolsas virtuales" de cotizaciones es
+              El acceso a las &quot;bolsas virtuales&quot; de cotizaciones es
               intransferible. La cesión del acceso a terceros es responsabilidad
               exclusiva del Distribuidor. BuscaRepuestos.cl no interviene ni se
               responsabiliza por estas acciones.
@@ -616,9 +614,9 @@ export default function PrivacyPolicies() {
             </p>
             <p>
               Los resultados de búsqueda confirman que la cesión del acceso a
-              las "bolsas virtuales" es una responsabilidad exclusiva del
-              Distribuidor, y que BuscaRepuestos.cl requiere autorización previa
-              y por escrito para aceptar y reconocer dicha cesión.
+              las &quot;bolsas virtuales&quot; es una responsabilidad exclusiva
+              del Distribuidor, y que BuscaRepuestos.cl requiere autorización
+              previa y por escrito para aceptar y reconocer dicha cesión.
             </p>
 
             {/*Policitcas*/}
@@ -671,9 +669,9 @@ export default function PrivacyPolicies() {
               19. Preguntas y Contacto
             </h1>
             <p className="mb-4">
-              Si tiene alguna pregunta o inquietud sobre los "Términos y
-              Condiciones de Uso" y "Política de Privacidad" aquí expuestos,
-              puede contactarnos por correo electrónico a{" "}
+              Si tiene alguna pregunta o inquietud sobre los &quot;Términos y
+              Condiciones de Uso&quot; y &quot;Política de Privacidad&quot; aquí
+              expuestos, puede contactarnos por correo electrónico a{" "}
               <a
                 href="mailto:contacto@buscarepuestos.cl"
                 className="text-blue-500 underline"

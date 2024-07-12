@@ -70,7 +70,7 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
         <div className="h-44 rounded-md">
           <Carousel className="text-black">
             {quote.quotation.images.map((s) => (
-              <img className="rounded-xl" src={s.url} alt="imagen" />
+              <img key={s.url} className="rounded-xl" src={s.url} alt="imagen" />
             ))}
           </Carousel>
         </div>

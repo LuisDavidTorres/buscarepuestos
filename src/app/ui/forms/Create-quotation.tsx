@@ -252,7 +252,7 @@ export function Create_quotation() {
                   </option>
                 ))}
               </select>
-              <div className="border-2 p-2 shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="border-2 p-2 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
                 <label htmlFor="fileimg">
                   <p className="font-bold">Subir Imagenes de Repuestos</p>{" "}
                   <label className="flex items-center text-sm">
