@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel } from "../container/carousel";
+import { Carousel } from "../container/Carousel.jsx";
 
 interface images {
   idImg: number;
