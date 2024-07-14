@@ -10,8 +10,11 @@ async function Home() {
       <main className="min-h-screen bg-custom-green">
         <HeaderOut />
         <div className="flex flex-col md:justify-center">
-          <div className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-60" style={{ boxShadow: '10px 15px 10px rgba(0, 0, 0, 0.5)' }}>
-          <div className="mt-4">
+          <div
+            className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-60"
+            style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
+          >
+            <div className="mt-4">
               <span className="bg-clip-text text-slate-100 text-xs sm:text-base">
                 MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES
               </span>
@@ -34,7 +37,10 @@ async function Home() {
           </div>
 
           <div>
-            <img src={"/images/backgrounds/Fondo_BR_home_index.png"}></img>
+            <img
+              src={"/images/backgrounds/Fondo_BR_home_index.png"}
+              loading="eager"
+            ></img>
           </div>
           <div className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5">
             <h1 className="text-gray-400">PLATAFORMA PROTEGIDA Y SEGURA.</h1>
