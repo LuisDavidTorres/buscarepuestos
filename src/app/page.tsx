@@ -41,6 +41,7 @@ async function Home() {
             <Image
               src={"/images/backgrounds/Fondo_BR_home_index.png"}
               alt="Busca Repuestos"
+              priority={true}
               quality={100}
             />
           </div>
