@@ -77,7 +77,7 @@ export function Plans({ plan }: { plan: Plan }) {
 
   return (
     <div>
-      <div className="w-72 h-auto text-black shadow-lg">
+      <div className="w-72 h-auto text-black shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
         <div className="bg-white w-auto h-56 rounded-t-lg p-5 border-2">
           <section className="flex justify-center">
             <h2
