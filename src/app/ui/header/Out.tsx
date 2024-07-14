@@ -13,6 +13,8 @@ export function HeaderOut() {
             alt="Busca Repuestos"
             width={260}
             height={500}
+            className="hidden sm:block"
+            quality={100} 
           />
           <Image
             src="/logo-images/logo-start-header.png"
@@ -20,6 +22,7 @@ export function HeaderOut() {
             width={63}
             height={40}
             className="sm:hidden"
+            quality={100} 
           />
         </Link>
       </header>
