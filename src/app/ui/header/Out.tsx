@@ -11,16 +11,16 @@ export function HeaderOut() {
           <Image
             src="/logo-images/logo-center-header.png"
             alt="Busca Repuestos"
-            width={500}
+            width={260}
             height={500}
           />
-          <img
+          <Image
             src="/logo-images/logo-start-header.png"
             alt="Busca Repuestos"
             width={63}
             height={40}
             className="sm:hidden"
-          ></img>
+          />
         </Link>
       </header>
     </div>
