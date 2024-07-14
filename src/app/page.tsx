@@ -3,6 +3,7 @@ import { HeaderOut } from "./ui/header/Out";
 import { ToEnter } from "./ui/buttons/To-enter";
 import { UsageSteps } from "./ui/cards/Usage-steps";
 import { IoIosLock } from "react-icons/io";
+import Image from "next/image";
 
 async function Home() {
   return (
@@ -37,10 +38,12 @@ async function Home() {
           </div>
 
           <div>
-            <img
+            <Image
               src={"/images/backgrounds/Fondo_BR_home_index.png"}
-              loading="eager"
-            ></img>
+              alt="Busca Repuestos"
+              quality={100} 
+              unoptimized = {true}
+            />
           </div>
           <div className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5">
             <h1 className="text-gray-400">PLATAFORMA PROTEGIDA Y SEGURA.</h1>
