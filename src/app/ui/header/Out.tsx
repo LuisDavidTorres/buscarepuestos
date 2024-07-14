@@ -15,7 +15,6 @@ export function HeaderOut() {
             height={500}
             className="hidden sm:block"
             quality={100} 
-            unoptimized = {true}
           />
           <Image
             src="/logo-images/logo-start-header.png"
@@ -24,7 +23,6 @@ export function HeaderOut() {
             height={40}
             className="sm:hidden"
             quality={100} 
-            unoptimized = {true}
           />
         </Link>
       </header>

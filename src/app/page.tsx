@@ -41,8 +41,7 @@ async function Home() {
             <Image
               src={"/images/backgrounds/Fondo_BR_home_index.png"}
               alt="Busca Repuestos"
-              quality={100} 
-              unoptimized = {true}
+              quality={100}
             />
           </div>
           <div className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5">
