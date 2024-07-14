@@ -10,8 +10,8 @@ export function HeaderOut() {
           <img
             src="/logo-images/logo-center-header.png"
             alt="Busca Repuestos"
-            width={26}
-            height={50}
+            width={260}
+            height={500}
             className="hidden sm:block"
           ></img>
           <img
