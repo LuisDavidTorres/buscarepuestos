@@ -273,7 +273,7 @@ export function Create_quotation() {
                 />
               </div>
 
-              <div className="flex overflow-x-auto w-60 md:w-96">
+              <div className="flex overflow-x-auto w-full md:w-96">
                 {previews.map((pic, index) => (
                   <div key={index} className="flex-shrink-0 mr-4">
                     <img
