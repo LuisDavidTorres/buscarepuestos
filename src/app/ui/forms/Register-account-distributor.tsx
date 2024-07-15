@@ -17,6 +17,7 @@ import { FaRegEye } from "react-icons/fa";
 export function Register_account_distribuitor() {
   const {
     register,
+    setValue,
     handleSubmit,
     setError,
     formState: { errors },
@@ -34,6 +35,28 @@ export function Register_account_distribuitor() {
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const formatRut = (rut: string) => {
+    rut = rut.replace(/[^0-9kK]/g, "");
+  
+    if (rut.length > 1) {
+      const parts = rut.match(/(\d{1,2})(\d{0,3})(\d{0,3})([0-9Kk]?)/);
+      if (parts) {
+        rut = parts[1]; 
+        if (parts[2]) rut += '.' + parts[2]; 
+        if (parts[3]) rut += '.' + parts[3]; 
+        if (parts[4]) rut += '-' + parts[4];
+      }
+    }
+  
+    return rut;
+  };
+  
+
+  const handleRutChange = (e: any) => {
+    const formattedRut = formatRut(e.target.value);
+    setValue("rutCompany", formattedRut);
   };
 
   const onSubmit = handleSubmit(async (data) => {
@@ -143,9 +166,18 @@ export function Register_account_distribuitor() {
                   value: true,
                   message: "Este campo es requerido",
                 },
+                maxLength: {
+                  value: 12,
+                  message: "Formato RUT Empresa No Valido"
+                },
                 pattern: {
                   value: /^[5-9][0-9]\.\d{3}\.\d{3}-[0-9Kk]$/,
                   message: "Formato RUT Empresa No Valido",
+                },
+                onChange: (e) => {
+                  {
+                    handleRutChange(e);
+                  }
                 },
               })}
             ></input>
