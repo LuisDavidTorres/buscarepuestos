@@ -134,7 +134,7 @@ export function Create_quotation() {
   }, [files]);
 
   return (
-    <menu className="flex flex-col lg:flex-row w-full">
+    <menu className="flex flex-col lg:flex-row w-full dark:text-black">
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row sm:space-x-16 md:space-x-44 mb-5 space-x-9 font-bold md:text-lg">
