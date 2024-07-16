@@ -8,7 +8,7 @@ export default function PrivacyPolicies() {
     <>
       <Header />
       <DesingHeaderDown titulo="TÉRMINOS Y CONDICIONES - POLÍTICAS DE PRIVACIDAD" />
-      <div className="bg-white min-h-screen">
+      <div className="bg-white min-h-screen dark:text-black">
         <div className="flex flex-row items-center mb-5 space-x-2 px-5 py-5 md:px-36 md:py-10">
           <FaArrowLeft />
           <Link href="/" className="no-underline hover:underline">

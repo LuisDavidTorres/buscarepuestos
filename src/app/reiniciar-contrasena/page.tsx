@@ -5,7 +5,7 @@ export default function page() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <div className="p-10 md:p-10 flex justify-center">
+      <div className="p-10 md:p-10 flex justify-center dark:text-black">
         <div className="border-2 p-10 rounded-md shadow-md">
           <h1 className="font-bold text-3xl mb-8">Resetear Contraseña</h1>
           <p>¿Olvidaste tu Contraseña?</p>
