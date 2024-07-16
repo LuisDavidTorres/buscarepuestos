@@ -63,11 +63,11 @@ export function Plans({ plan }: { plan: Plan }) {
         router.push("/home");
       } else {
         if (pathname === "/cambiar-plan") {
-          router.push("/cambiar-plan/seleccionar-tipo-pago");
+          router.push(`/cambiar-plan/seleccionar-tipo-pago?plan=${id}`);
         }
 
         if (pathname === "/crear-cuenta-distribuidor/planes") {
-          router.push("/crear-cuenta-distribuidor/seleccionar-tipo-pago");
+          router.push(`/crear-cuenta-distribuidor/seleccionar-tipo-pago?plan=${id}`);
         }
       }
     } catch (error) {

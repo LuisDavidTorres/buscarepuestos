@@ -21,7 +21,7 @@ export function Footer() {
               </Link>
             </li>
           </ul>
-          <div className="mt-1 flex justify-between flex-row items-center">
+          <div className="mt-4 flex justify-between flex-row items-center">
             <img
               className="rounded-md"
               width={150}

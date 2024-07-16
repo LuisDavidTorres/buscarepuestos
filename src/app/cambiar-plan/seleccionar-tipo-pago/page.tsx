@@ -4,7 +4,15 @@ import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import { SupportInformation } from "@/app/ui/ListComponents/Support-information";
 import Link from "next/link";
 
-export default function Page() {
+interface PageProps {
+  searchParams: {
+    plan: string;
+  };
+}
+
+export default function Page({ searchParams }: PageProps) {
+  const { plan } = searchParams;
+
   return (
     <div className="min-h-screen bg-white">
       <DashboardHeader />
@@ -18,7 +26,7 @@ export default function Page() {
             </section>
             <section>
               <h1 className="font-bold mt-5 mb-2 text-base">Tu plan</h1>
-              <CardPlanHorizontal />
+              <CardPlanHorizontal planId={plan} />
             </section>
             <h1 className="text-lg mt-14 mb-6">Métodos de pago disponibles</h1>
             <section className="flex justify-center">

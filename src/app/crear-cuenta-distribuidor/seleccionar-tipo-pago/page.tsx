@@ -4,7 +4,15 @@ import { SupportInformation } from "@/app/ui/ListComponents/Support-information"
 import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import Link from "next/link";
 
-function Page() {
+interface PageProps {
+  searchParams: {
+    plan: string;
+  };
+}
+
+function Page({ searchParams }: PageProps) {
+  const { plan } = searchParams;
+
   return (
     <>
       <div>
@@ -27,7 +35,7 @@ function Page() {
               </section>
               <section>
                 <h1 className="font-bold mt-5 mb-2 text-base">Tu plan</h1>
-                <CardPlanHorizontal />
+                <CardPlanHorizontal planId={plan} />
               </section>
               <h1 className="text-lg mt-14 mb-6">
                 Métodos de pago disponibles

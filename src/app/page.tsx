@@ -21,7 +21,7 @@ async function Home() {
               </span>
             </div>
             <div className="bg-gradient-to-r from-white to-gray-200 w-3/4 md:w-2/6 lg:w-1/4 h-36 border-l-neutral-500/800 rounded-md p-4 my-6 shadow-2xl">
-              <p className="flex justify-center text-xl">Ingreso</p>
+              <p className="flex justify-center text-xl dark:text-black">Ingreso</p>
               <div className="space-x-5 flex justify-items-center justify-center my-8">
                 <ToEnter />
               </div>

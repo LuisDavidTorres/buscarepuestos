@@ -9,7 +9,7 @@ export function UsageSteps({
 }) {
   return (
     <div className="border-2 p-4 flex flex-col w-4/5 sm:2/5 md:4/5 lg:w-2/5 xl:w-1/5 2xl:w-1/6 h-96 shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-md">
-      <h1 className="text-center font-bold text-7xl items-center">
+      <h1 className="text-center dark:text-black font-bold text-7xl items-center">
         {numberStep}
       </h1>
       <div className="space-y-10 justify-center mt-14">

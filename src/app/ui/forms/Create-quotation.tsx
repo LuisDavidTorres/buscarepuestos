@@ -267,7 +267,7 @@ export function Create_quotation() {
                   type="file"
                   id="fileimg"
                   accept="image/png, image/jpeg"
-                  className="w-32 md:w-auto"
+                  className="w-32 md:w-auto mt-1"
                   multiple
                   onChange={handleFileChange}
                 />

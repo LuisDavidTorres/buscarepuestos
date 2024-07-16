@@ -178,7 +178,7 @@ export function ModalLoginSupplier() {
                 </div>
               </form>
 
-              <section className="flex flex-row mt-10 text-sm justify-center space-x-1">
+              <section className="flex flex-row mt-10 text-sm justify-center items-center space-x-1">
                 <p className="text-gray-500">
                   ¿Aún no tienes cuenta como distribuidor?
                 </p>
