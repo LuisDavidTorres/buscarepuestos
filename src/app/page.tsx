@@ -85,7 +85,7 @@ async function Home() {
 
             <p className="text-gray-400 text text-xs">INFRAESTRUCTURA AWS.</p>
           </div>
-          <div className="flex flex-col md:flex-row justify-center p-10 gap-10 items-center bg-white">
+          <div className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white">
             <UsageSteps
               numberStep={"1°"}
               name={"CLIENTE"}
