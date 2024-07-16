@@ -46,7 +46,7 @@ export function ResetPasswordForm() {
     <div>
       {alertSuccess ? (
         <div
-          className="p-4 mb-4 text-sm w-9/12 sm:w-7/12 md:w-9/12 lg:w-4/12 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+          className="p-4 mb-4 text-sm 2xl:w-full text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
           role="alert"
         >
           <span className="font-medium">Correo enviado!</span> Te enviamos un
