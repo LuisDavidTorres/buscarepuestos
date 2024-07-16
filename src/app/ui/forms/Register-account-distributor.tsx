@@ -131,7 +131,7 @@ export function Register_account_distribuitor() {
   });
 
   return (
-    <div className="h-auto w-auto border-2 bg-white p-5 shadow-md rounded-md">
+    <div className="h-auto w-auto 2xl:max-w-screen-2xl border-2 bg-white p-5 shadow-md rounded-md">
       <form onSubmit={onSubmit}>
         <div className="flex flex-col 2xl:flex-row 2xl:justify-around">
           <div className="flex flex-col space-y-3">

@@ -6,7 +6,7 @@ export default function Page() {
     <>
       <main className="min-h-screen">
         <Header />
-        <div className="bg-white flex justify-center p-8 dark:text-black">
+        <div className="bg-white flex justify-center p-8 dark:text-black min-h-screen">
           <div className="w-full lg:w-8/12">
             <div className="flex flex-col space-y-2">
               <label>
