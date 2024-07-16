@@ -15,15 +15,22 @@ async function Home() {
             className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-60"
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
-            <div className="mt-4">
-              <span className="bg-clip-text text-slate-100 text-xs sm:text-base">
-                MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES
-              </span>
-            </div>
-            <div className="bg-gradient-to-r from-white to-gray-200 w-3/4 md:w-2/6 lg:w-1/4 h-36 border-l-neutral-500/800 rounded-md p-4 my-6 shadow-2xl">
-              <p className="flex justify-center text-xl dark:text-black">Ingreso</p>
-              <div className="space-x-5 flex justify-items-center justify-center my-8">
-                <ToEnter />
+            <div className="mt-4 flex flex-col items-start">
+              <div className="w-full text-center">
+                <p className="bg-clip-text text-slate-100 text-xs sm:text-base">
+                  {" "}
+                  MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="bg-gradient-to-r from-white to-gray-200 w-full h-36 border-l-neutral-500/800 rounded-md p-4 my-6 shadow-2xl">
+                  <p className="flex justify-center text-xl dark:text-black">
+                    Ingreso
+                  </p>
+                  <div className="space-x-5 flex justify-items-center justify-center my-8">
+                    <ToEnter />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -41,8 +48,9 @@ async function Home() {
             <Image
               src={"/images/backgrounds/Fondo_BR_home_index.png"}
               alt="Busca Repuestos"
+              className="w-full"
               width={1920}
-              height={500}
+              height={400}
               priority={true}
               quality={100}
             />
