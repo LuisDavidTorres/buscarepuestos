@@ -19,13 +19,17 @@ export function ToEnter() {
     }
   };
 
+  const redirecToCreateQuotation = () =>{
+    router.push("/crear-cotizacion")
+  }
+
   return (
     <>
-      <Link href="/crear-cotizacion" className={themeButtonSecond}>
+      <button className={themeButtonSecond} onClick={redirecToCreateQuotation} aria-labelledby="Cliente" aria-label="Cliente">
         CLIENTE
-      </Link>
+      </button>
 
-      <button type="button" className={themeButtonSecond} onClick={redirectTo}>
+      <button className={themeButtonSecond} onClick={redirectTo} aria-labelledby="Distribuidor" aria-label="Distribuidor">
         DISTRIBUIDOR
       </button>
     </>

@@ -36,19 +36,26 @@ export function Footer() {
               <Link
                 href="https://www.instagram.com/buscarepuestos.cl?igsh=OGQ5ZDc2ODk2ZA%3D%3D"
                 target="_blank"
+                aria-label="Instagram de BuscaRepuestos"
               >
                 <IoLogoInstagram />
+                <span className="sr-only">Instagram</span>{" "}
               </Link>
               <Link
                 href="https://www.facebook.com/profile.php?id=61558572538935"
                 target="_blank"
+                aria-label="Perfil de Facebook de BuscaRepuestos"
               >
-                {" "}
                 <ImFacebook2 />
+                <span className="sr-only">Facebook</span>{" "}
               </Link>
-              <Link href="#" target="_blank">
-                {" "}
+              <Link
+                href="#"
+                target="_blank"
+                aria-label="Perfil de LinkedIn de BuscaRepuestos"
+              >
                 <FaLinkedin />
+                <span className="sr-only">LinkedIn</span>{" "}
               </Link>
               <section>
                 {" "}
