@@ -25,11 +25,11 @@ export function ToEnter() {
 
   return (
     <>
-      <button className={themeButtonSecond} onClick={redirecToCreateQuotation} aria-labelledby="Cliente" aria-label="Cliente">
+      <button className={themeButtonSecond} onClick={redirecToCreateQuotation} aria-label="Cliente" name="Cliente">
         CLIENTE
       </button>
 
-      <button className={themeButtonSecond} onClick={redirectTo} aria-labelledby="Distribuidor" aria-label="Distribuidor">
+      <button className={themeButtonSecond} onClick={redirectTo} aria-label="Distribuidor" name="Distribuidor">
         DISTRIBUIDOR
       </button>
     </>
