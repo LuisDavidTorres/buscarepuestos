@@ -40,7 +40,7 @@ async function Home() {
               alt="br-logo"
               width={60}
               height={60}
-              src={"/logo-images/br-logo.png"}
+              src={"/logo-images/br-logo.webp"}
             ></img>
           </div>
 
