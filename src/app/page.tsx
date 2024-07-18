@@ -46,7 +46,7 @@ async function Home() {
 
           <div className="relative w-full overflow-hidden">
             <Image
-              src={"/images/backgrounds/Fondo_BR_home_index.png"}
+              src={"/images/backgrounds/Fondo_BR_home_index.webp"}
               alt="Busca Repuestos"
               className="w-full"
               width={1920}
