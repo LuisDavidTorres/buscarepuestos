@@ -38,7 +38,7 @@ export function TransbankPayment() {
       });
 
       if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
+        throw new Error(`error! estado: ${res.status}`);
       }
 
       const data: RedirectData = await res.json();

@@ -83,12 +83,16 @@ export async function POST(request: Request) {
         let amount = planInfo.pricePlan;
     
         if (PriceDiscount) {
-          amount = PriceDiscount
+          amount = parseFloat(PriceDiscount);
         }
     
         if(!PriceDiscount){
-          amount = amount
+          amount = parseFloat(amount);
         }
+
+        const ivaAmount = amount * 0.19;
+        amount = amount + ivaAmount;
+        amount = Math.round(amount);
 
         const user = await prisma.userAccount.findUnique({
           where: {

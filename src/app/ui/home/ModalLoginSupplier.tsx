@@ -66,7 +66,7 @@ export function ModalLoginSupplier() {
 
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <h2 className="mt-5 text-center text-xl md:text-2xl font-bold leading-9 text-gray-900">
-                Inicie sesión en su cuenta de Distribuidor
+                Cuenta Distribuidor
               </h2>
             </div>
 
@@ -114,7 +114,7 @@ export function ModalLoginSupplier() {
                           href="/reiniciar-contrasena"
                           className="font-semibold text-blue-600 hover:text-blue-900"
                         >
-                          ¿Haz olvidado tu contraseña?
+                          ¿Olvidó su contraseña?
                         </a>
                       </div>
                     </div>
@@ -178,16 +178,16 @@ export function ModalLoginSupplier() {
                 </div>
               </form>
 
-              <section className="flex flex-row mt-10 text-sm justify-center items-center space-x-1">
+              <section className="flex sm:flex-row flex-col mt-10 text-sm justify-center items-center space-x-1">
                 <p className="text-gray-500">
-                  ¿Aún no tienes cuenta como distribuidor?
+                  ¿Aún no tiene Cuenta Distribuidor?
                 </p>
-                <p>
+                <p className="mt-1 sm:mt-0">
                   <Link
                     href="/crear-cuenta-distribuidor"
                     className="font-semibold leading-6 text-blue-600 hover:text-blue-900"
                   >
-                    Registrarse
+                    Regristro Aquí.
                   </Link>
                 </p>
               </section>

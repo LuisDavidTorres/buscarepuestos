@@ -16,7 +16,7 @@ export default function Page({ searchParams }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       <DashboardHeader />
-      <div className="flex justify-center p-8">
+      <div className="flex justify-center p-8 dark:text-black">
         <div>
           <div>
             <section className="mt-2">

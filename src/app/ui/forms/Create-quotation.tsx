@@ -138,7 +138,7 @@ export function Create_quotation() {
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row sm:space-x-16 md:space-x-44 mb-5 space-x-9 font-bold md:text-lg">
-            <h1>Información de tu Vehículo</h1>
+            <h1>Información del Vehículo</h1>
             <h1 className="hidden sm:block">Información de Contacto</h1>
           </div>
           <div>
@@ -166,7 +166,7 @@ export function Create_quotation() {
                 id="id-car"
                 name="id-car"
                 value={idCar}
-                placeholder="Identificador de vehículo"
+                placeholder="Identificador"
                 pattern="(^[A-HJ-NPR-Z0-9]{17}$)"
                 title="Por favor, introduce un VIN válido. Formato de ejemplo: 1G1RC6E42BUXXXXXX"
                 onChange={handleInputChange}
@@ -183,7 +183,7 @@ export function Create_quotation() {
                 id="replacement"
                 name="replacement"
                 type="text"
-                placeholder="Nombre"
+                placeholder="Repuesto"
                 onChange={(e) => setSpareName(e.target.value)}
                 required
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
@@ -195,7 +195,7 @@ export function Create_quotation() {
               >
                 {" "}
                 <p className="text-red-600 ">*</p>
-                <p>Tipo de Repuesto</p>
+                <p>Tipo</p>
               </label>
               <select
                 name="replacement-type"
@@ -212,7 +212,7 @@ export function Create_quotation() {
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
-                <p>Marca de Auto</p>
+                <p>Marca</p>
               </label>
               <SelecCarBrand setCar={setCarBrand} />
 
@@ -220,10 +220,8 @@ export function Create_quotation() {
                 <p className="text-red-600 ">*</p>
                 <div>
                   {" "}
-                  <p>Modelo de Auto</p>
-                  <p className="text-sm">
-                    (Si el modelo no esta en el campo, puedes escribirlo)
-                  </p>
+                  <p>Modelo</p>
+                  <p className="text-sm">(Si no aparece, puede escribirlo)</p>
                 </div>
               </label>
               <CreatableSelect
@@ -238,7 +236,7 @@ export function Create_quotation() {
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
-                <p>Año de Fabricación</p>
+                <p>Año</p>
               </label>
               <select
                 name="vehicle-year"
@@ -253,24 +251,36 @@ export function Create_quotation() {
                 ))}
               </select>
               <div className="border-2 p-2 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
-                <label htmlFor="fileimg">
-                  <p className="font-bold">Subir Imagenes de Repuestos</p>{" "}
-                  <label className="flex items-center text-sm">
-                    <span>(Utiliza tu Cámara</span>
-                    <IoCameraOutline className="text-2xl mx-1" />
-                    <span>o Galería</span>
-                    <GrGallery className="text-lg mx-1" />
-                    <span>)</span>
-                  </label>
+                <label className="flex items-center" htmlFor="fileimg">
+                  <p className="font-bold">Adjuntar Imagenes</p>
+                  <p className="mx-2 text-sm">(Opcional)</p>{" "}
                 </label>
-                <input
-                  type="file"
-                  id="fileimg"
-                  accept="image/png, image/jpeg"
-                  className="w-32 md:w-auto mt-1"
-                  multiple
-                  onChange={handleFileChange}
-                />
+                <div className="flex items-center justify-center w-full mt-4">
+                  <label className="flex flex-col items-center justify-center w-full h-44 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:to-white">
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <section className="flex items-center space-x-1">
+                        {" "}
+                        <IoCameraOutline className="text-2xl" />
+                        <GrGallery className="text-lg" />
+                      </section>
+
+                      <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <span>Utiliza tu Cámara</span> o Galería
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        SVG, PNG, JPG
+                      </p>
+                    </div>
+                    <input
+                      type="file"
+                      id="fileimg"
+                      accept="image/png, image/jpeg"
+                      className="w-32 md:w-auto mt-1 hidden"
+                      multiple
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                </div>
               </div>
 
               <div className="flex overflow-x-auto w-full md:w-96">
@@ -304,12 +314,12 @@ export function Create_quotation() {
               >
                 {" "}
                 <p className="text-red-600 ">*</p>
-                <p>Nombre de Contacto</p>
+                <p>Nombre</p>
               </label>
               <input
                 id="contact-name"
                 type="text"
-                placeholder="Nombre"
+                placeholder="Nombre y Apellidos"
                 onChange={(e) => setContactName(e.target.value)}
                 required
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
@@ -318,7 +328,7 @@ export function Create_quotation() {
               <label className="flex flex-row space-x-1">
                 {" "}
                 <p className="text-red-600 ">*</p>
-                <p>Número de Celular</p>
+                <p>N° Teléfono</p>
               </label>
               <div className="flex flex-row space-x-2">
                 <SelecTelArea
@@ -328,7 +338,7 @@ export function Create_quotation() {
                 <input
                   id="contact-number"
                   type="tel"
-                  placeholder="943243247"
+                  placeholder="Celular"
                   onChange={(e) => setContactNumber(e.target.value)}
                   required
                   className="appearance-none p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
@@ -400,7 +410,6 @@ export function Create_quotation() {
 }
 
 function SelecCarBrand({ setCar }: { setCar: (code: number) => void }) {
-
   const sortedDataCars = [...dataCars];
 
   sortedDataCars.sort((a, b) => (a.label > b.label ? 1 : -1));

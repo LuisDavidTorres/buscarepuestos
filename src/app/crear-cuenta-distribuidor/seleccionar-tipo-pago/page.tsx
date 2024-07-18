@@ -18,7 +18,7 @@ function Page({ searchParams }: PageProps) {
       <div>
         <Header />
       </div>
-      <main className="min-h-screen h-auto bg-white">
+      <main className="min-h-screen h-auto bg-white dark:text-black">
         <div className="flex justify-center p-8">
           <div>
             <div>

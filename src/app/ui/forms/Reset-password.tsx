@@ -49,7 +49,7 @@ export function ResetPasswordForm() {
           className="p-4 mb-4 text-sm 2xl:w-full text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
           role="alert"
         >
-          <span className="font-medium">Correo enviado!</span> Te enviamos un
+          <span className="font-medium">!Correo enviado!</span> Te enviamos un
           email con instrucciones para restablecer la contraseña a{" "}
           <span className="font-medium">{email}</span> Si no lo ves en tu
           bandeja de entrada, revisa la carpeta de correo no deseado.

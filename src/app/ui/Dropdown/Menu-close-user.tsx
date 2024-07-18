@@ -55,7 +55,7 @@ export function MenuCloseUser() {
   function Updown() {
     return (
       <div
-        className="bg-white p-2 shadow-lg absolute z-10 right-3 rounded-md mt-5"
+        className="bg-white dark:text-black p-2 shadow-lg absolute z-10 right-3 rounded-md mt-5"
         ref={menuRef}
       >
         <ul>

@@ -4,7 +4,7 @@ import { VerifyEmailAccountForm } from "@/app/ui/forms/Verify-email-account";
 export default function Page() {
   return (
     <>
-      <main className="min-h-screen h-auto bg-white">
+      <main className="min-h-screen h-auto bg-white dark:text-black">
         <Header />
         <div className="flex justify-center p-8">
           <div className="w-full lg:w-8/12">

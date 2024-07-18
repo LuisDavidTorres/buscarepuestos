@@ -54,8 +54,8 @@ async function PlansSignup() {
                 {" "}
                 <h1 className="text-xl font-bold">Selecciona tu plan</h1>
                 <div className="flex items-center bg-amber-100 shadow-xl rounded-md h-8 w-80 gap-1 justify-center">
-                  <h1 className="font-bold">
-                    Contrata con hasta {maxDiscount.toString()}% de descuento
+                  <h1 className="font-bold dark:text-black">
+                    Compra con hasta {maxDiscount.toString()}% de descuento
                   </h1>
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>

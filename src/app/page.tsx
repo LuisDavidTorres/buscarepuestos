@@ -25,7 +25,7 @@ async function Home() {
               <div className="w-full">
                 <div className="bg-gradient-to-r from-white to-gray-200 w-full h-36 border-l-neutral-500/800 rounded-md p-4 my-6 shadow-2xl">
                   <p className="flex justify-center text-xl dark:text-black">
-                    Ingreso
+                    INGRESO
                   </p>
                   <div className="space-x-5 flex justify-items-center justify-center my-8">
                     <ToEnter />
@@ -56,7 +56,7 @@ async function Home() {
             />
           </div>
           <div className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5">
-            <h1 className="text-gray-400">PLATAFORMA PROTEGIDA Y SEGURA.</h1>
+            <h1 className="text-gray-400">PLATAFORMA PROTEGIDA</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -82,8 +82,6 @@ async function Home() {
                 <IoIosLock className="text-3xl text-gray-400" />
               </g>
             </svg>
-
-            <p className="text-gray-400 text text-xs">INFRAESTRUCTURA AWS.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white">
             <UsageSteps

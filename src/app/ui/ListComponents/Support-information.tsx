@@ -1,6 +1,6 @@
 export function SupportInformation() {
   return (
-    <div className="text-sm">
+    <div className="text-sm dark:text-black">
       <ul>
         <li>
           <p>* Soporte Técnico: Lunes a Viernes de 8:00 a 17:00</p>
