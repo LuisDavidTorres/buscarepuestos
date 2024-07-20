@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white p-6 w-4/4 md:w-3/4">
+    <div className="min-h-screen bg-white p-6 w-full">
       <h1 className="font-bold text-3xl flex justify-center">
         Actualizar Datos
       </h1>

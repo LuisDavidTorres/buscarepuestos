@@ -14,7 +14,7 @@ async function Page() {
   const paymentDetails = await loadHistory();
 
   return (
-    <div className="min-h-screen bg-white p-6 rounded-md">
+    <div className="min-h-screen bg-white p-6 rounded-md dark:text-black">
       <h1 className="font-bold text-3xl flex justify-center">Historial de Pagos</h1>
       <div className="mt-10">
         {paymentDetails.length === undefined || paymentDetails ? (

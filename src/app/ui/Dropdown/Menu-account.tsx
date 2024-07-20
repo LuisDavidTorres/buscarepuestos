@@ -58,7 +58,7 @@ export function MenuAccountDropDown() {
     <div className="relative" ref={dropdownRef}>
       <button
         id="dropdownDefaultButton"
-        className="text-white w-48 bg-gray-500 focus:ring-4 focus:outline-none focus:ring-slate-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        className="text-white w-48 bg-custom-green focus:ring-4 focus:outline-none focus:ring-custom-green font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         type="button"
         onClick={toggleMenu}
       >

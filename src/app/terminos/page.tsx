@@ -568,7 +568,7 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl utilizará el correo electrónico o publicaciones
               en su sitio web para enviar todas las notificaciones y
               comunicaciones dirigidas a los Distribuidores que utilicen las
-              &quot;bolsas virtuales&quot; bolsas virtuales.
+              &quot;bolsas virtuales&quot;.
             </p>
             <p>
               No se realizarán notificaciones por otros medios, por lo que los
@@ -1089,11 +1089,6 @@ export default function PrivacyPolicies() {
               Los padres o tutores legales son los responsables de supervisar y
               regular el uso de internet y servicios en línea por parte de los
               menores bajo su cuidado.
-            </p>
-            <p className="mb-4">
-              Se recomienda a los padres y tutores que eduquen a los niños sobre
-              el uso seguro y responsable de internet, y que los monitoreen
-              cuando utilicen servicios en línea.
             </p>
             <h2 className="font-bold mb-2">
               Acción ante Posible Recopilación de Datos de Menores

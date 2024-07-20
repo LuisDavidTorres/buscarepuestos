@@ -2,7 +2,6 @@ import { HeaderOut } from "../ui/header/Out";
 import { CardSuccessfulPayment } from "../ui/payment/Card/Successful-payment";
 import { PaymentSecurity } from "../ui/payment/Payment-security";
 import jwt from "jsonwebtoken";
-import { cookies } from "next/headers";
 
 interface PageProps {
   searchParams: {
@@ -38,7 +37,7 @@ export default function Page({ searchParams }: PageProps) {
     return (
       <>
         <HeaderOut />
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:text-black">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-3xl mt-10">Orden de compra no válida</h1>
           </div>
@@ -50,7 +49,7 @@ export default function Page({ searchParams }: PageProps) {
   return (
     <>
       <HeaderOut />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:text-black">
         <div className="flex flex-col justify-center items-center">
           <section className="w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12">
             <CardSuccessfulPayment details={details} />

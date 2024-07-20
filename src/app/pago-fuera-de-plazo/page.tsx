@@ -14,7 +14,7 @@ export default function Page({ searchParams }: PageProps) {
   return (
     <>
       <HeaderOut />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:text-black">
         <div className="flex flex-col justify-center items-center">
           <section className="w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12">
             <CardLatePayment purchaseOrder={oc} />

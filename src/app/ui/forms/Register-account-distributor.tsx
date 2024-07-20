@@ -39,20 +39,19 @@ export function Register_account_distribuitor() {
 
   const formatRut = (rut: string) => {
     rut = rut.replace(/[^0-9kK]/g, "");
-  
+
     if (rut.length > 1) {
       const parts = rut.match(/(\d{1,2})(\d{0,3})(\d{0,3})([0-9Kk]?)/);
       if (parts) {
-        rut = parts[1]; 
-        if (parts[2]) rut += '.' + parts[2]; 
-        if (parts[3]) rut += '.' + parts[3]; 
-        if (parts[4]) rut += '-' + parts[4];
+        rut = parts[1];
+        if (parts[2]) rut += "." + parts[2];
+        if (parts[3]) rut += "." + parts[3];
+        if (parts[4]) rut += "-" + parts[4];
       }
     }
-  
+
     return rut;
   };
-  
 
   const handleRutChange = (e: any) => {
     const formattedRut = formatRut(e.target.value);
@@ -135,10 +134,18 @@ export function Register_account_distribuitor() {
       <form onSubmit={onSubmit}>
         <div className="flex flex-col 2xl:flex-row 2xl:justify-around">
           <div className="flex flex-col space-y-3">
-            <h1 className="font-bold text-base text-gray-600">
-              DATOS DE TU EMPRESA
-            </h1>
-            <label htmlFor="nameCompany">Nombre *</label>
+            <h1 className="font-bold text-base text-gray-600">DATOS EMPRESA</h1>
+            <div>
+              <h1 className="text-red-600 text-sm mb-5">
+                (*) Campos obligatorios
+              </h1>
+            </div>
+            
+            <label htmlFor="nameCompany" className="flex flex-row space-x-1">
+              <p className="text-red-600 ">*</p>
+              <p>Nombre</p>
+            </label>
+
             <input
               className="border-2 rounded-md px-2 w-full 2xl:w-full h-9"
               type="text"
@@ -156,7 +163,11 @@ export function Register_account_distribuitor() {
               </span>
             )}
 
-            <label htmlFor="rutCompany">Rut *</label>
+            <label htmlFor="rutCompany" className="flex flex-row space-x-1">
+              {" "}
+              <p className="text-red-600 ">*</p>
+              <p>Rut</p>
+            </label>
             <input
               className="border-2 rounded-md px-2 w-full 2xl:w-full h-9"
               type="text"
@@ -168,7 +179,7 @@ export function Register_account_distribuitor() {
                 },
                 maxLength: {
                   value: 12,
-                  message: "Formato RUT Empresa No Valido"
+                  message: "Formato RUT Empresa No Valido",
                 },
                 pattern: {
                   value: /^[5-9][0-9]\.\d{3}\.\d{3}-[0-9Kk]$/,
@@ -187,7 +198,10 @@ export function Register_account_distribuitor() {
               </span>
             )}
 
-            <label htmlFor="businessLine">Giro *</label>
+            <label htmlFor="businessLine" className="flex flex-row space-x-1">
+              <p className="text-red-600 ">*</p>
+              <p>Giro</p>
+            </label>
             <input
               className="border-2 rounded-md px-2 w-full 2xl:w-full h-9"
               type="text"
@@ -207,7 +221,10 @@ export function Register_account_distribuitor() {
 
             <div className="flex items-center space-x-1">
               {" "}
-              <label htmlFor="contactName">Nombre de Contacto *</label>
+              <label htmlFor="contactName" className="flex flex-row space-x-1">
+                <p className="text-red-600 ">*</p>
+                <p>Nombre de Contacto</p>
+              </label>
               <p className="text-xs">(Representante Legal)</p>
             </div>
 
@@ -230,7 +247,10 @@ export function Register_account_distribuitor() {
 
             <div className="flex items-center space-x-1">
               {" "}
-              <label htmlFor="contacPhone">Teléfono *</label>
+              <label htmlFor="contacPhone" className="flex flex-row space-x-1">
+                <p className="text-red-600 ">*</p>
+                <p>Teléfono</p>
+              </label>
               <p className="text-xs">(Representante Legal)</p>
             </div>
 
@@ -257,7 +277,11 @@ export function Register_account_distribuitor() {
               )}
             </div>
 
-            <label>Tipo de Repuestos *</label>
+            <label className="flex flex-row space-x-1">
+              {" "}
+              <p className="text-red-600 ">*</p>
+              <p>Tipo de Repuestos</p>
+            </label>
             <select
               className="border-2 rounded-md w-full 2xl:w-full h-9"
               onChange={(e) => setRubric(e.target.value)}
@@ -277,7 +301,11 @@ export function Register_account_distribuitor() {
               </option>
             </select>
 
-            <label>Marcas que Comercializa *</label>
+            <label className="flex flex-row space-x-1">
+              {" "}
+              <p className="text-red-600 ">*</p>
+              <p>Marcas que Comercializa</p>
+            </label>
             <div>
               <Select
                 className="w-full 2xl:w-96"
@@ -301,7 +329,10 @@ export function Register_account_distribuitor() {
             </h1>
             <p className="text-xs">(Datos para crear tu Cuenta BR)</p>
             <div className="flex items-center space-x-1">
-              <label htmlFor="email">Email *</label>
+              <label htmlFor="email" className="flex flex-row space-x-1">
+                <p className="text-red-600 ">*</p>
+                <p>Email</p>
+              </label>
               <p className="text-xs">(Empresa)</p>
             </div>
             <input
@@ -325,7 +356,10 @@ export function Register_account_distribuitor() {
                 {errors.email.message?.toString()}
               </span>
             )}
-            <label>Contraseña *</label>
+            <label className="flex flex-row space-x-1">
+              <p className="text-red-600 ">*</p>
+              <p>Contraseña</p>
+            </label>
             <div className="relative w-full">
               {" "}
               <input

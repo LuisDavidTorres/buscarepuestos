@@ -1,8 +1,8 @@
-import { IoLogoInstagram } from "react-icons/io5";
+import { BsInstagram } from "react-icons/bs";
 import { ImFacebook2 } from "react-icons/im";
 import { IoIosLock } from "react-icons/io";
 import { ButtonShare } from "../buttons/Share";
-import { FaLinkedin } from "react-icons/fa6";
+import { BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -38,7 +38,7 @@ export function Footer() {
                 target="_blank"
                 aria-label="Instagram de BuscaRepuestos"
               >
-                <IoLogoInstagram />
+                <BsInstagram />
                 <span className="sr-only">Instagram</span>{" "}
               </Link>
               <Link
@@ -54,7 +54,7 @@ export function Footer() {
                 target="_blank"
                 aria-label="Perfil de LinkedIn de BuscaRepuestos"
               >
-                <FaLinkedin />
+                <BsLinkedin />
                 <span className="sr-only">LinkedIn</span>{" "}
               </Link>
               <section>

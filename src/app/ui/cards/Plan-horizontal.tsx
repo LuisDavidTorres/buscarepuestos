@@ -40,7 +40,7 @@ export async function CardPlanHorizontal({ planId }: { planId: string }) {
         {namePlan}
       </div>
       <div className="bg-slate-300 rounded-br-lg p-3 rounded-bl-lg flex flex-row justify-between">
-        <h1 className="mr-2">Total:</h1>
+        <h1 className="mr-2">Total (IVA Incluido):</h1>
         <h1>{formatMoneyString(finalPrice.toString())}</h1>
       </div>
     </div>

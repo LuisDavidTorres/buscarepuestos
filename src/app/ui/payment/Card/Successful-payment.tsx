@@ -3,6 +3,7 @@ import { CiCircleCheck } from "react-icons/ci";
 import { formatDate, formatTime } from "@/libs/dateUtils";
 import { format_payment_type_code } from "@/libs/payment";
 import { formatMoneyInt } from "@/libs/moneyutils";
+import { calculateNetPrice } from "@/libs/mathematicalFunctions";
 
 interface PaymentDetails {
   amount: number;
@@ -15,11 +16,16 @@ interface PaymentDetails {
   card_number: string;
 }
 
-export function CardSuccessfulPayment({
+export async function CardSuccessfulPayment({
   details,
 }: {
   details: PaymentDetails;
 }) {
+
+  const neto = await calculateNetPrice(details.amount);
+  const totalQuantity = await details.amount;
+  const iva = totalQuantity - neto
+  
   return (
     <div className="shadow-md rounded-md border-2 p-5 mt-5">
       <section className="flex justify-center">
@@ -29,7 +35,13 @@ export function CardSuccessfulPayment({
         ¡Tu pago se realizó con éxito!
       </h1>
       <p className="flex justify-center mt-5">
-        Monto: ${formatMoneyInt(details.amount)}
+        Neto: ${formatMoneyInt(neto)}
+      </p>
+      <p className="flex justify-center mt-1">
+        IVA (19%): {formatMoneyInt(iva)}
+      </p>
+      <p className="flex justify-center mt-1 font-bold">
+        Monto Total: ${formatMoneyInt(totalQuantity)}
       </p>
       <p className="flex justify-center mt-1">
         N°de orden: {details.buy_order}
@@ -62,7 +74,7 @@ export function CardSuccessfulPayment({
       </p>
       <p className="flex justify-center mt-1">Medio de pago: Webpay</p>
       <p className="flex justify-center mt-4">
-        Descripción de los bienes y/o servicios
+        {/*Descripción de los bienes y/o servicios*/}
       </p>
       <section className="flex justify-center mt-8">
         <ReturnToTrade

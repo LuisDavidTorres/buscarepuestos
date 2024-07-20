@@ -4,7 +4,7 @@ export const revalidate: number = 0;
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white p-6 rounded-md">
+    <div className="min-h-screen bg-white p-6 rounded-md dark:text-black">
       <h1 className="font-bold text-3xl flex justify-center">Cuenta</h1>
       <div className="mt-4">
         <InformationUser />

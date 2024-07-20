@@ -103,7 +103,7 @@ async function Page() {
       <DesingHeaderDown titulo="MIS COTIZACIONES" />
       <div className="min-h-screen bg-white p-6 md:p-10">
         <div className="flex flex-row justify-center md:justify-start">
-          <div className="w-56 bg-gradient-to-tr from-gray-300 to-zinc-400 p-4 rounded-md hidden md:block">
+          <div className="w-56 bg-gradient-to-tr from-gray-300 to-custom-gray p-4 rounded-md hidden md:block">
             <section id="filter">
               <Filter
                 className="flex flex-row items-center text-white"

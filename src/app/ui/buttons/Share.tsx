@@ -1,6 +1,6 @@
 "use client";
 
-import { FaShareFromSquare } from "react-icons/fa6";
+import { FaShare } from "react-icons/fa";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -18,7 +18,7 @@ export function ButtonShare() {
   return (
     <>
       <button onClick={handleShareClick}>
-        <FaShareFromSquare className="text-lg" />
+        <FaShare className="text-lg" />
       </button>
       <Toaster position="top-center" reverseOrder={false} />
     </>

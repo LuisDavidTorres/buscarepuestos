@@ -145,7 +145,7 @@ export function ChangeEmail() {
           <button
             type="button"
             onClick={cancelShangeEmail}
-            className="bg-gray-500 hover:bg-gray-400 text-white rounded-md p-2 w-32"
+            className="bg-custom-gray hover:bg-gray-400 text-white rounded-md p-2 w-32"
           >
             Cancelar
           </button>
