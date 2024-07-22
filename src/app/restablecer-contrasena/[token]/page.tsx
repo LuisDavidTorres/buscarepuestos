@@ -2,7 +2,7 @@ import Header from "@/app/ui/header/Header";
 import { ResetPasswordTokenForm } from "@/app/ui/forms/Reset-password-token";
 
 async function verifyToken(token: string) {
-  const res = await fetch(process.env.NEXT_PLUBLIC_API_URL+"/api/token/" + token, {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/token/" + token, {
     method: "GET",
     cache: "no-cache",
     headers: {

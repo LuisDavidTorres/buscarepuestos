@@ -33,7 +33,7 @@ async function loadToken(
   };
 
   const res = await fetch(
-    process.env.NEXT_PLUBLIC_API_URL + "/api/checkoutTransbank",
+    process.env.NEXT_PUBLIC_API_URL + "/api/checkoutTransbank",
     {
       method: "PUT",
       body: JSON.stringify(requestBody),
@@ -88,7 +88,7 @@ async function loadToken(
 
   if(redirecTo === "/pago-autorizado" && response_code === 0 && status === "AUTHORIZED"){
     
-    const response = await fetch(process.env.NEXT_PLUBLIC_API_URL + "/api/assignPlan", {
+    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/assignPlan", {
       method: "POST",
       headers: customHeaders,
       body: JSON.stringify({
@@ -97,7 +97,7 @@ async function loadToken(
     });
   
     if(response.ok){
-      const response = await fetch(process.env.NEXT_PLUBLIC_API_URL + "/api/userHistoryPayment", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/userHistoryPayment", {
         method: "POST",
         headers: customHeaders,
         body: JSON.stringify({

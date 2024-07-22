@@ -103,7 +103,7 @@ export async function POST(request: Request) {
         if (!user) throw new Error("usuario no encontrado");
 
         let buyOrder = "O-" + Math.floor(Math.random() * 10000000) + 1;
-        let returnUrl = process.env.NEXT_PLUBLIC_API_URL + "/redireccionar";
+        let returnUrl = process.env.NEXT_PUBLIC_API_URL + "/redireccionar";
         let session_id = user.id.toString();
 
         const commerceCode = process.env.TBK_API_KEY_ID;

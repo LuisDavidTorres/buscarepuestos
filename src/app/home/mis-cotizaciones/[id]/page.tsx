@@ -3,7 +3,7 @@ import { ImageContainer } from "@/app/ui/container/Image-container";
 
 async function loadQuote(id: string) {
   const res = await fetch(
-    process.env.NEXT_PLUBLIC_API_URL + "/api/quotes/" + id,
+    process.env.NEXT_PUBLIC_API_URL + "/api/quotes/" + id,
     {
       cache: "no-cache",
       headers: {
@@ -17,7 +17,7 @@ async function loadQuote(id: string) {
 
 async function loadImages(id: string) {
   const res = await fetch(
-    process.env.NEXT_PLUBLIC_API_URL + "/api/quotes/" + id,
+    process.env.NEXT_PUBLIC_API_URL + "/api/quotes/" + id,
     {
       cache: "no-cache",
       headers: {

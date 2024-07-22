@@ -3,7 +3,7 @@ import { UpdateCarBrandsForm } from "../ui/forms/Update-car-brands";
 import { getServerSession } from "next-auth";
 
 async function LoadInformationUser({ email }: { email: string }) {
-  const res = await fetch(process.env.NEXT_PLUBLIC_API_URL + "/api/user/" + email, {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email, {
     cache: "no-cache",
     headers: {
       Pragma: "no-cache",

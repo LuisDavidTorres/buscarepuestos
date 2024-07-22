@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 
 async function LoadPLan({ planId }: { planId: string }) {
   const res = await fetch(
-    process.env.NEXT_PLUBLIC_API_URL + "/api/subscriptions/" + planId,
+    process.env.NEXT_PUBLIC_API_URL + "/api/subscriptions/" + planId,
     {
       method: "GET",
     }

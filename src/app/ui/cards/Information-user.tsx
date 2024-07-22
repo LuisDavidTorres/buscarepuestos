@@ -4,7 +4,7 @@ import { PlanRedirect } from "../buttons/Plans-redirect";
 
 async function LoadInformationUser({ email }: { email: string }) {
   const res = await fetch(
-    process.env.NEXT_PLUBLIC_API_URL + "/api/user/" + email,
+    process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email,
     {
       next: { revalidate: 0 },
     }

@@ -2,9 +2,9 @@ import { PaymentHistorial } from "@/app/ui/ListComponents/Payment-historial";
 import { headers } from "next/headers";
 
 async function loadHistory() {
-  const res = await fetch(process.env.NEXT_PLUBLIC_API_URL+"/api/userHistoryPayment", {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/userHistoryPayment", {
     cache: "no-cache",
-    //headers: new Headers(headers()),
+    headers: new Headers(headers()),
   });
   const data = await res.json();
   return data;
