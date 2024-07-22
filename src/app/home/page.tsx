@@ -36,31 +36,13 @@ async function LoadCarBrand({ email }: { email: string }) {
 }
 
 async function loadQuotes() {
-  const nextHeaders = headers();
-  const plainHeaders: { [key: string]: string } = {};
-  nextHeaders.forEach((value, key) => {
-    plainHeaders[key] = value;
+  const res = await fetch(process.env.NEXT_PLUBLIC_API_URL + "/api/quotes", {
+    method: "GET",
+    cache: "no-cache",
   });
-
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/quotes`, {
-      method: "GET",
-      cache: "no-cache",
-      headers: plainHeaders,
-    });
-
-    if (!res.ok) {
-      throw new Error(`HTTP error! Status: ${res.status}`);
-    }
-
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching quotes:', error);
-    return []; // Devolver un arreglo vacío en caso de error
-  }
+  const data = await res.json();
+  return data;
 }
-
 
 async function Page() {
   const session = await getServerSession();
