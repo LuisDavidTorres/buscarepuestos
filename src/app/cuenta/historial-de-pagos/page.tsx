@@ -5,19 +5,21 @@ async function loadHistory() {
   // Obtener los encabezados de Next.js
   const nextHeaders = headers();
 
-  // Verificar los encabezados
-  console.log('Next Headers:', nextHeaders);
+  // Definir el tipo de los encabezados planos
+  const plainHeaders: { [key: string]: string } = {};
 
-  // Crear un nuevo objeto Headers a partir del existente
-  const headersConfig = new Headers(nextHeaders);
+  // Convertir los encabezados a un objeto plano
+  nextHeaders.forEach((value, key) => {
+    plainHeaders[key] = value;
+  });
 
-  // Verificar los encabezados después de crear el nuevo objeto Headers
-  console.log('Headers Config:', headersConfig);
+  // Verificar los encabezados convertidos
+  console.log('Plain Headers:', plainHeaders);
 
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/userHistoryPayment`, {
       cache: "no-cache",
-      headers: headersConfig,
+      headers: plainHeaders, // Usar el objeto plano de encabezados
     });
 
     if (!res.ok) {
