@@ -39,6 +39,7 @@ async function loadQuotes() {
   const res = await fetch(process.env.NEXT_PLUBLIC_API_URL + "/api/quotes", {
     method: "GET",
     cache: "no-cache",
+    //headers: new Headers(headers()),
   });
   const data = await res.json();
   return data;

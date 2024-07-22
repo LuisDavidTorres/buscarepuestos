@@ -18,7 +18,7 @@ interface Plan extends Subscription {
 async function loadPlans() {
   const res = await fetch(process.env.NEXT_PLUBLIC_API_URL+"/api/subscriptions", {
     next: {revalidate: 0},
-    headers: new Headers(headers()),
+    //headers: new Headers(headers()),
   });
 
   const data = await res.json();
