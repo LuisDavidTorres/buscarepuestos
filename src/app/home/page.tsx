@@ -36,10 +36,16 @@ async function LoadCarBrand({ email }: { email: string }) {
 }
 
 async function loadQuotes() {
+  const nextHeaders = headers();
+  const plainHeaders: { [key: string]: string } = {};
+  nextHeaders.forEach((value, key) => {
+    plainHeaders[key] = value;
+  });
+
   const res = await fetch(process.env.NEXT_PLUBLIC_API_URL + "/api/quotes", {
     method: "GET",
     cache: "no-cache",
-    headers: new Headers(headers()),
+    headers: plainHeaders,
   });
   const data = await res.json();
   return data;
