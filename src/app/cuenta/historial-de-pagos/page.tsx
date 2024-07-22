@@ -3,8 +3,9 @@ import { headers } from "next/headers";
 
 async function loadHistory() {
   const res = await fetch(process.env.NEXT_PLUBLIC_API_URL+"/api/userHistoryPayment", {
+    method: 'GET', 
     cache: "no-cache",
-    headers: headers(),
+    headers: new Headers(headers()),
   });
   const data = await res.json();
   return data;
