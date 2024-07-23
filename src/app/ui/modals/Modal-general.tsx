@@ -18,7 +18,7 @@ export function ModalGeneral() {
   const modalContent = useMemo(() => {
     if (modalGeneralOpen) {
       return (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed top-0 left-0 w-full min-h-screen bg-black bg-opacity-50 flex justify-center items-center">
           <div className="rounded-md bg-white p-4 xl:h-2/5 xl:w-2/5 w-11/12">
             <section className="flex md:justify-end justify-start">
               <div

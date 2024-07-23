@@ -5,10 +5,10 @@ import { authOptions } from "@/libs/authOptions";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
-  let email: string = ""; // Asignamos un valor predeterminado
+  let email: string = "";
 
   if (session) {
-    email = session.user?.email?.toString() ?? ""; // Si es undefined, asignamos un string vacío
+    email = session.user?.email?.toString() ?? ""; 
     console.log("La sesion esta definida: " + email + " || " + "Verificado: "+session.user?.emailVerified?.toString());
   } else {
     console.log("La sesión no está definida");

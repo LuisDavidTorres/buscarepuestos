@@ -36,10 +36,14 @@ async function LoadCarBrand({ email }: { email: string }) {
 }
 
 async function loadQuotes() {
+  const headersList = headers()
+  const referer = headersList.get('cookie')
+  console.log(referer)
+
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
     method: "GET",
     cache: "no-cache",
-    headers: headers(),
+    headers: new Headers(headers()),
   });
   const data = await res.json();
   return data;
