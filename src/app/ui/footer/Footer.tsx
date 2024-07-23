@@ -48,9 +48,9 @@ export function Footer() {
                   </svg>
                 </div>
                 <p className="text-left text-xs mt-2">
-                  Es una plataforma que simplifica la forma en que se buscan y
+                  Es una plataforma digital que simplifica la forma en que se buscan y
                   adquieren repuestos automotrices. Estamos comprometidos con
-                  brindar una experiencia de búsqueda rápida, fácil y segura
+                  brindar una experiencia de búsqueda Fácil, Rápida y Segura
                   para Clientes, Buscadores y Distribuidores, contribuyendo a un
                   mercado más eficiente, transparente y competitivo.
                 </p>
@@ -95,7 +95,7 @@ export function Footer() {
                     href="/terminos"
                     className=" text-gray-100 text-xs lg:text-sm hover:text-white hover:underline"
                   >
-                    Terminos y Política de Privacidad
+                    Términos, Condiciones y Políticas de Privacidad
                   </Link>
                 </li>
               </ul>
