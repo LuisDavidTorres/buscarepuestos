@@ -66,7 +66,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
         <GiToggles id="buttonFilter"></GiToggles>
         <p className="mx-2 font-bold">Filtros</p>
       </section>
-      <div className="mt-4">
+      <div className="mt-4 dark:text-black">
         <Select
           closeMenuOnSelect={false}
           components={animatedComponents}
