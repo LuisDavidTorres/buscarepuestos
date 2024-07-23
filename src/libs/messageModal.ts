@@ -1,6 +1,6 @@
 export const mesageNoCliks = {
   id: 1, // Unique ID for this message
-  text: "Sin clicks disponibles, pero no te preocupes, puedes obtener mas oprimiendo el siguentes botón",
+  text: "Sin clicks disponibles, pero no te preocupes, puedes obtener mas oprimiendo el siguente botón",
 };
 
 export const quoteAlreadyAccepted = {
