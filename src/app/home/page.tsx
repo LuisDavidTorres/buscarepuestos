@@ -40,7 +40,6 @@ async function loadQuotes() {
   const referer = headersList.get('cookie');
   console.log(referer);
 
-  // Prepare headers, defaulting to an empty object if referer is null
   const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
 
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {

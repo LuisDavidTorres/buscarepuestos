@@ -18,9 +18,15 @@ interface Plan extends Subscription {
 }
 
 async function loadPlans() {
+  const headersList = headers();
+  const referer = headersList.get('cookie');
+  console.log(referer);
+
+  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
+
   const res = await fetch(process.env.NEXT_PLUBLIC_API_URL+"/api/subscriptions", {
     cache: "no-store",
-    headers: new Headers(headers()),
+    headers: requestHeaders,
   });
 
   const data = await res.json();

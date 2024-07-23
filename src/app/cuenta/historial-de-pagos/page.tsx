@@ -2,9 +2,13 @@ import { PaymentHistorial } from "@/app/ui/ListComponents/Payment-historial";
 import { headers } from "next/headers";
 
 async function loadHistory() {
+  const headersList = headers();
+  const referer = headersList.get('cookie');
+  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
+
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/userHistoryPayment", {
     cache: "no-cache",
-    headers: new Headers(headers()),
+    headers: requestHeaders,
   });
   const data = await res.json();
   return data;
