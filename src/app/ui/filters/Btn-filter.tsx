@@ -10,7 +10,7 @@ export function ButtonFilter() {
     <div>
       <button onClick={viewFilter} className="h-14 w-32 space-x-2 flex flex-row-reverse items-center justify-center border-2 bg-white hover:text-gray-600 hover:bg-slate-100 rounded-md">
         <p className="mx-2 dark:text-black">Filtrar</p>
-        <GiToggles id="buttonFilter"></GiToggles>
+        <GiToggles id="buttonFilter" className="dark:text-black"></GiToggles>
       </button>
     </div>
   );
