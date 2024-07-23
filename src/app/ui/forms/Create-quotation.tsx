@@ -490,7 +490,7 @@ function Details_help() {
         Condiciones y Política de Privacidad o escribirnos a
         contacto@buscarepuestos.cl.
       </p>
-      <p className="mt-5">Éxito</p>
+      <p className="mt-5">Éxito!</p>
       <p className="mt-5 font-bold flex justify-end">
         Equipo Buscarepuestos.cl
       </p>

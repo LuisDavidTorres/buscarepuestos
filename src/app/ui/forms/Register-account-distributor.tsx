@@ -140,7 +140,7 @@ export function Register_account_distribuitor() {
                 (*) Campos obligatorios
               </h1>
             </div>
-            
+
             <label htmlFor="nameCompany" className="flex flex-row space-x-1">
               <p className="text-red-600 ">*</p>
               <p>Nombre</p>
@@ -414,16 +414,18 @@ export function Register_account_distribuitor() {
             </label>
           </div>
 
-          {loading ? (
-            <LoadButton text="Cargando" />
-          ) : (
-            <button
-              type="submit"
-              className="bg-custom-green hover:bg-green-400 w-20 p-2 rounded-md text-white mt-10 md:mt-0"
-            >
-              Enviar
-            </button>
-          )}
+          <div className="mt-10 md:mt-0">
+            {loading ? (
+              <LoadButton text="Cargando" />
+            ) : (
+              <button
+                type="submit"
+                className="bg-custom-green hover:bg-green-400 w-20 p-2 rounded-md text-white"
+              >
+                Enviar
+              </button>
+            )}
+          </div>
         </section>
       </form>
     </div>
