@@ -29,7 +29,7 @@ export function ModalGeneral() {
               </div>
             </section>
             <div className="flex text-center flex-col space-y-14">
-              <section className="mt-16">
+              <section className="mt-16 mb-10">
                 <p className="text-base">{messageModalGeneral.text}</p>
               </section>
               {messageModalGeneral.id === 1 && (
