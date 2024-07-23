@@ -147,11 +147,6 @@ export function Footer() {
               <p className="mx-1">© 2024 BuscaRepuestos.cl</p>
               <IoIosLock className="w-[15px] h-[12px] md:w-4 md:h-4" />
             </div>
-            <div className="flex justify-center items-center">
-              <p className="mx-1">
-                Rentaq SPA - San Francisco PC#22, Los Andes - Chile.
-              </p>
-            </div>
           </section>
         </div>
       </footer>

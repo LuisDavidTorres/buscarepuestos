@@ -36,14 +36,17 @@ async function LoadCarBrand({ email }: { email: string }) {
 }
 
 async function loadQuotes() {
-  const headersList = headers()
-  const referer = headersList.get('cookie')
-  console.log(referer)
+  const headersList = headers();
+  const referer = headersList.get('cookie');
+  console.log(referer);
+
+  // Prepare headers, defaulting to an empty object if referer is null
+  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
 
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
     method: "GET",
     cache: "no-cache",
-    headers: new Headers(headers()),
+    headers: requestHeaders,
   });
   const data = await res.json();
   return data;
