@@ -24,7 +24,7 @@ async function loadPlans() {
 
   const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
 
-  const res = await fetch(process.env.NEXT_PLUBLIC_API_URL+"/api/subscriptions", {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/subscriptions", {
     cache: "no-store",
     headers: requestHeaders,
   });
