@@ -474,6 +474,26 @@ function Details_help() {
       <p className="mt-2">
         Para que los distribuidores respondan tu solicitud de cotización.
       </p>
+      <p className="mt-5">
+        <strong className="font-bold">Fotografías del Repuesto:</strong> Las
+        utilizamos para que el Distribuidor identifique la pieza fácil y
+        rápidamente.
+      </p>
+
+      <p className="mt-5">
+        <strong className="font-bold">Fotografía del VIN:</strong> Sugerimos
+        incluir en las tomas una fotografía del VIN para corroborar transcripción
+        manual.
+      </p>
+      <p className="mt-5">
+        Para mayor información puedes dirigirte a nuestros Terminos y
+        Condiciones y Política de Privacidad o escribirnos a
+        contacto@buscarepuestos.cl.
+      </p>
+      <p className="mt-5">Éxito</p>
+      <p className="mt-5 font-bold flex justify-end">
+        Equipo Buscarepuestos.cl
+      </p>
     </div>
   );
 }
