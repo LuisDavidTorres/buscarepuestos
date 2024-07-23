@@ -30,6 +30,12 @@ export async function POST(request: Request) {
       },
     });
 
+    const company = await prisma.company.findFirst({
+      where: {
+        user: user,
+      },
+    });
+
     const templeEmail = `
 <!DOCTYPE html>
 <html lang="es">
@@ -107,12 +113,12 @@ export async function POST(request: Request) {
       <div class="desing_down_grey"></div>
       <div class="desing_down_green"></div>
       <div class="content">
-        <p>Hola [Nombre del usuario],</p>
+        <p>Hola ${company?.contactName},</p>
         <p>
           Gracias por registrarte en
           <a href="https://www.buscarepuestos.cl">www.buscarepuestos.cl</a>.
           Para completar tu registro y verificar que eres el dueño de la
-          dirección de correo electrónico [Dirección de correo electrónico],
+          dirección de correo electrónico: ${email},
         </p>
         <p>Copia el siguiente código en el campo de verificación:</p>
         <p>Tu codigo de verificacion es:</p>

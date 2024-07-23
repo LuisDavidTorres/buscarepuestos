@@ -19,15 +19,18 @@ interface Plan extends Subscription {
 
 async function loadPlans() {
   const headersList = headers();
-  const referer = headersList.get('cookie');
+  const referer = headersList.get("cookie");
   console.log(referer);
 
-  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
+  const requestHeaders: HeadersInit = referer ? { Cookie: referer } : {};
 
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/subscriptions", {
-    cache: "no-store",
-    headers: requestHeaders,
-  });
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/api/subscriptions",
+    {
+      cache: "no-store",
+      headers: requestHeaders,
+    }
+  );
 
   const data = await res.json();
   return data;
@@ -52,9 +55,9 @@ async function page() {
             <div className="flex justify-between xl:items-center flex-col xl:flex-row space-y-4 xl:space-y-0">
               {" "}
               <h1 className="text-xl font-bold">Selecciona tu Plan</h1>
-              <div className="flex items-center bg-amber-100 shadow-xl rounded-md h-8 w-96 gap-1 justify-center">
+              <div className="flex items-center bg-amber-100 shadow-xl rounded-md h-8 w-80 gap-1 justify-center">
                 <h1 className="font-bold dark:text-black">
-                  Compra con hasta un {maxDiscount.toString()}% de descuento
+                  Compra con hasta {maxDiscount.toString()}% de descuento
                 </h1>
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>

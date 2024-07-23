@@ -83,7 +83,7 @@ export function VerifyEmailAccountForm(){
       <header className="mb-8">
         <h1 className="text-2xl font-bold mb-1">Código de Verificación</h1>
         <p className="text-[15px] text-slate-500">
-          Ingresa el código de verificación que te enviamos a tu Email
+          Por favor ingresa el código de verificación que te enviamos a tu Email
         </p>
       </header>
       <form onSubmit={handleSubmit}>
