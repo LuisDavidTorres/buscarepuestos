@@ -109,7 +109,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
         </button>
         <button
           onClick={applyCloseFilters}
-          className="bg-custom-green hover:bg-green-600 p-2 rounded-md text-white sm:hidden"
+          className="bg-custom-green hover:bg-green-600 p-2 rounded-md text-white sm:hidden w-full"
         >
           Aplicar
         </button>
