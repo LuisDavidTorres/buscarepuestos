@@ -34,9 +34,9 @@ export async function InformationUser() {
         <p>Nombre de Representante:</p>
         <p className="font-bold break-all">{user?.user?.company.contactName}</p>
       </div>
-      <div className="flex mb-2 space-x-2 flex-wrap">
-        <p>Correo:</p>
-        <p className="font-bold break-all">{user?.user?.email}</p>
+      <div className="flex mb-2 space-x-2 overflow-x-auto">
+        <p  className="whitespace-nowrap">Correo:</p>
+        <p className="font-bold whitespace-nowrap flex-shrink-0">{user?.user?.email}</p>
       </div>
       <div className="flex mb-2 space-x-2">
         <p>Teléfono:</p>

@@ -134,10 +134,10 @@ export function Create_quotation() {
   }, [files]);
 
   return (
-    <menu className="flex flex-col lg:flex-row w-full dark:text-black">
+    <menu className="flex flex-col min-[1384px]:flex-row w-full dark:text-black">
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-row sm:space-x-16 md:space-x-44 mb-5 space-x-9 font-bold md:text-lg">
+          <div className="flex flex-row sm:space-x-20 md:space-x-40 mb-5 space-x-9 font-bold md:text-lg">
             <h1>Información del Vehículo</h1>
             <h1 className="hidden sm:block">Información de Contacto</h1>
           </div>
@@ -148,12 +148,12 @@ export function Create_quotation() {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:space-x-8 ">
-            <section className="flex flex-col space-y-5">
+            <section className="flex flex-col space-y-5  min-[640px]:w-6/12">
               <label htmlFor="patente" className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
                 <p>VIN</p>
               </label>
-              <section className="lg:hidden">
+              <section className="min-[1384px]:hidden">
                 <Link href="/crear-cotizacion#infoVni">
                   <p className="text-sm text-blue-800">
                     ¿Por qué es necesario?
@@ -307,7 +307,7 @@ export function Create_quotation() {
               Información de Contacto
             </h1>
 
-            <section className="flex flex-col space-y-5 mt-5 sm:mt-0">
+            <section className="flex flex-col space-y-5 mt-5 sm:mt-0 min-[773px]:w-full">
               <label
                 htmlFor="nombreContacto"
                 className="flex flex-row space-x-1"
@@ -402,7 +402,7 @@ export function Create_quotation() {
         </form>
       </div>
 
-      <div className="p-1 py-5 lg:px-10 lg:w-2/4 xl:px-16 lg:py-0">
+      <div className="p-1 py-5 min-[1384px]:px-10 min-[1384px]:w-2/4 xl:px-16 min-[1384px]:py-0">
         <Details_help></Details_help>
       </div>
     </menu>
@@ -453,8 +453,10 @@ function Details_help() {
       <div className="flex flex-col md:flex-row lg:flex-col xl:flex-col mt-2 md:space-x-1 lg:space-x-0 xl:space-x-0">
         <p>El VIN consta de 17 caracteres alfanuméricos.</p>
         <div className="flex xl:flex-row space-x-1">
-          <p className="font-bold md:mt-0">Ejemplo de Formato:</p>
-          <p>1G1RC6E42BUXXXXXX</p>
+          <label className="break-all">
+            <span className="font-bold md:mt-0">Ejemplo de Formato:</span>{" "}
+            1G1RC6E42BUXXXXXX
+          </label>
         </div>
       </div>
 
@@ -482,8 +484,8 @@ function Details_help() {
 
       <p className="mt-5">
         <strong className="font-bold">Fotografía del VIN:</strong> Sugerimos
-        incluir en las tomas una fotografía del VIN para corroborar transcripción
-        manual.
+        incluir en las tomas una fotografía del VIN para corroborar
+        transcripción manual.
       </p>
       <p className="mt-5">
         Para mayor información puedes dirigirte a nuestros Terminos y

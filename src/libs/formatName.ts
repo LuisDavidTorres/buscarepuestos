@@ -12,6 +12,6 @@ export function formatNameSpareType(SpareType: string) {
   } else if (SpareType === "original") {
     return "Original";
   } else {
-    return "Orig. o alterna.";
+    return "Original / Alternativo";
   }
 }
