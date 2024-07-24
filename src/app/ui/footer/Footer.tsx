@@ -47,12 +47,13 @@ export function Footer() {
                     />
                   </svg>
                 </div>
-                <p className="text-left text-xs mt-2">
-                  Es una plataforma digital que simplifica la forma en que se buscan y
-                  adquieren repuestos automotrices. Estamos comprometidos con
-                  brindar una experiencia de búsqueda Fácil, Rápida y Segura
-                  para Clientes, Buscadores y Distribuidores, contribuyendo a un
-                  mercado más eficiente, transparente y competitivo.
+                <p className="text-left text-xs mt-2 p-1">
+                  Es una plataforma digital que simplifica la manera en que se
+                  buscan y adquieren repuestos automotrices. Estamos
+                  comprometidos con brindar una experiencia de búsqueda fácil,
+                  rápida y segura para Clientes Buscadores y Distribuidores,
+                  contribuyendo a un mercado más eficiente, transparente y
+                  competitivo.
                 </p>
               </div>
               <section className="flex justify-center lg:justify-start mt-4 lg:mx-2 space-x-4">

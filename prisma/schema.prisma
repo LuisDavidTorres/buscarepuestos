@@ -94,7 +94,7 @@ model City{
 
 model Quotation{
     idQuotation Int @id @default(autoincrement())
-    idCar String
+    idCar String ?
     city City @relation(fields: [idCity], references: [id])
     idCity Int
     spareName String

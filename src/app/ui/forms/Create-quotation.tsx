@@ -137,7 +137,7 @@ export function Create_quotation() {
     <menu className="flex flex-col min-[1384px]:flex-row w-full dark:text-black">
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-row sm:space-x-20 md:space-x-40 mb-5 space-x-9 font-bold md:text-lg">
+          <div className="flex flex-row sm:space-x-20 md:space-x-40 mb-5 space-x-9 font-bold text-lg">
             <h1>Información del Vehículo</h1>
             <h1 className="hidden sm:block">Información de Contacto</h1>
           </div>
@@ -149,35 +149,10 @@ export function Create_quotation() {
 
           <div className="flex flex-col sm:flex-row sm:space-x-8 ">
             <section className="flex flex-col space-y-5  min-[640px]:w-6/12">
-              <label htmlFor="patente" className="flex flex-row space-x-1">
-                <p className="text-red-600 ">*</p>
-                <p>VIN</p>
-              </label>
-              <section className="min-[1384px]:hidden">
-                <Link href="/crear-cotizacion#infoVni">
-                  <p className="text-sm text-blue-800">
-                    ¿Por qué es necesario?
-                  </p>
-                </Link>
-              </section>
-
-              <input
-                type="text"
-                id="id-car"
-                name="id-car"
-                value={idCar}
-                placeholder="Identificador"
-                pattern="(^[A-HJ-NPR-Z0-9]{17}$)"
-                title="Por favor, introduce un VIN válido. Formato de ejemplo: 1G1RC6E42BUXXXXXX"
-                onChange={handleInputChange}
-                required
-                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
-              ></input>
-
               <label htmlFor="repuesto" className="flex flex-row space-x-1">
                 {" "}
                 <p className="text-red-600 ">*</p>
-                <p>Nombre de Repuesto</p>
+                <p>Nombre del Repuesto</p>
               </label>
               <input
                 id="replacement"
@@ -218,24 +193,6 @@ export function Create_quotation() {
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
-                <div>
-                  {" "}
-                  <p>Modelo</p>
-                  <p className="text-sm">(Si no aparece, puede escribirlo)</p>
-                </div>
-              </label>
-              <CreatableSelect
-                className="w-full"
-                isClearable
-                required
-                placeholder="Modelo"
-                formatCreateLabel={(inputValue) => `Registrar "${inputValue}"`}
-                noOptionsMessage={() => "Modelo no encontrado"}
-                options={filteredOptions}
-              />
-
-              <label className="flex flex-row space-x-1">
-                <p className="text-red-600 ">*</p>
                 <p>Año</p>
               </label>
               <select
@@ -250,6 +207,44 @@ export function Create_quotation() {
                   </option>
                 ))}
               </select>
+
+              <label className="flex flex-col space-x-1">
+                <div className="flex items-center space-x-2">
+                  <p>Modelo</p>
+                  <p className="text-sm">(Si no aparece, puede escribirlo)</p>
+                </div>
+              </label>
+              <CreatableSelect
+                className="w-full"
+                isClearable
+                placeholder="Modelo"
+                formatCreateLabel={(inputValue) => `Registrar "${inputValue}"`}
+                noOptionsMessage={() => "Modelo no encontrado"}
+                options={filteredOptions}
+              />
+
+              <div className="flex flex-row space-x-4 items-center">
+                <p>VIN</p>
+                <section className="min-[1384px]:hidden">
+                  <Link href="/crear-cotizacion#infoVni">
+                    <p className="text-sm text-blue-800 hover:underline">
+                      ¿Qué es?
+                    </p>
+                  </Link>
+                </section>
+              </div>
+              <input
+                type="text"
+                id="id-car"
+                name="id-car"
+                value={idCar}
+                placeholder="Identificador"
+                pattern="(^[A-HJ-NPR-Z0-9]{17}$)"
+                title="Por favor, introduce un VIN válido. Formato de ejemplo: 1G1RC6E42BUXXXXXX"
+                onChange={handleInputChange}
+                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
+              ></input>
+
               <div className="border-2 p-2 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
                 <label className="flex items-center" htmlFor="fileimg">
                   <p className="font-bold">Adjuntar Imagenes</p>
@@ -303,7 +298,7 @@ export function Create_quotation() {
               </div>
             </section>
 
-            <h1 className="sm:hidden mt-10 font-bold">
+            <h1 className="sm:hidden mt-10 font-bold text-lg">
               Información de Contacto
             </h1>
 
@@ -367,7 +362,7 @@ export function Create_quotation() {
             <input type="checkbox" required />
           </div>
 
-          <section className="mt-3">
+          <section className="mt-3 flex justify-center">
             {buttonDisabled ? (
               <button
                 disabled
@@ -441,7 +436,7 @@ function Details_help() {
         Número de Identificación del Vehículo, es un identificador único que se
         asigna a cada vehículo.
       </p>
-      <h1 className="font-bold mt-5">¿Por que necesitamos el VIN?</h1>
+      <h1 className="font-bold mt-5">¿Por que sugerimos el VIN?</h1>
       <p className="mt-2">
         Los repuestos pueden variar significativamente entre diferentes modelos,
         incluso dentro de una misma marca de automóviles, debido a las
@@ -492,7 +487,6 @@ function Details_help() {
         Condiciones y Política de Privacidad o escribirnos a
         contacto@buscarepuestos.cl.
       </p>
-      <p className="mt-5">Éxito!</p>
       <p className="mt-5 font-bold flex justify-end">
         Equipo Buscarepuestos.cl
       </p>

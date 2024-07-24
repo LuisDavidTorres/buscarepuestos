@@ -44,7 +44,7 @@ async function PlansSignup() {
       <div>
         <Header />
       </div>
-      <main className="min-h-screen bg-white ">
+      <main className="min-h-screen bg-white dark:text-black">
         <div className="flex justify-center p-8">
           <div>
             <div className="flex flex-col space-y-2">

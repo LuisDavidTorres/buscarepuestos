@@ -3,6 +3,7 @@ import { HeaderOut } from "./ui/header/Out";
 import { ToEnter } from "./ui/buttons/To-enter";
 import { UsageSteps } from "./ui/cards/Usage-steps";
 import { IoIosLock } from "react-icons/io";
+import { TfiArrowCircleDown } from "react-icons/tfi";
 import Image from "next/image";
 
 async function Home() {
@@ -34,7 +35,7 @@ async function Home() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center py-20">
+          <div className="flex flex-col justify-center items-center py-14">
             <img
               className="drop-shadow-[7px_10px_5px_rgba(0,0,0,0.5)]"
               alt="br-logo"
@@ -42,6 +43,9 @@ async function Home() {
               height={60}
               src={"/logo-images/br-logo.webp"}
             ></img>
+            <section className="mt-8">
+              <TfiArrowCircleDown className="animate-bounce text-white text-3xl" />
+            </section>
           </div>
 
           <div className="relative w-full overflow-hidden">
