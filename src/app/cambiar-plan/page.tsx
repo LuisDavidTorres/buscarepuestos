@@ -47,7 +47,7 @@ async function page() {
   }, 0);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:text-black">
       <DashboardHeader />
       <div className="flex justify-center p-8">
         <div>
