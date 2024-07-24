@@ -397,8 +397,8 @@ export function Register_account_distribuitor() {
         </div>
 
         <section className="mt-10 2xl:mx-14 flex flex-col md:flex-row md:justify-end space-x-5 items-center">
-          <div className="flex space-x-2">
-            <input id="terminos" type="checkbox" required></input>
+          <div className="flex space-x-2 items-start">
+            <input className="mt-1" id="terminos" type="checkbox" required></input>
             <label
               htmlFor="terminos"
               className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0"
