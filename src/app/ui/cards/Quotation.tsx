@@ -86,7 +86,7 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
           <label>Repuesto:</label>
           <p className="font-bold">{quote.spareName}</p>
         </div>
-        <div className="flex space-x-4 justify-between overflow-x-auto">
+        <div className="flex space-x-4 justify-between overflow-x-auto scrollbar-thin scrollbar-webkit">
           <label className="whitespace-nowrap">Tipo de Repuesto:</label>
           <p className="font-bold whitespace-nowrap flex-shrink-0">
             {formatNameSpareType(quote.spareType)}

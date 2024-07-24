@@ -7,7 +7,7 @@ export function SupportInformation() {
         </li>
         <li>
           * Para más información:{" "}
-          <a href="mailto:ventas@buscarepuestos.cl">ventas@buscarepuestos.cl</a>
+          <a href="mailto:ventas@buscarepuestos.cl">contacto@buscarepuestos.cl</a>
         </li>
         <li>
           <p className="md:w-4/6 rounded-md font-bold">

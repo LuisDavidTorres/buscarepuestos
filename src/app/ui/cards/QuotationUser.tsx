@@ -63,7 +63,7 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
           <label>Repuesto:</label>
           <p className="font-bold">{quote.quotation.spareName}</p>
         </div>
-        <div className="flex space-x-4 justify-between overflow-x-auto">
+        <div className="flex space-x-4 justify-between overflow-x-auto scrollbar-thin scrollbar-webkit">
           <label className="whitespace-nowrap">Tipo de Repuesto:</label>
           <p className="font-bold whitespace-nowrap flex-shrink-0">{formatNameSpareType(quote.quotation.spareType)}</p>
         </div>
