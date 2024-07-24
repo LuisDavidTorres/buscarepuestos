@@ -31,7 +31,8 @@ function SamplePrevArrow(props) {
 export function CarouselFlowbite({ plans }) {
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
