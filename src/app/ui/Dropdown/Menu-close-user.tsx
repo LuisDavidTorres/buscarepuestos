@@ -77,7 +77,7 @@ export function MenuCloseUser() {
                   router.push("/home");
                 }
                 if (menu === "Bolsas Virtuales") {
-                  router.push("/home");
+                  router.push("/cambiar-plan");
                 }
               }}
             >
