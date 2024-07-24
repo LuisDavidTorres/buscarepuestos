@@ -29,6 +29,12 @@ export async function POST(request: Request) {
       },
     });
 
+    const company = await prisma.company.findFirst({
+      where: {
+        user: user,
+      },
+    });
+
     const templeEmail = `
 <!DOCTYPE html>
 <html lang="es">
@@ -115,7 +121,7 @@ export async function POST(request: Request) {
       <div class="desing_down_grey"></div>
       <div class="desing_down_green"></div>
       <div class="content">
-        <p>Hola [Nombre del usuario],</p>
+        <p>Hola ${company?.contactName},</p>
         <p>
           Recibimos una solicitud para restablecer la contraseña de tu cuenta de
           <a href="https://www.buscarepuestos.cl">www.buscarepuestos.cl</a>. Si
