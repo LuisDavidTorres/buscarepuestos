@@ -62,7 +62,7 @@ export function MenuCloseUser() {
           {Menu.map((menu) => (
             <li
               key={menu}
-              className="p-2 text-base cursor-pointer rounded hover:bg-zinc-300"
+              className="p-2 text-base cursor-pointer rounded hover:bg-zinc-300 select-none"
               onClick={() => {
                 if (menu === "Cerrar Sesión") {
                   handleCloseSession();

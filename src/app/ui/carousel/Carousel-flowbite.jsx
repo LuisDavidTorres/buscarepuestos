@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import { Plans } from "@/app/ui/cards/Plans";
 import "slick-carousel/slick/slick.css";
@@ -29,10 +30,12 @@ function SamplePrevArrow(props) {
 }
 
 export function CarouselFlowbite({ plans }) {
+  const [ autoplay , setAutoplay ] = useState (true);
+
   var settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
+    autoplay: autoplay,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -46,7 +49,9 @@ export function CarouselFlowbite({ plans }) {
     <div>
       <Slider {...settings}>
         {plans.map((plan) => (
-          <div key={plan.id} className="mt-8">
+          <div key={plan.id} className="mt-8" onMouseEnter={()=>{
+            setAutoplay(false)
+          }}>
             <Plans plan={plan} />
           </div>
         ))}

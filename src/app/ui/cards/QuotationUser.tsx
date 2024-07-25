@@ -41,7 +41,7 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
   };
 
   return (
-    <div className="border-2 p-5 h-auto w-80 rounded-md mt-10 sm:mt-0 dark:text-black">
+    <div className="border-2 p-5 h-auto w-72 rounded-md mt-10 sm:mt-0 dark:text-black">
       <section className="flex justify-between">
         <label className="font-bold">{quote.quotation.city.name}</label>
         <label className="font-bold">{Date}</label>

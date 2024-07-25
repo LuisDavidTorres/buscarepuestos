@@ -30,45 +30,52 @@ export async function InformationUser() {
   return (
     <div className="bg-white">
       <h1 className="text-lg font-bold mb-4">Información Personal</h1>
-      <div className="flex mb-2 space-x-2 flex-wrap">
-        <p>Nombre de Representante:</p>
-        <p className="font-bold break-all">{user?.user?.company.contactName}</p>
+      <div className="overflow-x-auto">
+        <div className="flex mb-2 space-x-2 flex-wrap">
+          <p>Nombre de Representante:</p>
+          <p className="font-bold break-all">
+            {user?.user?.company.contactName}
+          </p>
+        </div>
+        <div className="flex mb-2 space-x-2">
+          <p className="whitespace-nowrap">Correo:</p>
+          <p className="font-bold whitespace-nowrap flex-shrink-0">
+            {user?.user?.email}
+          </p>
+        </div>
+        <div className="flex mb-2 space-x-2">
+          <p>Teléfono:</p>
+          <p className="font-bold">{user?.user?.company.phoneNumber}</p>
+        </div>
+        <div className="flex mb-2 space-x-2">
+          <p>Empresa:</p>
+          <p className="font-bold">{user?.user?.company.name}</p>
+        </div>
+        <div className="flex mb-2 space-x-2">
+          <p>Rut Empresa:</p>
+          <p className="font-bold">{user?.user?.company.rut}</p>
+        </div>
+        <div className="flex mb-2 space-x-2">
+          <p className="whitespace-nowrap">Giro:</p>
+          <p className="font-bold whitespace-nowrap flex-shrink-0">
+            {capitalizeWords(user?.user?.company.businessLine)}
+          </p>
+        </div>
+        <div className="flex mb-2 space-x-2">
+          <p className="whitespace-nowrap">Tipo de Repuesto:</p>
+          <p className="font-bold whitespace-nowrap flex-shrink-0">
+            {formatNameSpareType(user?.user?.company.rubric)}
+          </p>
+        </div>
       </div>
-      <div className="flex mb-2 space-x-2 overflow-x-auto">
-        <p  className="whitespace-nowrap">Correo:</p>
-        <p className="font-bold whitespace-nowrap flex-shrink-0">{user?.user?.email}</p>
-      </div>
-      <div className="flex mb-2 space-x-2">
-        <p>Teléfono:</p>
-        <p className="font-bold">{user?.user?.company.phoneNumber}</p>
-      </div>
-      <div className="flex mb-2 space-x-2">
-        <p>Empresa:</p>
-        <p className="font-bold">{user?.user?.company.name}</p>
-      </div>
-      <div className="flex mb-2 space-x-2">
-        <p>Rut Empresa:</p>
-        <p className="font-bold">{user?.user?.company.rut}</p>
-      </div>
-      <div className="flex mb-2 space-x-2">
-        <p>Giro:</p>
-        <p className="font-bold">
-          {capitalizeWords(user?.user?.company.businessLine)}
-        </p>
-      </div>
-      <div className="flex mb-2 space-x-2">
-        <p>Tipo de Repuesto:</p>
-        <p className="font-bold">
-          {formatNameSpareType(user?.user?.company.rubric)}
-        </p>
-      </div>
+
       <div>
         <p>Marca de autos registradas</p>
         <div className="px-6 pt-4 pb-2 sm:w-3/4">
           {user?.CompanyCardBrands?.map((brand: any) => (
             <span
               key={brand.car.idCardBrand}
-              className="inline-block bg-gray-200 hover:bg-slate-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+              className="inline-block bg-gray-200 hover:bg-slate-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:cursor-grab select-none"
             >
               {brand.car.nameCarBrand}
             </span>

@@ -483,9 +483,8 @@ function Details_help() {
         transcripción manual.
       </p>
       <p className="mt-5">
-        Para mayor información puedes dirigirte a nuestros Terminos y
-        Condiciones y Política de Privacidad o escribirnos a
-        contacto@buscarepuestos.cl.
+        Para mayor información puedes dirigirte a nuestros Términos, Condiciones
+        y Políticas de Privacidad o escribirnos a contacto@buscarepuestos.cl.
       </p>
       <p className="mt-5 font-bold flex justify-end">
         Equipo Buscarepuestos.cl

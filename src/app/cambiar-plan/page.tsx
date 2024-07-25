@@ -55,7 +55,7 @@ async function page() {
             <div className="flex justify-between xl:items-center flex-col xl:flex-row space-y-4 xl:space-y-0">
               {" "}
               <h1 className="text-xl font-bold">Selecciona tu Plan</h1>
-              <div className="flex items-center bg-amber-100 shadow-xl rounded-md h-8 w-auto gap-1 justify-center text-sm">
+              <div className="flex items-center bg-amber-100 shadow-xl rounded-md h-8 w-auto gap-1 justify-center text-sm p-1">
                 <h1 className="font-bold dark:text-black">
                   Compra con hasta {maxDiscount.toString()}% de descuento
                 </h1>
