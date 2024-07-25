@@ -51,13 +51,7 @@ export function CarouselFlowbite({ plans }) {
           <div
             key={plan.id}
             className="mt-8"
-            onMouseEnter={() => {
-              setAutoplay(false);
-            }}
-            onMouseOver={() => {
-              setAutoplay(false);
-            }}
-            onMouseMove={() => {
+            onTouchStart={() => {
               setAutoplay(false);
             }}
           >
