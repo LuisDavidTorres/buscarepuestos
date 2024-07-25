@@ -49,7 +49,7 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
       <section className="flex flex-col space-y-4 mt-8 mb-5">
         <div className="flex flex-row justify-between">
           <label>{formatNameIdCar(quote.quotation.idCar.length)}:</label>
-          <p className="font-bold">{quote.quotation.idCar}</p>
+          <p className="font-bold">{quote.quotation.idCar ? quote.quotation.idCar : "N/A"}</p>
         </div>
         <div className="flex flex-row justify-between">
           <label>Marca:</label>

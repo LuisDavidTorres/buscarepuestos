@@ -139,12 +139,12 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   };
 
   return (
-    <div className="flex flex-col px-10 py-5 w-auto h-auto shadow-2xl justify-start rounded-md text-neutral-900">
-      <div className="space-y-3">
+    <div className="flex flex-col max-[360px]:px-4 px-10 py-5 w-auto h-auto shadow-2xl justify-start rounded-md text-neutral-900">
+      <div className="space-y-3 overflow-x-auto">
         <h1 className="font-bold">Información de Cliente:</h1>
-        <div className="flex flex-row">
+        <div className="flex flex-row flex-wrap">
           <label className="flex mr-1">Nombre:</label>
-          <h1>{quoteUser.quotation.contactName}</h1>
+          <h1 className="break-all">{quoteUser.quotation.contactName}</h1>
         </div>
         <div className="flex flex-row">
           <label className="flex mr-1">Teléfono:</label>
@@ -154,14 +154,15 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
           <label className="flex mr-1">Región:</label>
           <h1>{quoteUser.quotation.city.name}</h1>
         </div>
+        <hr className="xl:hidden"></hr>
         <h1 className="font-bold">Informacion de Cotización:</h1>
-        <div className="flex flex-col sm:flex-row">
-          <label className="flex mr-1">Fecha de Solicitud:</label>
-          <p>{formatDate(quoteUser.quotation.dateQuotation)}</p>
+        <div className="flex flex-row">
+          <label className="flex mr-1 whitespace-nowrap">Fecha de Solicitud:</label>
+          <p className="whitespace-nowrap flex-shrink-0">{formatDate(quoteUser.quotation.dateQuotation)}</p>
         </div>
         <div className="flex flex-row">
-          <label className="flex mr-1">{formatNameIdCar(parseInt(quoteUser.quotation.idCar, 10))}:</label>
-          <p className="font-bold">{quoteUser.quotation.idCar}</p>
+          <label className="flex mr-1">{formatNameIdCar(quoteUser.quotation.idCar.length)}:</label>
+          <p className="font-bold">{quoteUser.quotation.idCar ? quoteUser.quotation.idCar : "N/A"}</p>
         </div>
         <div className="flex flex-row">
           <label className="flex mr-1">Marca:</label>
@@ -176,10 +177,11 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
           <p className="font-bold">{quoteUser.quotation.spareName}</p>
         </div>
         <div className="flex flex-row">
-          <label className="flex mr-1">Tipo de Repuesto:</label>
-          <p className="font-bold">{formatNameSpareType(quoteUser.quotation.spareType)}</p>
+          <label className="flex mr-1 whitespace-nowrap">Tipo de Repuesto:</label>
+          <p className="font-bold whitespace-nowrap flex-shrink-0">{formatNameSpareType(quoteUser.quotation.spareType)}</p>
         </div>
       </div>
+      <hr className="xl:hidden mt-4"></hr>
       <form onSubmit={habdleSubmit}>
         <section className="space-y-2 mt-6">
           <p className="font-bold">Precio Repuesto (Con IVA)</p>
@@ -225,8 +227,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
             <label className="mr-1">Nombre</label>
             {sent ? (
               <input
-                className="border-2 rounded-md h-9 px-1 text-gray-500w-3/4 text-slate-400 cursor-not-allowed"
-                placeholder="Tu nombre"
+                className="border-2 rounded-md h-9 px-1 text-gray-500w-3/4 text-slate-400 cursor-not-allowed w-3/4"
                 disabled
                 value={sellerName?.toString()}
               />
@@ -245,8 +246,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
             <label className="mr-1">Apellido</label>
             {sent ? (
               <input
-                className="border-2 rounded-md h-9 px-1 text-gray-500w-3/4 text-slate-400 cursor-not-allowed"
-                placeholder="Tu apellido"
+                className="border-2 rounded-md h-9 px-1 text-gray-500w-3/4 text-slate-400 cursor-not-allowed w-3/4"
                 disabled
                 value={sellerLastName?.toString()}
               />
@@ -268,7 +268,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
             />
             {sent ? (
               <input
-                className="border-2 rounded-e-md px-1 2xl:w-62 text-slate-400 cursor-not-allowed"
+                className="border-2 rounded-e-md px-1 2xl:w-62 text-slate-400 cursor-not-allowed w-3/4"
                 placeholder="Numero de teléfono"
                 disabled
                 value={sellerPhone}

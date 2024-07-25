@@ -1,10 +1,8 @@
 export function formatNameIdCar(length: number) {
-  if (length === 0) {
-    return "Patente / VIN";
-  } else if (length < 17) {
-    return "Patente";
-  } else {
+  if (length === 0 || length === null || length === 17) {
     return "VIN";
+  } else {
+    return "Patente";
   }
 }
 

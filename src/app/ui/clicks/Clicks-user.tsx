@@ -42,7 +42,7 @@ export function ClicksUser() {
           <PlanRedirect />
         ) : (
           <div>
-            <label className="flex space-x-2">
+            <label className="flex space-x-2 max-[347px]:space-x-1 max-[347px]:text-sm">
               <p>Clicks disponibles:</p>
               <p>{totalClicks}</p>
             </label>

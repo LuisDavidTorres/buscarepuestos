@@ -165,7 +165,7 @@ export async function POST(request: Request) {
   `;
 
     const { data, error } = await resend.emails.send({
-      from: "Acme <soporte@buscarepuestos.cl>",
+      from: "Busca Repuestos <soporte@buscarepuestos.cl>",
       to: email,
       subject: "Restablecer contraseña para tu cuenta de Busca Repuestos",
       html: templeEmail,

@@ -12,7 +12,7 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block"}}
+      style={{ ...style, display: "block" }}
       onClick={onClick}
     />
   );
@@ -23,14 +23,14 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block"}}
+      style={{ ...style, display: "block" }}
       onClick={onClick}
     />
   );
 }
 
 export function CarouselFlowbite({ plans }) {
-  const [ autoplay , setAutoplay ] = useState (true);
+  const [autoplay, setAutoplay] = useState(true);
 
   var settings = {
     dots: true,
@@ -41,17 +41,26 @@ export function CarouselFlowbite({ plans }) {
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
-    
+    prevArrow: <SamplePrevArrow />,
   };
 
   return (
     <div>
       <Slider {...settings}>
         {plans.map((plan) => (
-          <div key={plan.id} className="mt-8" onMouseEnter={()=>{
-            setAutoplay(false)
-          }}>
+          <div
+            key={plan.id}
+            className="mt-8"
+            onMouseEnter={() => {
+              setAutoplay(false);
+            }}
+            onMouseOver={() => {
+              setAutoplay(false);
+            }}
+            onMouseMove={() => {
+              setAutoplay(false);
+            }}
+          >
             <Plans plan={plan} />
           </div>
         ))}

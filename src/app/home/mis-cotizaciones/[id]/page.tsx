@@ -62,7 +62,7 @@ async function Page({ params }: { params: { id: string } }) {
         <div className="mx-4 sm:mx-6 md:mx-10 xl:mx-0 w-11/12 xl:max-w-5xl mt-4">
           <ImageContainer images={images} />
         </div>
-        <div className="xl:w-4/12 mt-10 xl:mt-0">
+        <div className="xl:w-4/12 mt-10 xl:mt-0 max-[320px]:text-sm">
           <QuotationFull quoteUser={quoteUser} />
         </div>
       </div>
