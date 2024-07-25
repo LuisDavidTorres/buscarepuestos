@@ -83,14 +83,15 @@ async function loadToken(
     finalDiscount,
   };
 
-  const customHeaders = new Headers(headers());
-  customHeaders.append("Content-Type", "application/json");
+  const headersList = headers();
+  const referer = headersList.get('cookie');
+  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
 
   if(redirecTo === "/pago-autorizado" && response_code === 0 && status === "AUTHORIZED"){
     
     const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/assignPlan", {
       method: "POST",
-      headers: customHeaders,
+      headers: requestHeaders,
       body: JSON.stringify({
         planInfo: planInfo,
       }),
@@ -99,7 +100,7 @@ async function loadToken(
     if(response.ok){
       const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/userHistoryPayment", {
         method: "POST",
-        headers: customHeaders,
+        headers: requestHeaders,
         body: JSON.stringify({
           planInfo: planInfo,
         }),
