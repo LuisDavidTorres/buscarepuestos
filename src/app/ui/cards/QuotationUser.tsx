@@ -48,29 +48,39 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
       </section>
       <section className="flex flex-col space-y-4 mt-8 mb-5">
         <div className="flex flex-row justify-between">
-          <label>{formatNameIdCar(quote.quotation.idCar.length)}:</label>
-          <p className="font-bold">{quote.quotation.idCar ? quote.quotation.idCar : "N/A"}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Marca:</label>
-          <p>{carBrandName}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Año de Fabricación:</label>
-          <p>{quote.quotation.vehicleYear}</p>
-        </div>
-        <div className="flex flex-row justify-between">
           <label>Repuesto:</label>
           <p className="font-bold">{quote.quotation.spareName}</p>
         </div>
         <div className="flex space-x-4 justify-between overflow-x-auto scrollbar-thin scrollbar-webkit">
           <label className="whitespace-nowrap">Tipo de Repuesto:</label>
-          <p className="font-bold whitespace-nowrap flex-shrink-0">{formatNameSpareType(quote.quotation.spareType)}</p>
+          <p className="font-bold whitespace-nowrap flex-shrink-0">
+            {formatNameSpareType(quote.quotation.spareType)}
+          </p>
         </div>
+        <div className="flex flex-row justify-between">
+          <label>Marca:</label>
+          <p className="font-bold">{carBrandName}</p>
+        </div>
+        <div className="flex flex-row justify-between">
+          <label>Año de Fabricación:</label>
+          <p className="font-bold">{quote.quotation.vehicleYear}</p>
+        </div>
+        <div className="flex flex-row justify-between">
+          <label>{formatNameIdCar(quote.quotation.idCar.length)}:</label>
+          <p>
+            {quote.quotation.idCar ? quote.quotation.idCar : "N/A"}
+          </p>
+        </div>
+
         <div className="h-44 rounded-md">
           <Carousel className="text-black">
             {quote.quotation.images.map((s) => (
-              <img key={s.url} className="rounded-xl" src={s.url} alt="imagen" />
+              <img
+                key={s.url}
+                className="rounded-xl"
+                src={s.url}
+                alt="imagen"
+              />
             ))}
           </Carousel>
         </div>

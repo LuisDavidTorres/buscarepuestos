@@ -138,11 +138,11 @@ export function Create_quotation() {
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row sm:space-x-20 md:space-x-40 mb-5 space-x-9 font-bold text-lg">
-            <h1>Información del Vehículo</h1>
+            <h1>Información del Repuesto</h1>
             <h1 className="hidden sm:block">Información de Contacto</h1>
           </div>
           <div>
-            <h1 className="text-red-600 text-sm mb-5">
+            <h1 className="text-red-600 text-xs mb-5">
               (*) Campos obligatorios
             </h1>
           </div>
@@ -184,12 +184,28 @@ export function Create_quotation() {
                   Orignal o Alternativo
                 </option>
               </select>
+              <h1 className="font-bold text-lg">Información del Vehículo</h1>
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
                 <p>Marca</p>
               </label>
               <SelecCarBrand setCar={setCarBrand} />
+
+              <label className="flex flex-col space-x-1">
+                <div className="flex items-center space-x-2">
+                  <p>Modelo</p>
+                  <p className="text-xs">(Si no aparece, puede escribirlo)</p>
+                </div>
+              </label>
+              <CreatableSelect
+                className="w-full"
+                isClearable
+                placeholder="Modelo"
+                formatCreateLabel={(inputValue) => `Registrar "${inputValue}"`}
+                noOptionsMessage={() => "Modelo no encontrado"}
+                options={filteredOptions}
+              />
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
@@ -207,22 +223,7 @@ export function Create_quotation() {
                   </option>
                 ))}
               </select>
-
-              <label className="flex flex-col space-x-1">
-                <div className="flex items-center space-x-2">
-                  <p>Modelo</p>
-                  <p className="text-sm">(Si no aparece, puede escribirlo)</p>
-                </div>
-              </label>
-              <CreatableSelect
-                className="w-full"
-                isClearable
-                placeholder="Modelo"
-                formatCreateLabel={(inputValue) => `Registrar "${inputValue}"`}
-                noOptionsMessage={() => "Modelo no encontrado"}
-                options={filteredOptions}
-              />
-
+              
               <div className="flex flex-row space-x-4 items-center">
                 <p>VIN</p>
                 <section className="min-[1384px]:hidden">
@@ -248,7 +249,7 @@ export function Create_quotation() {
               <div className="border-2 p-2 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
                 <label className="flex items-center" htmlFor="fileimg">
                   <p className="font-bold">Adjuntar Imagenes</p>
-                  <p className="mx-2 text-sm">(Opcional)</p>{" "}
+                  <p className="mx-2 text-xs">(Opcional)</p>{" "}
                 </label>
                 <div className="flex items-center justify-center w-full mt-4">
                   <label className="flex flex-col items-center justify-center w-full h-44 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:to-white">

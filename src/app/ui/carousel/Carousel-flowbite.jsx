@@ -34,7 +34,7 @@ export function CarouselFlowbite({ plans }) {
 
   var settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     autoplay: autoplay,
     speed: 500,
     slidesToShow: 1,

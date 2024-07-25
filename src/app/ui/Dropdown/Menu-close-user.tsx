@@ -9,7 +9,7 @@ export function MenuCloseUser() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const Menu = ["Perfil", "Mesón Digital" ,"Mis Cotizaciones", "Bolsas Virtuales" , "Cerrar Sesión"];
+  const Menu = ["Mi Cuenta", "Mesón Digital" ,"Mis Cotizaciones", "Bolsas Virtuales" , "Cerrar Sesión"];
 
   const menuRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
@@ -70,7 +70,7 @@ export function MenuCloseUser() {
                 if (menu === "Mis Cotizaciones") {
                   router.push("/home/mis-cotizaciones");
                 }
-                if (menu === "Perfil") {
+                if (menu === "Mi Cuenta") {
                   router.push("/cuenta");
                 }
                 if (menu === "Mesón Digital") {

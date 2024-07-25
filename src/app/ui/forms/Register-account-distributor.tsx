@@ -136,14 +136,14 @@ export function Register_account_distribuitor() {
           <div className="flex flex-col space-y-3">
             <h1 className="font-bold text-base text-gray-600">DATOS EMPRESA</h1>
             <div>
-              <h1 className="text-red-600 text-sm mb-5">
+              <h1 className="text-red-600 text-xs mb-5">
                 (*) Campos obligatorios
               </h1>
             </div>
 
             <label htmlFor="nameCompany" className="flex flex-row space-x-1">
               <p className="text-red-600 ">*</p>
-              <p>Nombre</p>
+              <p>Nombre de Empresa</p>
             </label>
 
             <input

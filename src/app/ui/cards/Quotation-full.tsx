@@ -44,7 +44,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   );
   const [sentButton, setSentButton] = useState(quoteUser.sent);
   const [sent, setSent] = useState(quoteUser.sent);
-  const [errors, setErrors] = useState({ sellerPhone: "", price: ""});
+  const [errors, setErrors] = useState({ sellerPhone: "", price: "" });
 
   const [isSending, setIsSending] = useState(false);
 
@@ -84,7 +84,11 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   };
 
   const validatePrice = () => {
-    if (price.toString().startsWith("0") || Number(price) < 1 || /^0+$/.test(price.toString())) {
+    if (
+      price.toString().startsWith("0") ||
+      Number(price) < 1 ||
+      /^0+$/.test(price.toString())
+    ) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         price: "Ingrese un precio válido",
@@ -97,11 +101,11 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
       }));
       return false;
     }
-  }
+  };
 
   const habdleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     //ver si hay errores en array de errores
     if (errors.sellerPhone || errors.price) {
       alert("por favor corrija los errores en el formulario");
@@ -141,6 +145,14 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   return (
     <div className="flex flex-col max-[360px]:px-4 px-10 py-5 w-auto h-auto shadow-2xl justify-start rounded-md text-neutral-900">
       <div className="space-y-3 overflow-x-auto">
+        <div className="flex flex-row">
+          <label className="flex mr-1 whitespace-nowrap">
+            Fecha de Solicitud:
+          </label>
+          <p className="whitespace-nowrap flex-shrink-0 font-bold">
+            {formatDate(quoteUser.quotation.dateQuotation)}
+          </p>
+        </div>
         <h1 className="font-bold">Información de Cliente:</h1>
         <div className="flex flex-row flex-wrap">
           <label className="flex mr-1">Nombre:</label>
@@ -155,15 +167,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
           <h1>{quoteUser.quotation.city.name}</h1>
         </div>
         <hr className="xl:hidden"></hr>
-        <h1 className="font-bold">Informacion de Cotización:</h1>
-        <div className="flex flex-row">
-          <label className="flex mr-1 whitespace-nowrap">Fecha de Solicitud:</label>
-          <p className="whitespace-nowrap flex-shrink-0">{formatDate(quoteUser.quotation.dateQuotation)}</p>
-        </div>
-        <div className="flex flex-row">
-          <label className="flex mr-1">{formatNameIdCar(quoteUser.quotation.idCar.length)}:</label>
-          <p className="font-bold">{quoteUser.quotation.idCar ? quoteUser.quotation.idCar : "N/A"}</p>
-        </div>
+        <h1 className="font-bold">Información del Vehículo:</h1>
         <div className="flex flex-row">
           <label className="flex mr-1">Marca:</label>
           <p>{carBrandName}</p>
@@ -173,15 +177,28 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
           <p>{quoteUser.quotation.vehicleYear}</p>
         </div>
         <div className="flex flex-row">
+          <label className="flex mr-1">
+            {formatNameIdCar(quoteUser.quotation.idCar.length)}:
+          </label>
+          <p>
+            {quoteUser.quotation.idCar ? quoteUser.quotation.idCar : "N/A"}
+          </p>
+        </div>
+        <hr className="xl:hidden mt-4"></hr>
+        <h1 className="font-bold">Información del Repuesto:</h1>
+        <div className="flex flex-row">
           <label className="flex mr-1">Repuesto:</label>
           <p className="font-bold">{quoteUser.quotation.spareName}</p>
         </div>
         <div className="flex flex-row">
-          <label className="flex mr-1 whitespace-nowrap">Tipo de Repuesto:</label>
-          <p className="font-bold whitespace-nowrap flex-shrink-0">{formatNameSpareType(quoteUser.quotation.spareType)}</p>
+          <label className="flex mr-1 whitespace-nowrap">
+            Tipo de Repuesto:
+          </label>
+          <p className="font-bold whitespace-nowrap flex-shrink-0">
+            {formatNameSpareType(quoteUser.quotation.spareType)}
+          </p>
         </div>
       </div>
-      <hr className="xl:hidden mt-4"></hr>
       <form onSubmit={habdleSubmit}>
         <section className="space-y-2 mt-6">
           <p className="font-bold">Precio Repuesto (Con IVA)</p>
@@ -221,7 +238,11 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
               </div>
             )}
           </div>
-          {errors.price && <p className="text-red-500 mx-16 text-xs md:text-sm">{errors.price}</p>}
+          {errors.price && (
+            <p className="text-red-500 mx-16 text-xs md:text-sm">
+              {errors.price}
+            </p>
+          )}
           <p className="font-bold">Datos Vendedor</p>
           <div className="flex flex-row items-center">
             <label className="mr-1">Nombre</label>
@@ -284,7 +305,11 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
               />
             )}
           </div>
-          {errors.sellerPhone && <p className="text-red-500 mx-16 text-xs md:text-sm">{errors.sellerPhone}</p>}
+          {errors.sellerPhone && (
+            <p className="text-red-500 mx-16 text-xs md:text-sm">
+              {errors.sellerPhone}
+            </p>
+          )}
         </section>
         <div className="my-4 flex justify-end">
           <button

@@ -71,18 +71,6 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
       </section>
       <section className="flex flex-col space-y-4 mt-8 mb-5">
         <div className="flex flex-row justify-between">
-          <label>{formatNameIdCar(quote.idCar.length)}:</label>
-          <p className="font-bold">{quote.idCar ? quote.idCar : "N/A"}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Marca:</label>
-          <p>{carBrandName}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Año:</label>
-          <p>{quote.vehicleYear}</p>
-        </div>
-        <div className="flex flex-row justify-between">
           <label>Repuesto:</label>
           <p className="font-bold">{quote.spareName}</p>
         </div>
@@ -91,6 +79,18 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
           <p className="font-bold whitespace-nowrap flex-shrink-0">
             {formatNameSpareType(quote.spareType)}
           </p>
+        </div>
+        <div className="flex flex-row justify-between">
+          <label>Marca:</label>
+          <p className="font-bold">{carBrandName}</p>
+        </div>
+        <div className="flex flex-row justify-between">
+          <label>Año:</label>
+          <p className="font-bold">{quote.vehicleYear}</p>
+        </div>
+        <div className="flex flex-row justify-between">
+          <label>{formatNameIdCar(quote.idCar.length)}:</label>
+          <p>{quote.idCar ? quote.idCar : "N/A"}</p>
         </div>
         <div className="h-44">
           <Carousel className="text-black">
