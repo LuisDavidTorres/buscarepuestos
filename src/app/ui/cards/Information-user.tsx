@@ -15,13 +15,12 @@ async function LoadInformationUser({ email }: { email: string }) {
 
 export async function InformationUser() {
   const session = await getServerSession();
-  let email = session?.user?.email?.toString();
+  const email = session?.user?.email?.toString() || "";
 
-  email = email || "";
+  const userData = email ? await LoadInformationUser({ email }) : { user: null, CompanyCardBrands: null };
+  const { user, CompanyCardBrands } = userData;
 
-  const user = await LoadInformationUser({ email });
-
-  const subscription = user?.user?.subscription;
+  const subscription = user?.subscription;
 
   function capitalizeWords(str: string) {
     return str?.replace(/\b\w/g, (l) => l.toUpperCase());

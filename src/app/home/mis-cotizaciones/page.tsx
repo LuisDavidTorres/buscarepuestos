@@ -34,7 +34,7 @@ async function LoadCarBrand({ email }: { email: string }) {
   const res = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email,
     {
-      //cache: "no-cache",
+      cache: "no-cache",
       headers: {
         Pragma: "no-cache",
       },
@@ -48,7 +48,7 @@ async function loadQuotes({ email }: { email: string }) {
   const res = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/api/assignedQuotes/" + email,
     {
-      //cache: "no-cache",
+      cache: "no-cache",
       headers: {
         Pragma: "no-cache",
       },
