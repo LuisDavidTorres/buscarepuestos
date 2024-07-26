@@ -20,6 +20,7 @@ interface QuotationFull extends UserQuotation {
     date: string;
     idCar: string;
     carBrand: number;
+    carModel: string;
     vehicleYear: number;
     spareName: string;
     spareType: string;
@@ -33,6 +34,7 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
   const carBrandName = dataCars.find(
     (car) => car.value === quote.quotation.carBrand
   )?.label;
+  const idCar = quote.quotation.idCar?.length ?? 0; 
 
   const router = useRouter();
 
@@ -62,11 +64,15 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
           <p className="font-bold">{carBrandName}</p>
         </div>
         <div className="flex flex-row justify-between">
+          <label>Modelo:</label>
+          <p className="font-bold">{quote.quotation.carModel}</p>
+        </div>
+        <div className="flex flex-row justify-between">
           <label>Año de Fabricación:</label>
           <p className="font-bold">{quote.quotation.vehicleYear}</p>
         </div>
         <div className="flex flex-row justify-between">
-          <label>{formatNameIdCar(quote.quotation.idCar.length)}:</label>
+          <label>{formatNameIdCar(idCar)}:</label>
           <p>
             {quote.quotation.idCar ? quote.quotation.idCar : "N/A"}
           </p>

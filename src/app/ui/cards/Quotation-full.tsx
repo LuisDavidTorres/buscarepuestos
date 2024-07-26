@@ -19,6 +19,7 @@ interface QuotationFull extends UserQuotation {
     date: string;
     idCar: string;
     carBrand: number;
+    carModel: string;
     vehicleYear: number;
     spareName: string;
     spareType: string;
@@ -171,6 +172,10 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
         <div className="flex flex-row">
           <label className="flex mr-1">Marca:</label>
           <p>{carBrandName}</p>
+        </div>
+        <div className="flex flex-row">
+          <label className="flex mr-1">Modelo:</label>
+          <p>{quoteUser.quotation.carModel}</p>
         </div>
         <div className="flex flex-row">
           <label className="flex mr-1">Año:</label>

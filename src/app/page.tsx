@@ -35,7 +35,7 @@ async function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center py-14">
+          <div className="flex flex-col justify-center items-center py-14 select-none">
             <img
               className="drop-shadow-[7px_10px_5px_rgba(0,0,0,0.5)]"
               alt="br-logo"
@@ -44,11 +44,13 @@ async function Home() {
               src={"/logo-images/br-logo.webp"}
             ></img>
             <section className="mt-8">
-              <TfiArrowCircleDown className="animate-bounce text-white text-3xl" />
+              <a href="#usageSteps">
+                <TfiArrowCircleDown className="animate-bounce text-white text-3xl hover:cursor-pointer" />
+              </a>
             </section>
           </div>
 
-          <div className="relative w-full overflow-hidden">
+          <div className="relative w-full overflow-hidden select-none">
             <Image
               src={"/images/backgrounds/Fondo_BR_home_index.webp"}
               alt="Busca Repuestos"
@@ -87,7 +89,10 @@ async function Home() {
               </g>
             </svg>
           </div>
-          <div className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white">
+          <div
+            id="usageSteps"
+            className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white"
+          >
             <UsageSteps
               numberStep={"1°"}
               name={"CLIENTE"}

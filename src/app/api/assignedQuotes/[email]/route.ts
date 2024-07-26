@@ -32,6 +32,7 @@ export async function GET(request: Request, { params }: Params) {
             contactName: true,
             contactNumber: true,
             carBrand: true,
+            carModel: true,
             vehicleYear: true,
             details: true,
             dateQuotation: true,

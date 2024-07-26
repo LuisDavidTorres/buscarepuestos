@@ -1,5 +1,5 @@
 export function formatNameIdCar(length: number) {
-  if (length === 0 || length === null || length === 17) {
+  if (length === 0 || length === null || length === 17 || length === 0) {
     return "VIN";
   } else {
     return "Patente";

@@ -23,6 +23,7 @@ export function Create_quotation() {
   const [areaCode, setAreaCode] = useState("+56");
   const [contactNumber, setContactNumber] = useState("");
   const [carBrand, setCarBrand] = useState<number>(1);
+  const [carModel, setCarModel] = useState("");
   const [vehicleYear, setVehicleYear] = useState<number>(
     new Date().getFullYear()
   );
@@ -81,6 +82,7 @@ export function Create_quotation() {
       contactName,
       contactNumber: areaCode + contactNumber,
       carBrand,
+      carModel,
       vehicleYear,
       idCity,
       details,
@@ -194,6 +196,7 @@ export function Create_quotation() {
 
               <label className="flex flex-col space-x-1">
                 <div className="flex items-center space-x-2">
+                  <p className="text-red-600 ">*</p>
                   <p>Modelo</p>
                   <p className="text-xs">(Si no aparece, puede escribirlo)</p>
                 </div>
@@ -201,10 +204,12 @@ export function Create_quotation() {
               <CreatableSelect
                 className="w-full"
                 isClearable
+                required
                 placeholder="Modelo"
                 formatCreateLabel={(inputValue) => `Registrar "${inputValue}"`}
                 noOptionsMessage={() => "Modelo no encontrado"}
                 options={filteredOptions}
+                onChange={(e) => setCarModel((e as { value: string }).value)}
               />
 
               <label className="flex flex-row space-x-1">
@@ -223,7 +228,7 @@ export function Create_quotation() {
                   </option>
                 ))}
               </select>
-              
+
               <div className="flex flex-row space-x-4 items-center">
                 <p>VIN</p>
                 <section className="min-[1384px]:hidden">

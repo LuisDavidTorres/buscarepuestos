@@ -27,6 +27,7 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
   const carBrandName = dataCars.find(
     (car) => car.value === quote.carBrand
   )?.label;
+  const idCar = quote.idCar?.length ?? 0; 
   const [acceptButton, setAcceptButton] = useState(false);
 
   const router = useRouter();
@@ -85,11 +86,15 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
           <p className="font-bold">{carBrandName}</p>
         </div>
         <div className="flex flex-row justify-between">
+          <label>Modelo:</label>
+          <p className="font-bold">{quote.carModel}</p>
+        </div>
+        <div className="flex flex-row justify-between">
           <label>Año:</label>
           <p className="font-bold">{quote.vehicleYear}</p>
         </div>
         <div className="flex flex-row justify-between">
-          <label>{formatNameIdCar(quote.idCar.length)}:</label>
+          <label>{formatNameIdCar(idCar)}:</label>
           <p>{quote.idCar ? quote.idCar : "N/A"}</p>
         </div>
         <div className="h-44">

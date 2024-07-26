@@ -22,6 +22,7 @@ interface QuotationFull extends UserQuotation {
     date: string;
     idCar: string;
     carBrand: number;
+    carModel: string;
     vehicleYear: number;
     spareName: string;
     spareType: string;

@@ -102,7 +102,7 @@ model Quotation{
     contactName String
     contactNumber String
     carBrand Int
-    carModel Int ?
+    carModel String
     details String
     dateQuotation DateTime
     available Boolean  @default(true)

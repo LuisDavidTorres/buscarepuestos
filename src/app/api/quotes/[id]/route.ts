@@ -25,6 +25,7 @@ export async function GET(request: Request, { params }: Params) {
             idQuotation: true,
             idCar: true,
             carBrand: true,
+            carModel: true,
             vehicleYear: true,
             spareName: true,
             details: true,
