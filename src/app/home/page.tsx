@@ -25,7 +25,7 @@ async function LoadCarBrand({ email }: { email: string }) {
   const res = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email,
     {
-      cache: "no-cache",
+      //cache: "no-cache",
       headers: {
         Pragma: "no-cache",
       },
@@ -44,7 +44,7 @@ async function loadQuotes() {
 
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
     method: "GET",
-    cache: "no-cache",
+    //cache: "no-cache",
     headers: requestHeaders,
   });
   const data = await res.json();
