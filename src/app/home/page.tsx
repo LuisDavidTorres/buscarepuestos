@@ -69,21 +69,26 @@ async function Page() {
 
   let quotes = await loadQuotes();
 
-  quotes = quotes.filter((quote: QuotationWithCity) => {
-    // Filtrado por rubric (rubro)
-    const rubricMatch = rubric ? quote.spareType === rubric.toString() : true;
-
-    // Filtrado por city (ciudad)
-    const cityMatch =
-      citiesArray.length > 0 ? citiesArray.includes(quote.idCity) : true;
-
-    // Filtrado por cars (coches)
-    const carsMatch =
-      carsArray.length > 0 ? carsArray.includes(quote.carBrand) : true;
-
-    // Solo se devuelven las cotizaciones que coincidan con todas las condiciones especificadas
-    return rubricMatch && cityMatch && carsMatch;
-  });
+  if (!Array.isArray(quotes)) {
+    console.error('Quotes no es un array:', quotes);
+    quotes = []; // Asignar un array vacío si quotes no es un array
+  } else {
+    quotes = quotes.filter((quote: QuotationWithCity) => {
+      // Filtrado por rubric (rubro)
+      const rubricMatch = rubric ? quote.spareType === rubric.toString() : true;
+  
+      // Filtrado por city (ciudad)
+      const cityMatch =
+        citiesArray.length > 0 ? citiesArray.includes(quote.idCity) : true;
+  
+      // Filtrado por cars (coches)
+      const carsMatch =
+        carsArray.length > 0 ? carsArray.includes(quote.carBrand) : true;
+  
+      // Solo se devuelven las cotizaciones que coincidan con todas las condiciones especificadas
+      return rubricMatch && cityMatch && carsMatch;
+    });
+  }
 
   return (
     <>
