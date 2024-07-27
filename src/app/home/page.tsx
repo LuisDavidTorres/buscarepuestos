@@ -35,7 +35,21 @@ async function LoadCarBrand({ email }: { email: string }) {
   return { CompanyCardBrands };
 }
 
+async function loadQuotes() {
+  const headersList = headers();
+  const referer = headersList.get('cookie');
+  console.log(referer);
 
+  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
+    method: "GET",
+    cache: "no-cache",
+    headers: requestHeaders,
+  });
+  const data = await res.json();
+  return data;
+}
 
 async function Page() {
   const session = await getServerSession();
@@ -53,6 +67,23 @@ async function Page() {
   const carsArray = JSON.parse(cars?.valueOf() || "[]");
   const citiesArray = JSON.parse(city?.valueOf() || "[]");
 
+  let quotes = await loadQuotes();
+
+  quotes = quotes.filter((quote: QuotationWithCity) => {
+    // Filtrado por rubric (rubro)
+    const rubricMatch = rubric ? quote.spareType === rubric.toString() : true;
+
+    // Filtrado por city (ciudad)
+    const cityMatch =
+      citiesArray.length > 0 ? citiesArray.includes(quote.idCity) : true;
+
+    // Filtrado por cars (coches)
+    const carsMatch =
+      carsArray.length > 0 ? carsArray.includes(quote.carBrand) : true;
+
+    // Solo se devuelven las cotizaciones que coincidan con todas las condiciones especificadas
+    return rubricMatch && cityMatch && carsMatch;
+  });
 
   return (
     <>
@@ -75,7 +106,10 @@ async function Page() {
             <section className="w-full flex justify-between md:hidden">
               <ButtonFilter />
             </section>
-           
+            <CardGridQuotation quotes={quotes} />
+            {quotes.length === 0 && (
+              <NoResultsQuotation message={NoQuoteResultsFilter.message} />
+            )}
           </div>
         </div>
         <ModalGeneral />
