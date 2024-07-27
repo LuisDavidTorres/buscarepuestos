@@ -139,9 +139,9 @@ export function Create_quotation() {
     <menu className="flex flex-col min-[1384px]:flex-row w-full dark:text-black">
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-row sm:space-x-20 md:space-x-40 mb-5 space-x-9 font-bold text-lg">
-            <h1>Información del Repuesto</h1>
-            <h1 className="hidden sm:block">Información de Contacto</h1>
+          <div className="flex flex-row sm:space-x-20 md:space-x-36 mb-5 space-x-9 font-bold text-lg">
+            <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DEL REPUESTO</h1>
+            <h1 className="hidden sm:block font-bold text-base text-gray-600">INFORMACIÓN DE CONTACTO</h1>
           </div>
           <div>
             <h1 className="text-red-600 text-xs mb-5">
@@ -186,7 +186,7 @@ export function Create_quotation() {
                   Orignal o Alternativo
                 </option>
               </select>
-              <h1 className="font-bold text-lg">Información del Vehículo</h1>
+              <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DE VEHÍCULO</h1>
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
@@ -304,8 +304,8 @@ export function Create_quotation() {
               </div>
             </section>
 
-            <h1 className="sm:hidden mt-10 font-bold text-lg">
-              Información de Contacto
+            <h1 className="sm:hidden mt-10 font-bold text-base text-gray-600">
+              INFORMACIÓN DE CONTACTO
             </h1>
 
             <section className="flex flex-col space-y-5 mt-5 sm:mt-0 min-[773px]:w-full">

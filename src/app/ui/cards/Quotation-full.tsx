@@ -154,7 +154,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
             {formatDate(quoteUser.quotation.dateQuotation)}
           </p>
         </div>
-        <h1 className="font-bold">Información de Cliente:</h1>
+        <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DE CLIENTE</h1>
         <div className="flex flex-row flex-wrap">
           <label className="flex mr-1">Nombre:</label>
           <h1 className="break-all">{quoteUser.quotation.contactName}</h1>
@@ -168,7 +168,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
           <h1>{quoteUser.quotation.city.name}</h1>
         </div>
         <hr className="xl:hidden"></hr>
-        <h1 className="font-bold">Información del Vehículo:</h1>
+        <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DE VEHÍCULO</h1>
         <div className="flex flex-row">
           <label className="flex mr-1">Marca:</label>
           <p>{carBrandName}</p>
@@ -190,7 +190,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
           </p>
         </div>
         <hr className="xl:hidden mt-4"></hr>
-        <h1 className="font-bold">Información del Repuesto:</h1>
+        <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DEL REPUESTO</h1>
         <div className="flex flex-row">
           <label className="flex mr-1">Repuesto:</label>
           <p className="font-bold">{quoteUser.quotation.spareName}</p>
