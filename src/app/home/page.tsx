@@ -21,35 +21,9 @@ interface QuotationWithCity extends Quotation {
   }[];
 }
 
-async function LoadCarBrand({ email }: { email: string }) {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email,
-    {
-      cache: "no-cache",
-      headers: {
-        Pragma: "no-cache",
-      },
-    }
-  );
-  const { CompanyCardBrands } = await res.json();
-  return { CompanyCardBrands };
-}
 
-async function loadQuotes() {
-  const headersList = headers();
-  const referer = headersList.get('cookie');
-  console.log(referer);
 
-  const requestHeaders: HeadersInit = referer ? { 'Cookie': referer } : {};
 
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
-    method: "GET",
-    cache: "no-cache",
-    headers: requestHeaders,
-  });
-  const data = await res.json();
-  return data;
-}
 
 async function Page() {
   const session = await getServerSession();
@@ -57,8 +31,6 @@ async function Page() {
 
   email = email || "";
 
-  const user = await LoadCarBrand({ email });
-  let carBrands = user.CompanyCardBrands;
 
   const rubric = getCookie("selectedRubric", { cookies });
   const city = getCookie("selectedCity", { cookies });
@@ -67,23 +39,8 @@ async function Page() {
   const carsArray = JSON.parse(cars?.valueOf() || "[]");
   const citiesArray = JSON.parse(city?.valueOf() || "[]");
 
-  let quotes = await loadQuotes();
 
-  quotes = quotes.filter((quote: QuotationWithCity) => {
-    // Filtrado por rubric (rubro)
-    const rubricMatch = rubric ? quote.spareType === rubric.toString() : true;
 
-    // Filtrado por city (ciudad)
-    const cityMatch =
-      citiesArray.length > 0 ? citiesArray.includes(quote.idCity) : true;
-
-    // Filtrado por cars (coches)
-    const carsMatch =
-      carsArray.length > 0 ? carsArray.includes(quote.carBrand) : true;
-
-    // Solo se devuelven las cotizaciones que coincidan con todas las condiciones especificadas
-    return rubricMatch && cityMatch && carsMatch;
-  });
 
   return (
     <>
@@ -93,23 +50,16 @@ async function Page() {
         <div className="flex flex-row justify-center md:justify-start">
           <div className="w-56 bg-gradient-to-tr from-gray-300 to-custom-gray p-4 rounded-md hidden md:block">
             <section id="filter">
-              <Filter
-                className="flex flex-row items-center text-white"
-                carBrands={carBrands}
-              />
+          
             </section>
           </div>
           <section>
-            <NavBarFilter carBrands={carBrands} />
           </section>
           <div className="md:mx-10">
             <section className="w-full flex justify-between md:hidden">
               <ButtonFilter />
             </section>
-            <CardGridQuotation quotes={quotes} />
-            {quotes.length === 0 && (
-              <NoResultsQuotation message={NoQuoteResultsFilter.message} />
-            )}
+          
           </div>
         </div>
         <ModalGeneral />
