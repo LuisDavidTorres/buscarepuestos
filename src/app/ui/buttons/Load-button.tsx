@@ -3,7 +3,7 @@ export function LoadButton({ text }: { text: string }) {
     <button
       disabled
       type="button"
-      className="text-white bg-green-600 focus:ring-4 focus:outline-none font-medium rounded text-sm px-5 py-2.5 text-center mr-2 dark:bg-green-600 inline-flex items-center"
+      className="text-white bg-green-500 focus:ring-4 focus:outline-none font-medium rounded text-sm px-5 py-2.5 text-center mr-2 dark:bg-green-500 inline-flex items-center"
     >
       <svg
         aria-hidden="true"
