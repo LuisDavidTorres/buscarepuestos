@@ -71,7 +71,7 @@ export async function InformationUser() {
 
       <div>
         <p>Marca de autos registradas</p>
-        <div className="px-6 pt-4 pb-2 sm:w-3/4">
+        <div className="px-6 pt-4 pb-2 sm:w-full lg:w-3/4">
           {user?.CompanyCardBrands?.map((brand: any) => (
             <span
               key={brand.car.idCardBrand}

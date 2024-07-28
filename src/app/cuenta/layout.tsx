@@ -17,10 +17,10 @@ export default function NavBarDashboardlayout({
         </div>
     
 
-        <div className="hidden md:block w-2/12 shadow-lg">
+        <div className="hidden md:block w-2/12 md:w-4/12 lg:w-3/12 xl:w-3/12 2xl:w-2/12 shadow-lg">
           <AccountSideNav />
         </div>
-        <div className="w-11/12 md:w-2/4 shadow-lg">{children}</div>
+        <div className="w-11/12 md:w-3/4 xl:w-2/4 2xl:w-2/4 shadow-lg">{children}</div>
       </div>
     </>
   );

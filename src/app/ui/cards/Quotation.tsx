@@ -27,7 +27,7 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
   const carBrandName = dataCars.find(
     (car) => car.value === quote.carBrand
   )?.label;
-  const idCar = quote.idCar?.length ?? 0; 
+  const idCar = quote.idCar?.length ?? 0;
   const [acceptButton, setAcceptButton] = useState(false);
 
   const router = useRouter();
@@ -71,31 +71,33 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
         <label className="font-bold">{Date}</label>
       </section>
       <section className="flex flex-col space-y-4 mt-8 mb-5">
-        <div className="flex flex-row justify-between">
-          <label>Repuesto:</label>
-          <p className="font-bold">{quote.spareName}</p>
-        </div>
-        <div className="flex space-x-4 justify-between overflow-x-auto scrollbar-thin scrollbar-webkit">
-          <label className="whitespace-nowrap">Tipo de Repuesto:</label>
-          <p className="font-bold whitespace-nowrap flex-shrink-0">
-            {formatNameSpareType(quote.spareType)}
-          </p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Marca:</label>
-          <p className="font-bold">{carBrandName}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Modelo:</label>
-          <p className="font-bold">{quote.carModel}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>Año:</label>
-          <p className="font-bold">{quote.vehicleYear}</p>
-        </div>
-        <div className="flex flex-row justify-between">
-          <label>{formatNameIdCar(idCar)}:</label>
-          <p>{quote.idCar ? quote.idCar : "N/A"}</p>
+        <div className="overflow-x-auto space-y-4 scrollbar-thin scrollbar-webkit">
+          <div className="flex flex-row justify-between space-x-2">
+            <label className="whitespace-nowrap">Repuesto:</label>
+            <p className="font-bold whitespace-nowrap flex-shrink-0">{quote.spareName}</p>
+          </div>
+          <div className="flex flex-row justify-between space-x-6">
+            <label className="whitespace-nowrap">Tipo de Repuesto:</label>
+            <p className="font-bold whitespace-nowrap flex-shrink-0">
+              {formatNameSpareType(quote.spareType)}
+            </p>
+          </div>
+          <div className="flex flex-row justify-between">
+            <label>Marca:</label>
+            <p className="font-bold">{carBrandName}</p>
+          </div>
+          <div className="flex flex-row justify-between">
+            <label>Modelo:</label>
+            <p className="font-bold">{quote.carModel}</p>
+          </div>
+          <div className="flex flex-row justify-between">
+            <label>Año:</label>
+            <p className="font-bold">{quote.vehicleYear}</p>
+          </div>
+          <div className="flex flex-row justify-between">
+            <label>{formatNameIdCar(idCar)}:</label>
+            <p>{quote.idCar ? quote.idCar : "N/A"}</p>
+          </div>
         </div>
         <div className="h-44">
           <Carousel className="text-black">
