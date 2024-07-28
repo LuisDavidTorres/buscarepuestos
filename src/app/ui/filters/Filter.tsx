@@ -68,6 +68,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
       </section>
       <div className="mt-4 dark:text-black">
         <Select
+          instanceId={"select-marca"}
           closeMenuOnSelect={false}
           components={animatedComponents}
           defaultValue={[]}
@@ -79,6 +80,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           }
         />
         <Select
+          instanceId={"select-region"}
           className="mt-10"
           closeMenuOnSelect={false}
           components={animatedComponents}
@@ -91,6 +93,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           }
         />
         <Select
+          instanceId={"select-tipo"}
           className="mt-10"
           closeMenuOnSelect={false}
           components={animatedComponents}

@@ -30,13 +30,13 @@ export function Footer() {
                       rx="11.56"
                       fill="none"
                       stroke="white"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
                     <text
                       transform="translate(42.46 139.75)"
                       fill="white"
-                      font-size="107.86px"
-                      font-family="Arial-BoldMT, Arial;font-weight:700"
+                      fontSize="107.86px"
+                      fontFamily="Arial-BoldMT, Arial;font-weight:700"
                     >
                       BuscaRepuestos.cl
                     </text>
