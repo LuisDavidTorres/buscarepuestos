@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
+import { parsePhoneNumberFromString, CountryCode } from "libphonenumber-js";
 import makeAnimated from "react-select/animated";
 import dataCars from "@/app/data/dataCars";
 import SelecTelArea from "./Selet-tel-area";
@@ -20,6 +21,7 @@ export function Register_account_distribuitor() {
     setValue,
     handleSubmit,
     setError,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -27,7 +29,8 @@ export function Register_account_distribuitor() {
 
   const [areaCode, setAreaCode] = useState("+56");
   const [rubric, setRubric] = useState("original");
-  const [carBrands, setCarBrands] = useState([1, 2, 4]);
+  const [carBrands, setCarBrands] = useState<number[]>([]);
+  const [selectAll, setSelectAll] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -36,6 +39,41 @@ export function Register_account_distribuitor() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const validatePhoneNumber = (
+    phoneNumber: string,
+    countryCode: CountryCode
+  ) => {
+    try {
+      const phoneNum = parsePhoneNumberFromString(phoneNumber, countryCode);
+      //return phoneNum ? phoneNum.isValid() : false;
+
+      let numberWithout9 = phoneNumber.substring(4);
+      let numerWithAreaCode = phoneNumber.substring(3);
+      console.log(numberWithout9);
+      console.log(numerWithAreaCode);
+      const validateChilePhone =
+        (areaCode === "+56" && !numerWithAreaCode.startsWith("9")) ||
+        numberWithout9.startsWith("0") ||
+        numerWithAreaCode.length < 7 ||
+        (numerWithAreaCode.length > 7 && /0000/.test(numberWithout9));
+
+      if (
+        phoneNum?.isValid() === false ||
+        phoneNumber === undefined ||
+        validateChilePhone
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    } catch (error) {
+      console.error("Error al validar el número de teléfono:", error);
+      return false;
+    }
+  };
+
+  const countryCode = areaCode;
 
   const formatRut = (rut: string) => {
     rut = rut.replace(/[^0-9kK]/g, "");
@@ -53,6 +91,14 @@ export function Register_account_distribuitor() {
     return rut;
   };
 
+  const selectAllCarBrands = () => {
+    if (selectAll) {
+      setCarBrands([]);
+    } else {
+      setCarBrands(dataCars.map((option) => option.value));
+    }
+    setSelectAll(!selectAll);
+  };
   const handleRutChange = (e: any) => {
     const formattedRut = formatRut(e.target.value);
     setValue("rutCompany", formattedRut);
@@ -260,22 +306,25 @@ export function Register_account_distribuitor() {
                 clases="w-36 2xl:w-33 h-7 border-2 rounded-md h-9"
               />
               <input
-                className="w-3/5 2xl:w-8/12 border-2 rounded-md px-2 h-9"
-                type="tel"
+                className="w-3/5 2xl:w-8/12 border-2 rounded-md px-2 h-9 [&::-webkit-inner-spin-button]:appearance-none"
+                type="number"
                 placeholder="Número"
                 {...register("phoneNumber", {
                   required: {
                     value: true,
                     message: "Este campo es requerido",
                   },
+                  validate: (value) =>
+                    validatePhoneNumber(
+                      areaCode + value,
+                      countryCode as CountryCode
+                    ),
                 })}
               ></input>
-              {errors.phoneNumber && (
-                <span className="text-red-500 text-sm">
-                  {errors.phoneNumber.message?.toString()}
-                </span>
-              )}
             </div>
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-sm">El número no es válido</p>
+            )}
 
             <label className="flex flex-row space-x-1">
               {" "}
@@ -312,22 +361,35 @@ export function Register_account_distribuitor() {
                 instanceId={"carBrands2"}
                 closeMenuOnSelect={false}
                 components={animatedComponents}
-                defaultValue={[]}
+                value={dataCars.filter((option) =>
+                  carBrands.includes(option.value)
+                )}
                 isMulti
                 options={dataCars}
                 placeholder="Buscar"
-                onChange={(e) =>
-                  setCarBrands(e.map((e) => (e as { value: number }).value))
-                }
+                onChange={(e) => setCarBrands(e.map((e) => e.value))}
                 required
               />
             </div>
+            <label className="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                value=""
+                checked={selectAll}
+                onChange={selectAllCarBrands}
+                className="sr-only peer"
+              />
+              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-al peer-checked:bg-custom-green"></div>
+              <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-900">
+                Todas las Marcas
+              </span>
+            </label>
           </div>
           <div className="flex flex-col space-y-3 2xl:w-4/12 mt-10 2xl:mt-0">
             <h1 className="font-bold text-base text-gray-600">
               DATOS DE AUTENTICACIÓN
             </h1>
-            <p className="text-xs">(Datos para crear tu Cuenta BR)</p>
+            <p className="text-xs">(Crea tu Cuenta BR)</p>
             <div className="flex items-center space-x-1">
               <label htmlFor="email" className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
@@ -398,7 +460,12 @@ export function Register_account_distribuitor() {
 
         <section className="mt-10 2xl:mx-14 flex flex-col md:flex-row md:justify-end space-x-5 items-center">
           <div className="flex space-x-2 items-start">
-            <input className="mt-1" id="terminos" type="checkbox" required></input>
+            <input
+              className="mt-1"
+              id="terminos"
+              type="checkbox"
+              required
+            ></input>
             <label
               htmlFor="terminos"
               className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0"

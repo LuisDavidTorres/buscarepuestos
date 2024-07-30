@@ -66,7 +66,12 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
         Phone,
         areaCode as CountryCode
       );
-      if (phoneNumber?.isValid() === false || phoneNumber === undefined) {
+
+      let numberWithout9 = e.target.value.substring(1);
+
+      const validateChilePhone = areaCode === "+56" && !e.target.value.startsWith('9') || numberWithout9.startsWith('0') || e.target.value.length < 7 || e.target.value.length > 7 && /0000/.test(numberWithout9);
+
+      if (phoneNumber?.isValid() === false || phoneNumber === undefined || validateChilePhone) {
         setErrors((prevErrors) => ({
           ...prevErrors,
           sellerPhone: "Número de teléfono inválido",

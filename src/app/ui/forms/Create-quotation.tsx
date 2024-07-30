@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SelecTelArea from "./Selet-tel-area";
+import { parsePhoneNumberFromString, CountryCode } from "libphonenumber-js";
 import SelecCity from "./Select-city";
 import dataCars from "@/app/data/dataCars";
 import Link from "next/link";
@@ -33,11 +34,45 @@ export function Create_quotation() {
   const [previews, setPreviews] = useState<string[]>([]);
   const { toggleModalGeneral, setMessageModalGeneral } = useAppContext();
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [errors, setErrors] = useState({ contactNumber: "" });
+
   const MAX_FILES = 5;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value.toUpperCase();
     setIdcar(inputValue);
+  };
+
+  const validatePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setContactNumber(e.target.value);
+    const Phone = areaCode + e.target.value;
+    console.log(Phone);
+    try {
+      const phoneNumber = parsePhoneNumberFromString(
+        Phone,
+        areaCode as CountryCode
+      );
+
+      let numberWithout9 = e.target.value.substring(1);
+
+      const validateChilePhone = areaCode === "+56" && !e.target.value.startsWith('9') || numberWithout9.startsWith('0') || e.target.value.length < 7 || e.target.value.length > 7 && /0000/.test(numberWithout9);
+      
+      if (phoneNumber?.isValid() === false || phoneNumber === undefined || validateChilePhone) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          contactNumber: "Número de teléfono inválido",
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          contactNumber: "",
+        }));
+      }
+      return phoneNumber ? phoneNumber.isValid() : false;
+    } catch (error) {
+      console.error("Error al validar el número de teléfono:", error);
+      return false;
+    }
   };
 
   const filteredOptions = carBrand
@@ -70,6 +105,11 @@ export function Create_quotation() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (errors.contactNumber) {
+     
+      return;
+    }
 
     setButtonDisabled(true);
 
@@ -140,8 +180,12 @@ export function Create_quotation() {
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row sm:space-x-20 md:space-x-36 mb-5 space-x-9 font-bold text-lg">
-            <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DEL REPUESTO</h1>
-            <h1 className="hidden sm:block font-bold text-base text-gray-600">INFORMACIÓN DE CONTACTO</h1>
+            <h1 className="font-bold text-base text-gray-600">
+              INFORMACIÓN DEL REPUESTO
+            </h1>
+            <h1 className="hidden sm:block font-bold text-base text-gray-600">
+              INFORMACIÓN DE CONTACTO
+            </h1>
           </div>
           <div>
             <h1 className="text-red-600 text-xs mb-5">
@@ -186,7 +230,9 @@ export function Create_quotation() {
                   Orignal o Alternativo
                 </option>
               </select>
-              <h1 className="font-bold text-base text-gray-600">INFORMACIÓN DE VEHÍCULO</h1>
+              <h1 className="font-bold text-base text-gray-600">
+                INFORMACIÓN DE VEHÍCULO
+              </h1>
 
               <label className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
@@ -340,11 +386,16 @@ export function Create_quotation() {
                   id="contact-number"
                   type="tel"
                   placeholder="Celular"
-                  onChange={(e) => setContactNumber(e.target.value)}
+                  onChange={validatePhoneNumber}
                   required
                   className="appearance-none p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
                 ></input>
               </div>
+              {errors.contactNumber && (
+                <p className="text-red-500 text-xs md:text-sm">
+                  {errors.contactNumber}
+                </p>
+              )}
 
               <label className="flex flex-row space-x-1">
                 {" "}

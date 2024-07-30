@@ -42,7 +42,17 @@ export function ChangePhoneNumber() {
         newPhoneNumber,
         countryCode
       );
-      return phoneNumber ? phoneNumber.isValid() : false;
+      let numberWithout9 = newPhoneNumber.substring(4);
+      let numerWithAreaCode = newPhoneNumber.substring(3);
+
+      const validateChilePhone = watch("countryCode") === "+56" && !numerWithAreaCode.startsWith('9') || numberWithout9.startsWith('0') || numerWithAreaCode.length < 7 || numerWithAreaCode.length > 7 && /0000/.test(numberWithout9);
+
+      if (phoneNumber?.isValid() === false || phoneNumber === undefined || validateChilePhone) {
+        return false;
+      } else {
+        return true;
+      }
+
     } catch (error) {
       console.error("Error al validar el número de teléfono:", error);
       return false;

@@ -15,17 +15,25 @@ export function UpdateCarBrandsForm({ carBrands }: { carBrands: any[] }) {
     router.push("/cuenta/actualizar-datos");
   };
 
-  carBrands = carBrands.map((carBrand) => {
-    return {
-      value: carBrand.car.idCardBrand,
-      label: carBrand.car.nameCarBrand,
-    };
-  });
+  const formattedCarBrands = carBrands.map((carBrand) => ({
+    value: carBrand.car.idCardBrand,
+    label: carBrand.car.nameCarBrand,
+  }));
 
-  const carBrandValues = carBrands.map((carBrand) => carBrand.value);
+  const carBrandValues = formattedCarBrands.map((carBrand) => carBrand.value);
 
   const [carBrand, setCarBrand] = useState(carBrandValues);
+  const [selectAll, setSelectAll] = useState(false);
   const [buttonLoading, setButtonLoading] = useState(false);
+
+  const selectAllCarBrands = () => {
+    if (selectAll) {
+      setCarBrand([]);
+    } else {
+      setCarBrand(dataCars.map((option) => option.value));
+    }
+    setSelectAll(!selectAll);
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -68,7 +76,7 @@ export function UpdateCarBrandsForm({ carBrands }: { carBrands: any[] }) {
             instanceId={"carBrands"}
             closeMenuOnSelect={false}
             components={animatedComponents}
-            defaultValue={carBrands}
+            defaultValue={formattedCarBrands}
             isMulti
             options={dataCars}
             placeholder="Filtrar por marca"
@@ -84,11 +92,27 @@ export function UpdateCarBrandsForm({ carBrands }: { carBrands: any[] }) {
                 overflowY: "auto",
               }),
             }}
+            value={dataCars.filter((option) =>
+              carBrand.includes(option.value)
+            )}
             onChange={(e) =>
               setCarBrand(e.map((e) => (e as { value: number }).value))
             }
           />
         </div>
+        <label className="inline-flex items-center cursor-pointer mt-4">
+          <input
+            type="checkbox"
+            value=""
+            checked={selectAll}
+            onChange={selectAllCarBrands}
+            className="sr-only peer"
+          />
+          <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-al peer-checked:bg-custom-green"></div>
+          <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-900">
+            Todas las Marcas
+          </span>
+        </label>
         <div className="mt-48 space-x-8 flex justify-center">
           {buttonLoading ? (
             <LoadButton text="Guardando" />

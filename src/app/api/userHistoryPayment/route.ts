@@ -75,6 +75,10 @@ export async function POST(request: Request) {
       amount = amount
     }
 
+    const ivaAmount = amount * 0.19;
+    amount = amount + ivaAmount;
+    amount = Math.round(amount);
+
     const user = await prisma.userAccount.findUnique({
       where: {
         email,

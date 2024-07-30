@@ -74,7 +74,7 @@ export function Footer() {
                   <span className="sr-only">Facebook</span>{" "}
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/buscarepuestos/?viewAsMember=true"
                   target="_blank"
                   aria-label="Perfil de LinkedIn de BuscaRepuestos"
                 >
