@@ -24,7 +24,7 @@ async function Home() {
                 </p>
               </div>
               <section>
-                <p className="w-96 mt-4 text-white flex flex-col text-center text-balance opacity-95 text-sm sm:text-base">
+                <p className="max-[385px]:w-72 w-96 mt-4 text-white flex flex-col text-center text-balance opacity-95 text-sm sm:text-base">
                   Simplifica la manera en que se buscan y adquieren repuestos
                   automotrices. Brindamos una experiencia Fácil, Rápida y Segura
                   para Clientes Buscadores y Distribuidores.
