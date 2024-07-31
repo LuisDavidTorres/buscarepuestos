@@ -29,7 +29,7 @@ export async function InformationUser() {
 
   return (
     <div className="bg-white">
-      <h1 className="text-lg font-bold mb-4">Información Personal</h1>
+      <h1 className="font-bold mb-4 text-base text-gray-600">INFORMACIÓN PERSONAL</h1>
       <div className="overflow-x-auto">
         <div className="flex mb-2 space-x-2 flex-wrap">
           <p>Nombre de Representante:</p>
@@ -96,7 +96,7 @@ export async function InformationUser() {
         ) : (
           <div>
             {" "}
-            <h1 className="text-lg font-bold mb-2">Información tu plan</h1>
+            <h1 className="font-bold mb-2 text-base text-gray-600">INFORMACIÓN DE TU PLAN</h1>
             <div className="border-2 rounded-md p-4 w-3/3 lg:w-5/12 shadow-md hover:shadow-lg transition-shadow duration-300">
               <div>
                 <h1 className="font-bold">
