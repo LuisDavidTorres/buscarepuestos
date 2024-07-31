@@ -13,16 +13,23 @@ async function Home() {
         <HeaderOut />
         <div className="flex flex-col md:justify-center">
           <div
-            className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-60"
+            className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-96"
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
-            <div className="mt-4 flex flex-col items-start">
+            <div className="mt-4 flex flex-col items-center px-1 sm:px-0">
               <div className="w-full text-center">
-                <p className="bg-clip-text text-slate-100 text-xs sm:text-base">
+                <p className="bg-clip-text text-white text-xs sm:text-base">
                   {" "}
                   MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES
                 </p>
               </div>
+              <section>
+                <p className="w-96 mt-4 text-white flex flex-col text-center text-balance opacity-95 text-sm sm:text-base">
+                  Simplifica la manera en que se buscan y adquieren repuestos
+                  automotrices. Brindamos una experiencia Fácil, Rápida y Segura
+                  para Clientes Buscadores y Distribuidores.
+                </p>
+              </section>
               <div className="w-full">
                 <div className="bg-gradient-to-r from-white to-gray-200 w-full h-36 border-l-neutral-500/800 rounded-md p-4 my-6 shadow-2xl">
                   <p className="flex justify-center text-xl dark:text-black">
@@ -35,7 +42,7 @@ async function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center py-14 select-none">
+          <div className="flex flex-col justify-center items-center py-10 select-none xl:mt-16 mt:0">
             <img
               className="drop-shadow-[7px_10px_5px_rgba(0,0,0,0.5)]"
               alt="br-logo"

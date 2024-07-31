@@ -187,7 +187,7 @@ export function ModalLoginSupplier() {
                     href="/crear-cuenta-distribuidor"
                     className="font-semibold leading-6 text-blue-600 hover:text-blue-900"
                   >
-                    Regristro Aquí.
+                    Registro Aquí.
                   </Link>
                 </p>
               </section>
