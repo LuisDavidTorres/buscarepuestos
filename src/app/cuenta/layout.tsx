@@ -12,7 +12,7 @@ export default function NavBarDashboardlayout({
     <>
       <DashboardHeader />
       <div className="flex flex-col md:flex-row p-4 md:p-8 justify-center items-center md:items-stretch bg-white dark:text-black">
-        <div className="w-full md:hidden mb-5">
+        <div className="w-11/12 md:hidden mb-5">
           <MenuAccountDropDown />
         </div>
     
