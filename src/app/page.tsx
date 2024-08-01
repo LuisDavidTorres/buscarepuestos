@@ -13,7 +13,7 @@ async function Home() {
         <HeaderOut />
         <div className="flex flex-col md:justify-center">
           <div
-            className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-96"
+            className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-80"
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
             <div className="mt-4 flex flex-col items-center px-1 sm:px-0">
