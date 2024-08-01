@@ -44,11 +44,12 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
 
   return (
     <div className="border-2 p-5 h-auto w-72 rounded-md mt-10 sm:mt-0 dark:text-black">
-      <section className="flex justify-between">
+      <section className="flex justify-between mb-4">
         <label className="font-bold">{quote.quotation.city.name}</label>
         <label className="font-bold">{Date}</label>
       </section>
-      <section className="flex flex-col space-y-4 mt-8 mb-5">
+      <hr></hr>
+      <section className="flex flex-col space-y-4 mt-4 mb-5">
         <div className="overflow-x-auto space-y-4 scrollbar-thin scrollbar-webkit">
           <div className="flex flex-row justify-between space-x-2">
             <label className="whitespace-nowrap">Repuesto:</label>
