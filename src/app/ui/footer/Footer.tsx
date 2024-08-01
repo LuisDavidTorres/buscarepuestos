@@ -46,7 +46,7 @@ export function Footer() {
                     <path
                       d="M337.37,168.68l143.9,16c14.12.54,18.37-3.29,18.37-8.22V151.65Z"
                       fill="#4CAF50"
-                      transform="translate(-20, 3)"
+                      transform="translate(-0, 3)"
                     />
                   </svg>
                 </div>
