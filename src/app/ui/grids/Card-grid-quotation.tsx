@@ -20,7 +20,7 @@ export function CardGridQuotation({ quotes }: { quotes: any }) {
 
   return (
     <>
-      <div className="mt-10 md:mt-0 sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-16">
+      <div className="sm:mt-10 md:mt-0 sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-16">
         {currentQuotes.map((quotation: any) => {
           const key =
             pathname === "/home" ? quotation.idQuotation : quotation.id;
