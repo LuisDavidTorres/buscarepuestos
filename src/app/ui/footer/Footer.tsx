@@ -33,7 +33,7 @@ export function Footer() {
                       strokeWidth="2"
                     />
                     <text
-                      transform="translate(42.46 139.75)"
+                      transform="translate(100.46 139.75)"
                       fill="white"
                       fontSize="107.86px"
                       fontFamily="Arial-BoldMT, Arial;font-weight:700"

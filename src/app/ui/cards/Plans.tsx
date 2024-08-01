@@ -67,7 +67,9 @@ export function Plans({ plan }: { plan: Plan }) {
         }
 
         if (pathname === "/crear-cuenta-distribuidor/planes") {
-          router.push(`/crear-cuenta-distribuidor/seleccionar-tipo-pago?plan=${id}`);
+          router.push(
+            `/crear-cuenta-distribuidor/seleccionar-tipo-pago?plan=${id}`
+          );
         }
       }
     } catch (error) {
@@ -179,13 +181,13 @@ function DiscountPlanInfo({
 
   return (
     <div className="text-center">
-      <h2 className="font-bold text-2xl">
-        ${planPriceDiscounFinaltFormat} <p className="text-xs">+ IVA</p>
-      </h2>
-      <h2 className="font-bold text-xs">{discountPercentage}% dcto.</h2>
       <del>
         <h3>${planPriceFormat}</h3>
       </del>
+      <h2 className="font-bold text-xs">{discountPercentage}% dcto.</h2>
+      <h2 className="font-bold text-2xl flex items-center gap-x-1">
+        ${planPriceDiscounFinaltFormat} <p className="text-xs">+ IVA</p>
+      </h2>
     </div>
   );
 }

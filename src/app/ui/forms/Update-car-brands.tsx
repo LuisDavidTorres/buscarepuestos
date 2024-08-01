@@ -72,7 +72,7 @@ export function UpdateCarBrandsForm({ carBrands }: { carBrands: any[] }) {
       <form onSubmit={handleSubmit}>
         <div>
           <Select
-            className="w-60 sm:w-96"
+            className="w-full sm:w-96"
             instanceId={"carBrands"}
             closeMenuOnSelect={false}
             components={animatedComponents}
