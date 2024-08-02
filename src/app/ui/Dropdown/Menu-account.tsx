@@ -58,7 +58,7 @@ export function MenuAccountDropDown() {
     <div className="relative" ref={dropdownRef}>
       <button
         id="dropdownDefaultButton"
-        className="text-white w-48 bg-custom-green focus:ring-4 focus:outline-none focus:ring-custom-green font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+        className="text-white bg-custom-green font-semibold w-48 focus:outline-none focus:border-dashed border-2 rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         type="button"
         onClick={toggleMenu}
       >
@@ -85,7 +85,7 @@ export function MenuAccountDropDown() {
       {isOpen && (
         <div
           id="dropdown"
-          className="z-10 absolute top-full left-0 mt-1 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          className="z-10 absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-48 dark:bg-gray-700"
         >
           <ul
             className="py-2 text-sm text-gray-700 dark:text-gray-200"

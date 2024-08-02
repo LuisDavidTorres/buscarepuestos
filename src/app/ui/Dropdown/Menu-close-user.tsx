@@ -55,14 +55,14 @@ export function MenuCloseUser() {
   function Updown() {
     return (
       <div
-        className="bg-white dark:text-black p-2 shadow-lg absolute z-10 right-3 rounded-md mt-5"
+        className="bg-zinc-50 dark:text-black p-2 shadow-lg absolute z-10 right-4 rounded-md mt-5"
         ref={menuRef}
       >
         <ul>
           {Menu.map((menu) => (
             <li
               key={menu}
-              className="p-2 text-base cursor-pointer rounded hover:bg-zinc-300 select-none"
+              className={`p-2 text-base cursor-pointer rounded hover:bg-zinc-300 select-none ${menu === "Cerrar Sesión" ? 'text-red-600 dark:text-red-600' : ''}`}
               onClick={() => {
                 if (menu === "Cerrar Sesión") {
                   handleCloseSession();

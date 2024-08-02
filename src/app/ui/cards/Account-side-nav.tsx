@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function AccountSideNav() {
   return (
-    <div className="rounded-md bg-white h-full p-4">
+    <div className="rounded-md bg-zinc-50 h-full p-4">
       <ul>
         <Link href={"/cuenta"}>
           <li className="p-2 text-base cursor-pointer rounded hover:bg-zinc-300">
