@@ -85,7 +85,7 @@ export function MenuAccountDropDown() {
       {isOpen && (
         <div
           id="dropdown"
-          className="z-10 absolute top-full left-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-48 dark:bg-gray-700"
+          className="z-10 absolute top-full left-0 mt-2 bg-zinc-50 divide-y divide-gray-100 rounded-lg shadow w-48 dark:bg-gray-700"
         >
           <ul
             className="py-2 text-sm text-gray-700 dark:text-gray-200"
