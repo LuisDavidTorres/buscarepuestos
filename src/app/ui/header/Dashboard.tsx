@@ -7,7 +7,7 @@ import Image from "next/image";
 export function DashboardHeader() {
   return (
     <div className="h-full">
-      <nav className="bg-white p-4 flex justify-between items-center border-b-4">
+      <nav className="bg-white p-1 sm:p-4 flex justify-between items-center border-b-4">
         <section className="flex justify-start sm:flex text-sm gap-2">
         <Link href="/home">
             <Image

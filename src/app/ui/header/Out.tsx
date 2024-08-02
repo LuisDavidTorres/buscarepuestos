@@ -6,7 +6,7 @@ import Image from "next/image";
 export function HeaderOut() {
   return (
     <div className="h-full">
-      <header className=" bg-white p-4 flex justify-between items-center">
+      <header className=" bg-white p-1 sm:p-4 flex justify-between items-center">
         <Link href="/">
           <Image
             src="/logo-images/logo-center-header.png"
