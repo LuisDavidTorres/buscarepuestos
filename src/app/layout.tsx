@@ -8,7 +8,7 @@ import Provider from "@/context/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Busca Repuestos",
+  title: "BuscaRepuestos.cl",
   description: "Mesón Digital de Repuestos Automotrices",
 };
 
