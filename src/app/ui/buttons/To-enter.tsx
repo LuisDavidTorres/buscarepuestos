@@ -41,7 +41,7 @@ export function ToEnter() {
         name="Cliente"
         className="w-full relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-black rounded-lg group bg-gradient-to-br from-gray-400 to-custom-gray group-hover:from-lime-300 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-gray-500 dark:ring-gray-500"
       >
-        <span className="w-full sm:w-52 relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-custom-green rounded-md group-hover:bg-opacity-0">
+        <span className="w-full sm:w-52 relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-white rounded-md group-hover:bg-opacity-0">
           Únete como Proveedor
         </span>
       </button>
