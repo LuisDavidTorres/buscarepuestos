@@ -93,12 +93,12 @@ export function CardQuotationUser({ quote }: { quote: QuotationFull }) {
         </div>
       </section>
 
-      <section className="mt-14 text-center">
+      <section className="mt-8 text-center">
         <button
           onClick={handleClick}
           className="p-2 bg-custom-green hover:bg-green-700 rounded-md text-white"
         >
-          Ver detalles
+          Ver Detalles
         </button>
       </section>
     </div>

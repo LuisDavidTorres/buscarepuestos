@@ -114,7 +114,7 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
         </div>
       </section>
 
-      <section className="mt-14 flex justify-center">
+      <section className="mt-8 flex justify-center">
         {acceptButton ? (
           <LoadButton text="Aceptar" />
         ) : (

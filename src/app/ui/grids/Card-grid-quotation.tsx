@@ -37,7 +37,7 @@ export function CardGridQuotation({ quotes }: { quotes: any }) {
       </div>
       {nPages !== 0 && (
         <div className="mt-10 items-center flex flex-col sm:flex-row"> 
-          <div className="lg:mr-40 w-52"> 
+          <div className="lg:mr-60 w-52"> 
             {" "}
             <p className="text-black">{indexIni + 1} - {indexFin > quotes.length ? quotes.length : indexFin} de {quotes.length} cotizaciones</p>
           </div>
