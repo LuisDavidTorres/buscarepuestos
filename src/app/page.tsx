@@ -18,7 +18,8 @@ async function Home() {
           >
             <div className="flex flex-col justify-center items-center gap-4 sm:gap-9 w-full">
               <h1 className="text-wrap font-bold text-white opacity-90 text-2xl w-full md:w-auto">
-                Encuentra los repuestos que necesitas <span className="text-slate-200">o Únete como Proveedor</span>
+                Encuentra los repuestos que necesitas{" "}
+                <span className="text-slate-200">o Únete como Proveedor</span>
               </h1>
               <div className="text-white opacity-90 lg:px-96 space-y-4 text-start md:text-center borde-2">
                 <p>
@@ -62,7 +63,10 @@ async function Home() {
               quality={100}
             />
           </div>
-          <div className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5">
+          <div
+            id="usageSteps"
+            className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5"
+          >
             <h1 className="text-gray-400">PLATAFORMA PROTEGIDA</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,10 +94,7 @@ async function Home() {
               </g>
             </svg>
           </div>
-          <div
-            id="usageSteps"
-            className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white"
-          >
+          <div className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white">
             <UsageSteps
               numberStep={"1°"}
               name={"CLIENTE"}

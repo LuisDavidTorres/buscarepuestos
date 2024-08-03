@@ -27,9 +27,15 @@ export function HeaderOut() {
         </Link>
         <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold">
           <ul className="flex gap-x-4 text-sm">
-            <li>Funcionamiento</li>
-            <li>Preguntas Frecuentes</li>
-            <li>Testimonios</li>
+            <li className="hover:text-slate-600">
+              <a href="#usageSteps">Funcionamiento</a>
+            </li>
+            <li className="hover:text-slate-600">
+              <a>Preguntas Frecuentes </a>
+            </li>
+            <li className="hover:text-slate-600">
+              <a>Testimonios</a>
+            </li>
           </ul>
         </nav>
       </header>
