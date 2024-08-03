@@ -12,37 +12,31 @@ async function Home() {
       <main className="min-h-screen bg-custom-green">
         <HeaderOut />
         <div className="flex flex-col md:justify-center">
-          <div
-            className="bg-gradient-to-r bg-zinc-700 w-full flex flex-col items-center h-80 2xl:h-96"
+          <section
+            className="bg-gradient-to-r p-4 md:p-20 bg-zinc-700 w-full flex flex-col items-center h-auto"
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
-            <div className="mt-4 flex flex-col items-center px-1 sm:px-0">
-              <div className="w-full text-center">
-                <p className="bg-clip-text text-white text-xs sm:text-base">
-                  {" "}
-                  MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES
+            <div className="flex flex-col justify-center items-center gap-4 sm:gap-9 w-full">
+              <h1 className="text-wrap font-bold text-white opacity-90 text-xl md:text-2xl w-full md:w-auto">
+                Encuentra los repuestos que necesitas
+              </h1>
+              <div className="text-white opacity-90 lg:px-96 space-y-4 text-start md:text-center borde-2">
+                <p>
+                  BuscaRepuestos.cl es una plataforma que conecta a clientes que
+                  buscan repuestos con proveedores confiables que ofrecen una
+                  amplia variedad de repuestos.
+                </p>
+                <p>
+                  Nuestro objetivo es facilitar el proceso de encontrar y
+                  adquirir los repuestos que necesitas para tu vehículo.
                 </p>
               </div>
-              <section>
-                <p className="max-[385px]:w-72 w-96 mt-4 text-white flex flex-col text-center text-balance opacity-95 text-sm sm:text-base">
-                  Simplifica la manera en que se buscan y adquieren repuestos
-                  automotrices. Brindamos una experiencia Fácil, Rápida y Segura
-                  para Clientes Buscadores y Distribuidores.
-                </p>
+              <section className="sm:space-x-2 flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto">
+                <ToEnter />
               </section>
-              <div className="w-full">
-                <div className="bg-gradient-to-r from-white to-gray-200 w-full h-36 border-l-neutral-500/800 rounded-md p-4 my-6 shadow-2xl">
-                  <p className="flex justify-center text-xl dark:text-black">
-                    INGRESO
-                  </p>
-                  <div className="space-x-5 flex justify-items-center justify-center my-8">
-                    <ToEnter />
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div className="flex flex-col justify-center items-center py-10 select-none xl:mt-16 mt:0">
+          </section>
+          <div className="flex flex-col justify-center items-center py-9 select-none">
             <img
               className="drop-shadow-[7px_10px_5px_rgba(0,0,0,0.5)]"
               alt="br-logo"
@@ -57,7 +51,7 @@ async function Home() {
             </section>
           </div>
 
-          <div className="relative w-full overflow-hidden select-none">
+          <div className="relative w-full overflow-hidden select-none mt-4">
             <Image
               src={"/images/backgrounds/Fondo_BR_home_index.webp"}
               alt="Busca Repuestos"

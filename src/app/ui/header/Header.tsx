@@ -10,7 +10,7 @@ async function Header() {
 
   return (
     <div className="h-full">
-      <header className="bg-white p-1 sm:p-4 flex justify-between items-center border-b-4">
+      <header className="bg-white p-2 flex justify-between items-center border-b-4">
           <Link href="/">
             <Image
               src="/logo-images/logo-center-header.png"

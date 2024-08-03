@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export function HeaderOut() {
   return (
-    <div className="h-full">
-      <header className=" bg-white p-1 sm:p-4 flex justify-between items-center">
+    <div className="h-full sticky top-0 z-10">
+      <header className="bg-white p-2 flex justify-start gap-x-6 items-center">
         <Link href="/">
           <Image
             src="/logo-images/logo-center-header.png"
@@ -14,7 +14,7 @@ export function HeaderOut() {
             width={260}
             height={500}
             className="hidden sm:block"
-            quality={100} 
+            quality={100}
           />
           <Image
             src="/logo-images/logo-start-header.png"
@@ -22,9 +22,16 @@ export function HeaderOut() {
             width={63}
             height={40}
             className="sm:hidden"
-            quality={100} 
+            quality={100}
           />
         </Link>
+        <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold">
+          <ul className="flex gap-x-4 text-sm">
+            <li>Funcionamiento</li>
+            <li>Preguntas Frecuentes</li>
+            <li>Testimonios</li>
+          </ul>
+        </nav>
       </header>
     </div>
   );

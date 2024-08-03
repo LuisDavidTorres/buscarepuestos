@@ -16,7 +16,7 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
   );
 
   const [themeButtonSecond, setThemeButtonSecond] = useState(
-    "bg-custom-green p-2 rounded-md text-white w-32 hover:bg-green-700 text-center"
+    "bg-custom-green p-2 relative rounded-md text-white w-48 hover:bg-green-700 text-center"
   );
 
   const [planSelected, setSelectedPlan] = useState({
