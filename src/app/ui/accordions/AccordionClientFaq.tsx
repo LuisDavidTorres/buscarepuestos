@@ -8,7 +8,7 @@ export default function AccordionClientFaq() {
   return (
     <AccordionQuestions value="0">
       {QuestionsClients.map((question) => (
-        <AccordionItem value={question.value} trigger={question.question}>
+        <AccordionItem key={question.value} value={question.value} trigger={question.question}>
           {question.answer}
         </AccordionItem>
       ))}
