@@ -31,10 +31,7 @@ export function HeaderOut() {
               <a href="#usageSteps">Funcionamiento</a>
             </li>
             <li className="hover:text-slate-600">
-              <a>Preguntas Frecuentes </a>
-            </li>
-            <li className="hover:text-slate-600">
-              <a>Testimonios</a>
+              <a href="#frequentQuestions">Preguntas Frecuentes </a>
             </li>
           </ul>
         </nav>

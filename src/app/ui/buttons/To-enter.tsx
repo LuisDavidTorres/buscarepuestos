@@ -45,7 +45,7 @@ export function ToEnter() {
           {status === "authenticated" ? (
             <p>Ir a mi cuenta</p>
           ) : (
-            <p>Únete como Proveedor</p>
+            <p>Únete como Distribuidor</p>
           )}
         </span>
       </button>

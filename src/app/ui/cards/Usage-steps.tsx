@@ -12,7 +12,7 @@ export function UsageSteps({
       <h1 className="text-center dark:text-black font-bold text-7xl items-center">
         {numberStep}
       </h1>
-      <div className="space-y-10 justify-center mt-14">
+      <div className="space-y-10 justify-center mt-10">
         <div className="text-center text-white bg-custom-green p-4 rounded-md">
           <p className="font-bold text-xl">{name}</p>
         </div>

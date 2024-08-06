@@ -5,6 +5,7 @@ import { UsageSteps } from "./ui/cards/Usage-steps";
 import { IoIosLock } from "react-icons/io";
 import { TfiArrowCircleDown } from "react-icons/tfi";
 import Image from "next/image";
+import AccordionClientFaq from "./ui/accordions/AccordionClientFaq";
 
 async function Home() {
   return (
@@ -13,23 +14,22 @@ async function Home() {
         <HeaderOut />
         <div className="flex flex-col md:justify-center">
           <section
-            className="bg-gradient-to-r p-4 md:p-20 bg-zinc-700 w-full flex flex-col items-center h-auto"
+            className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 p-4 md:p-20 w-full flex flex-col items-center h-auto"
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
             <div className="flex flex-col justify-center items-center gap-4 sm:gap-9 w-full">
               <h1 className="text-wrap font-bold text-white opacity-90 text-2xl w-full md:w-auto">
-                Encuentra los repuestos que necesitas{" "}
-                <span className="text-slate-200">o Únete como Proveedor</span>
+                Encuentra los Repuestos que Necesitas{" "}
               </h1>
               <div className="text-white opacity-90 lg:px-96 space-y-4 text-start md:text-center borde-2">
                 <p>
                   BuscaRepuestos.cl es una plataforma que conecta a clientes que
-                  buscan repuestos con proveedores confiables que ofrecen una
+                  buscan repuestos con Distribuidores confiables que ofrecen una
                   amplia variedad de estos.
                 </p>
                 <p>
                   Nuestro objetivo es facilitar el proceso de encontrar y
-                  adquirir los repuestos que necesitas para tu vehículo.
+                  adquirir los repuestos que necesitas para tu Vehículo.
                 </p>
               </div>
               <section className="sm:space-x-2 flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto">
@@ -65,9 +65,9 @@ async function Home() {
           </div>
           <div
             id="usageSteps"
-            className="bg-gradient-to-r bg-zinc-700 flex justify-center p-12 flex-col items-center space-y-5"
+            className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 flex justify-center p-12 flex-col items-center space-y-5"
           >
-            <h1 className="text-gray-400">PLATAFORMA PROTEGIDA</h1>
+            <h1 className="text-gray-400">PLATAFORMA SEGURA</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -94,25 +94,42 @@ async function Home() {
               </g>
             </svg>
           </div>
-          <div className="flex flex-col md:flex-row justify-center p-10 gap-8 items-center bg-white">
-            <UsageSteps
-              numberStep={"1°"}
-              name={"CLIENTE"}
-              descrition={"COMPLETE LA COTIZACIÓN Y PRESIONE ENVIAR"}
-            />
-            <UsageSteps
-              numberStep={"2°"}
-              name={"PLATAFORMA"}
-              descrition={
-                "SU COTIZACIÓN INGRESA AL MESÓN DIGITAL BuscaRepuestos.cl"
-              }
-            />
-            <UsageSteps
-              numberStep={"3°"}
-              name={"DISTRIBUIDOR"}
-              descrition={"DISTRIBUIDORES REGISTRADOS COTIZAN Y RESPONDEN"}
-            />
-          </div>
+          <section className="p-10 items-center bg-white">
+            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-10 text-center">
+              Pasos para Crear una Cotización
+            </h3>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-14">
+              {" "}
+              <UsageSteps
+                numberStep={"1°"}
+                name={"CLIENTE"}
+                descrition={"COMPLETE LA COTIZACIÓN Y PRESIONE ENVIAR"}
+              />
+              <UsageSteps
+                numberStep={"2°"}
+                name={"PLATAFORMA"}
+                descrition={
+                  "SU COTIZACIÓN INGRESA AL MESÓN DIGITAL BuscaRepuestos.cl"
+                }
+              />
+              <UsageSteps
+                numberStep={"3°"}
+                name={"DISTRIBUIDOR"}
+                descrition={"DISTRIBUIDORES REGISTRADOS COTIZAN Y RESPONDEN"}
+              />
+            </div>
+          </section>
+          <section
+            id="frequentQuestions"
+            className="w-full bg-white flex flex-col justify-center items-center"
+          >
+            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-14">
+              Preguntas Frecuentes
+            </h3>
+            <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
+              <AccordionClientFaq />
+            </div>
+          </section>
 
           <div className="flex justify-center absolute my-2 md:my-8">
             <ModalLoginSupplier />
