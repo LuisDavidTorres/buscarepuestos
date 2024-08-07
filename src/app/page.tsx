@@ -63,10 +63,7 @@ async function Home() {
               quality={100}
             />
           </div>
-          <div
-            id="usageSteps"
-            className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 flex justify-center p-12 flex-col items-center space-y-5"
-          >
+          <div className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 flex justify-center p-12 flex-col items-center space-y-5">
             <h1 className="text-gray-400">PLATAFORMA SEGURA</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,8 +91,8 @@ async function Home() {
               </g>
             </svg>
           </div>
-          <section className="p-10 items-center bg-white">
-            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-10 text-center">
+          <section id="usageSteps" className="p-10 items-center bg-white">
+            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24 text-center">
               Pasos para Crear una Cotización
             </h3>
             <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-14">
@@ -123,7 +120,7 @@ async function Home() {
             id="frequentQuestions"
             className="w-full bg-white flex flex-col justify-center items-center"
           >
-            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-14">
+            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24">
               Preguntas Frecuentes
             </h3>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
