@@ -6,6 +6,7 @@ import { IoIosLock } from "react-icons/io";
 import { TfiArrowCircleDown } from "react-icons/tfi";
 import Image from "next/image";
 import AccordionClientFaq from "./ui/accordions/AccordionClientFaq";
+import AccordionDistributorFaq from "./ui/accordions/AccordionDistributorFaq";
 
 async function Home() {
   return (
@@ -123,8 +124,11 @@ async function Home() {
             <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24">
               Preguntas Frecuentes
             </h3>
-            <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
+            <div className="w-4/5 sm:w-3/5 mt-10 mb-10">
               <AccordionClientFaq />
+            </div>
+            <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
+              <AccordionDistributorFaq />
             </div>
           </section>
 

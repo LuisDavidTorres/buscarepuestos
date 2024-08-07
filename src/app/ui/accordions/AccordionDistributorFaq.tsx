@@ -1,10 +1,10 @@
-import QuestionsClients from "../../data/CustomerQuestions";
+import QuestionsDistributors from "../../data/DistributorQuestions";
 import { AccordionQuestions, AccordionItem } from "./Frequent-questions";
 
-export default function AccordionClientFaq() {
+export default function AccordionDistributorFaq() {
   return (
     <AccordionQuestions value="0">
-      {QuestionsClients.map((question) => (
+      {QuestionsDistributors.map((question) => (
         <AccordionItem
           key={question.value}
           value={question.value}
