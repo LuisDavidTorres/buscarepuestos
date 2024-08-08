@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { MenuIndex } from "../Dropdown/Menu-index";
 
 export function HeaderOut() {
   return (
     <div className="h-full sticky top-0 z-10">
-      <header className="bg-white p-2 flex justify-start gap-x-6 items-center">
+      <header className="bg-white p-2 flex justify-between xl:justify-start gap-x-6 items-center">
         <Link href="/">
           <Image
             src="/logo-images/logo-center-header.png"
@@ -31,10 +32,11 @@ export function HeaderOut() {
               <a href="#usageSteps">Funcionamiento</a>
             </li>
             <li className="hover:text-slate-600">
-              <a href="#frequentQuestions">Preguntas Frecuentes </a>
+              <a href="#frequentQuestions">Preguntas Frecuentes</a>
             </li>
           </ul>
         </nav>
+        <MenuIndex/>
       </header>
     </div>
   );

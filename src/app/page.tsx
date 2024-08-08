@@ -55,7 +55,7 @@ async function Home() {
           </div>
 
           <div className="relative w-full overflow-hidden select-none mt-4">
-            <Parallax/>
+            <Parallax />
           </div>
           <div className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 flex justify-center p-12 flex-col items-center space-y-5">
             <h1 className="text-gray-400">PLATAFORMA SEGURA</h1>
@@ -118,9 +118,11 @@ async function Home() {
               Preguntas Frecuentes
             </h3>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-10">
+              <h3 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Buscadores</h3>
               <AccordionClientFaq />
             </div>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
+              <h3 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Distribuidores</h3>
               <AccordionDistributorFaq />
             </div>
           </section>
