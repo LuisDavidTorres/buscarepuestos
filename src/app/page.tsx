@@ -7,6 +7,7 @@ import { TfiArrowCircleDown } from "react-icons/tfi";
 import Image from "next/image";
 import AccordionClientFaq from "./ui/accordions/AccordionClientFaq";
 import AccordionDistributorFaq from "./ui/accordions/AccordionDistributorFaq";
+import Parallax from "./ui/parallax/Parallax";
 
 async function Home() {
   return (
@@ -54,15 +55,7 @@ async function Home() {
           </div>
 
           <div className="relative w-full overflow-hidden select-none mt-4">
-            <Image
-              src={"/images/backgrounds/Fondo_BR_home_index.webp"}
-              alt="Busca Repuestos"
-              className="w-full"
-              width={1920}
-              height={400}
-              priority={true}
-              quality={100}
-            />
+            <Parallax/>
           </div>
           <div className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 flex justify-center p-12 flex-col items-center space-y-5">
             <h1 className="text-gray-400">PLATAFORMA SEGURA</h1>
