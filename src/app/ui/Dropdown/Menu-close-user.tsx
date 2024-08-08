@@ -79,6 +79,9 @@ export function MenuCloseUser() {
                 if (menu === "Bolsas Virtuales") {
                   router.push("/cambiar-plan");
                 }
+
+                setOpen(false);
+
               }}
             >
               {menu}
