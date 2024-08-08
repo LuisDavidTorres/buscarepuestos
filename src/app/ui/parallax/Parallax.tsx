@@ -5,9 +5,9 @@ export default function Parallax() {
     <div>
       <div className="relative">
         <Image
-          src="/images/backgrounds/Fondo_BR_home_index.webp"
+          src={"/images/backgrounds/Fondo_BR_home_index.webp"}
           alt="Busca Repuestos"
-          className="w-full h-[400px] object-cover bg-gradient-to-r from-cyan-500 to-blue-500"
+          className="w-full"
           width={1920}
           height={400}
           priority={true}
