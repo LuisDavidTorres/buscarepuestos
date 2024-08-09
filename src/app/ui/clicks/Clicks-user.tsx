@@ -46,8 +46,8 @@ export function ClicksUser() {
                 <p>{totalClicks}</p>
               </label>
             </div>
-            <div className="p-2 rounded-md bg-gray-100 shadow-sm">
-              <label className="hidden sm:flex items-center space-x-2 max-[347px]:space-x-1 max-[347px]:text-sm">
+            <div className="hidden sm:block p-2 rounded-md bg-gray-100 shadow-sm">
+              <label className="flex items-center space-x-2 max-[347px]:space-x-1 max-[347px]:text-sm">
                 <PiCursorClickFill className="text-green-500" />
                 <p className="text-gray-700 font-semibold">
                   Clics disponibles:
