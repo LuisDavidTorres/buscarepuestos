@@ -46,7 +46,7 @@ export function MenuCloseUser() {
         onClick={() => setOpen(!open)}
         ref={iconRef}
       >
-        <GiHamburgerMenu className="text-black size-7" />
+        <GiHamburgerMenu className="text-black size-5 sm:size-7" />
       </div>
       {open && <Updown />}
     </div>

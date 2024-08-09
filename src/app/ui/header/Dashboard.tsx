@@ -28,7 +28,7 @@ export function DashboardHeader() {
             />
           </Link>
         </section>
-        <div className="flex flex-row items-center space-x-5">
+        <div className="flex flex-row items-center space-x-4">
           <section>
             <ClicksUser />
           </section>
