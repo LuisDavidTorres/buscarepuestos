@@ -58,7 +58,7 @@ export function AccordionItem({
     <li className="border-b" {...props}>
       <header
         onClick={() => setSelected(open ? null : value)}
-        className="flex justify-between items-center p-4 font-medium text-black dark:text-black text-sm sm:text-base"
+        className="flex justify-between items-center p-4 font-medium text-black dark:text-black text-sm sm:text-base cursor-pointer"
       >
         {trigger}
         <BiChevronDown

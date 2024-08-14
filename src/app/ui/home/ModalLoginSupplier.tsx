@@ -136,6 +136,7 @@ export function ModalLoginSupplier() {
                           className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
                         />
                         <button
+                          aria-label="showPassword"
                           type="button"
                           className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"
                           onClick={togglePasswordVisibility}
@@ -150,6 +151,7 @@ export function ModalLoginSupplier() {
                   <div>
                     {loading ? (
                       <button
+                        aria-label="buttonLoading"
                         disabled
                         type="button"
                         className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900 items-center"
@@ -174,7 +176,7 @@ export function ModalLoginSupplier() {
                         Ingresando
                       </button>
                     ) : (
-                      <button className="flex w-full justify-center rounded-md bg-custom-green px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900">
+                      <button aria-label="loginUser" className="flex w-full justify-center rounded-md bg-custom-green px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900">
                         Ingresar
                       </button>
                     )}

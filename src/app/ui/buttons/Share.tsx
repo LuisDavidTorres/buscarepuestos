@@ -17,7 +17,7 @@ export function ButtonShare() {
 
   return (
     <>
-      <button onClick={handleShareClick}>
+      <button aria-label="sharePage" onClick={handleShareClick}>
         <FaShare className="text-lg" />
       </button>
       <Toaster position="top-center" reverseOrder={false} />
