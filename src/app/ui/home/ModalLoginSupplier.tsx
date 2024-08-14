@@ -88,6 +88,7 @@ export function ModalLoginSupplier() {
                     </label>
                     <div className="mt-2">
                       <input
+                        id="email"
                         type="email"
                         {...register("email", {
                           required: {
@@ -123,6 +124,7 @@ export function ModalLoginSupplier() {
                     <div className="mt-2">
                       <div className="relative w-full">
                         <input
+                          id="password"
                           type={showPassword ? "text" : "password"}
                           {...register("password", {
                             required: {
