@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "custom-gray": "#454444", // color gris personalizado
-        "custom-green": "#4CAF50", // Color persoalizado fondo
+        "custom-gray": "#454444",
+        "custom-green": "#4CAF50",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

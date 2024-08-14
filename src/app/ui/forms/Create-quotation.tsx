@@ -55,9 +55,17 @@ export function Create_quotation() {
 
       let numberWithout9 = e.target.value.substring(1);
 
-      const validateChilePhone = areaCode === "+56" && !e.target.value.startsWith('9') || numberWithout9.startsWith('0') || e.target.value.length < 7 || e.target.value.length > 7 && /0000/.test(numberWithout9);
-      
-      if (phoneNumber?.isValid() === false || phoneNumber === undefined || validateChilePhone) {
+      const validateChilePhone =
+        (areaCode === "+56" && !e.target.value.startsWith("9")) ||
+        numberWithout9.startsWith("0") ||
+        e.target.value.length < 7 ||
+        (e.target.value.length > 7 && /0000/.test(numberWithout9));
+
+      if (
+        phoneNumber?.isValid() === false ||
+        phoneNumber === undefined ||
+        validateChilePhone
+      ) {
         setErrors((prevErrors) => ({
           ...prevErrors,
           contactNumber: "Número de teléfono inválido",
@@ -107,7 +115,6 @@ export function Create_quotation() {
     event.preventDefault();
 
     if (errors.contactNumber) {
-     
       return;
     }
 
@@ -195,7 +202,11 @@ export function Create_quotation() {
 
           <div className="flex flex-col sm:flex-row sm:space-x-8 ">
             <section className="flex flex-col space-y-5  min-[640px]:w-6/12">
-              <label htmlFor="repuesto" className="flex flex-row space-x-1">
+              <label
+                id="label-replacement"
+                htmlFor="replacement"
+                className="flex flex-row space-x-1"
+              >
                 {" "}
                 <p className="text-red-600 ">*</p>
                 <p>Nombre del Repuesto</p>
@@ -211,6 +222,7 @@ export function Create_quotation() {
               ></input>
 
               <label
+                id="label-replacement-type"
                 htmlFor="replacement-type"
                 className="flex flex-row space-x-1"
               >
@@ -234,13 +246,13 @@ export function Create_quotation() {
                 INFORMACIÓN DE VEHÍCULO
               </h1>
 
-              <label className="flex flex-row space-x-1">
+              <label id="label-car-brand" className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
                 <p>Marca</p>
               </label>
               <SelecCarBrand setCar={setCarBrand} />
 
-              <label className="flex flex-col space-x-1">
+              <label id="label-car-model" className="flex flex-col space-x-1">
                 <div className="flex items-center space-x-2">
                   <p className="text-red-600 ">*</p>
                   <p>Modelo</p>
@@ -248,6 +260,7 @@ export function Create_quotation() {
                 </div>
               </label>
               <CreatableSelect
+                instanceId={"select-car-model"}
                 className="w-full"
                 isClearable
                 required
@@ -258,7 +271,7 @@ export function Create_quotation() {
                 onChange={(e) => setCarModel((e as { value: string }).value)}
               />
 
-              <label className="flex flex-row space-x-1">
+              <label id="label-car-year" className="flex flex-row space-x-1">
                 <p className="text-red-600 ">*</p>
                 <p>Año</p>
               </label>
@@ -276,7 +289,14 @@ export function Create_quotation() {
               </select>
 
               <div className="flex flex-row space-x-4 items-center">
-                <p>VIN</p>
+                <label
+                  id="label-car-id"
+                  className="flex items-center ms-3"
+                  htmlFor="id-car"
+                >
+                  <p>VIN</p>
+                  <p className="mx-2 text-xs">(Opcional)</p>
+                </label>
                 <section className="min-[1384px]:hidden">
                   <Link href="/crear-cotizacion#infoVni">
                     <p className="text-sm text-blue-800 hover:underline">
@@ -356,7 +376,8 @@ export function Create_quotation() {
 
             <section className="flex flex-col space-y-5 mt-5 sm:mt-0 min-[773px]:w-full">
               <label
-                htmlFor="nombreContacto"
+                id="label-contact-name"
+                htmlFor="contact-name"
                 className="flex flex-row space-x-1"
               >
                 {" "}
@@ -372,7 +393,7 @@ export function Create_quotation() {
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
               ></input>
 
-              <label className="flex flex-row space-x-1">
+              <label id="label-contact-numer" className="flex flex-row space-x-1">
                 {" "}
                 <p className="text-red-600 ">*</p>
                 <p>N° Teléfono</p>
@@ -397,7 +418,7 @@ export function Create_quotation() {
                 </p>
               )}
 
-              <label className="flex flex-row space-x-1">
+              <label id="label-zona" className="flex flex-row space-x-1">
                 {" "}
                 <p className="text-red-600 ">*</p>
                 <p>Región</p>
@@ -406,7 +427,7 @@ export function Create_quotation() {
             </section>
           </div>
           <div className="flex flex-row mt-10 mb-10 space-x-2">
-            <label className="flex flex-row space-x-1">
+            <label id="label-terms" className="flex flex-row space-x-1">
               <p>Acepto</p>
               <Link
                 href="/terminos"

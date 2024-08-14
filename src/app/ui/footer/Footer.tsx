@@ -39,7 +39,7 @@ export function Footer() {
                       fontSize="107.86px"
                       fontFamily="Arial-BoldMT, Arial"
                       fontWeight="700"
-                      text-anchor="middle"
+                      textAnchor="middle"
                     >
                       BuscaRepuestos.cl
                     </text>

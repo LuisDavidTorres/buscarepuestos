@@ -9,7 +9,13 @@ export function MenuCloseUser() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const Menu = ["Mi Cuenta", "Mesón Digital" ,"Mis Cotizaciones", "Bolsas Virtuales" , "Cerrar Sesión"];
+  const Menu = [
+    "Mi Cuenta",
+    "Mesón Digital",
+    "Mis Cotizaciones",
+    "Bolsas Virtuales",
+    "Cerrar Sesión",
+  ];
 
   const menuRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
@@ -36,7 +42,7 @@ export function MenuCloseUser() {
   }, [open]);
 
   const handleCloseSession = () => {
-    signOut(); 
+    signOut();
   };
 
   return (
@@ -62,7 +68,9 @@ export function MenuCloseUser() {
           {Menu.map((menu) => (
             <li
               key={menu}
-              className={`p-2 text-base cursor-pointer rounded hover:bg-zinc-300 select-none ${menu === "Cerrar Sesión" ? 'text-red-600 dark:text-red-600' : ''}`}
+              className={`p-2 text-sm sm:text-base cursor-pointer rounded hover:bg-zinc-300 select-none ${
+                menu === "Cerrar Sesión" ? "text-red-600 dark:text-red-600" : ""
+              }`}
               onClick={() => {
                 if (menu === "Cerrar Sesión") {
                   handleCloseSession();
@@ -81,7 +89,6 @@ export function MenuCloseUser() {
                 }
 
                 setOpen(false);
-
               }}
             >
               {menu}
@@ -92,4 +99,3 @@ export function MenuCloseUser() {
     );
   }
 }
-
