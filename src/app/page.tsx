@@ -23,7 +23,7 @@ async function Home() {
               <h1 className="text-wrap font-bold text-white opacity-90 text-2xl w-full md:w-auto">
                 Encuentra los Repuestos que Necesitas{" "}
               </h1>
-              <div className="text-white opacity-90 lg:px-96 space-y-4 text-start md:text-center borde-2">
+              <div className="text-white opacity-90 lg:px-40 xl:px-72 2xl:px-96 space-y-4 text-start md:text-center borde-2">
                 <p>
                   BuscaRepuestos.cl es una plataforma que conecta a clientes que
                   buscan repuestos con Distribuidores confiables que ofrecen una
