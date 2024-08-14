@@ -86,9 +86,9 @@ async function Home() {
             </svg>
           </div>
           <section id="usageSteps" className="p-10 items-center bg-white">
-            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24 text-center">
+            <h2 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24 text-center">
               Pasos para Crear una Cotización
-            </h3>
+            </h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-14">
               {" "}
               <UsageSteps
@@ -114,15 +114,15 @@ async function Home() {
             id="frequentQuestions"
             className="w-full bg-white flex flex-col justify-center items-center"
           >
-            <h3 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24">
+            <h2 className="font-bold text-2xl sm:text-3xl text-black/70 mt-24">
               Preguntas Frecuentes
-            </h3>
+            </h2>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-10">
-              <h3 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Buscadores</h3>
+              <h2 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Buscadores</h2>
               <AccordionClientFaq />
             </div>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
-              <h3 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Distribuidores</h3>
+              <h2 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Distribuidores</h2>
               <AccordionDistributorFaq />
             </div>
           </section>
