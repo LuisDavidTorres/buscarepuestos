@@ -11,6 +11,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "@material-tailwind/react": "^2.1.9",
+    "@next/third-parties": "^14.2.5",
     "@paypal/checkout-server-sdk": "^1.0.3",
     "@paypal/react-paypal-js": "^8.3.0",
     "@prisma/client": "^5.12.1",
@@ -28,7 +29,7 @@
     "jsdom": "^24.1.0",
     "jsonwebtoken": "^9.0.2",
     "libphonenumber-js": "^1.11.3",
-    "next": "14.1.4",
+    "next": "^14.2.5",
     "next-auth": "^4.24.7",
     "nookies": "^2.5.2",
     "pg": "^8.11.5",
