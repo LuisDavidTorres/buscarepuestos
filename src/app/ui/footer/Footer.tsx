@@ -91,7 +91,7 @@ export function Footer() {
               </section>
             </div>
             <div className="mt-5 md:mt-0">
-              <h6>Legal</h6>
+              <h3>Legal</h3>
               <hr></hr>
               <ul className="mt-3 space-y-2">
                 <li>
@@ -105,7 +105,7 @@ export function Footer() {
               </ul>
             </div>
             <div className="mt-5 md:mt-0">
-              <h6>Centro de ayuda</h6>
+              <h3>Centro de ayuda</h3>
               <hr></hr>
               <section className="mt-4 flex flex-col space-y-2">
                 <a
