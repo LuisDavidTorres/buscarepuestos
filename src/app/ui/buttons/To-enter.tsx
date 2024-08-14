@@ -26,7 +26,6 @@ export function ToEnter() {
     <>
       <button
         onClick={redirecToCreateQuotation}
-        aria-labelledby="create-quotation"
         aria-label="Cliente"
         name="Cliente"
         className="w-full relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-green-500 to-green-600 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-3 focus:outline-none focus:ring-green-400 dark:ring-green-400"
@@ -38,7 +37,6 @@ export function ToEnter() {
 
       <button
         onClick={redirectTo}
-        aria-labelledby="open-modal"
         aria-label="Cliente"
         name="Cliente"
         className="w-full relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-black rounded-lg group bg-gradient-to-br from-gray-400 to-custom-gray group-hover:from-lime-300 group-hover:to-blue-500 hover:text-white dark:text-black focus:ring-4 focus:outline-none focus:ring-gray-500 dark:ring-gray-500"

@@ -5,13 +5,16 @@ export default function Parallax() {
     <div>
       <div className="relative">
         <Image
-          src={"/images/backgrounds/Fondo_BR_home_index.webp"}
+          src="/images/backgrounds/Fondo_BR_home_index.webp"
           alt="Busca Repuestos"
           className="w-full"
           width={1920}
           height={400}
           priority={true}
-          quality={100}
+          quality={75}
+          placeholder="blur" 
+          blurDataURL="/images/backgrounds/Fondo_BR_home_index_blur.webp" 
+          sizes="(max-width: 768px) 100vw, 1920px"
         />
         <div className="absolute inset-0 flex justify-center items-center bg-gradient-to-t from-zinc-700/20 to-transparent">
           <div className="bg-white/40 p-6 rounded-lg shadow-2xl backdrop-blur-sm max-w-md mx-4 text-center">
