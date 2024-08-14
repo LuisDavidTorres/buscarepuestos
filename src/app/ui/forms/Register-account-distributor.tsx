@@ -391,6 +391,7 @@ export function Register_account_distribuitor() {
             </label>
             <div>
               <Select
+                id="carBrands2"
                 className="w-full 2xl:w-96"
                 instanceId={"carBrands2"}
                 closeMenuOnSelect={false}
@@ -405,13 +406,8 @@ export function Register_account_distribuitor() {
                 required
               />
             </div>
-            <label
-              id="laber-all-car"
-              htmlFor="allCars"
-              className="inline-flex items-center cursor-pointer"
-            >
+            <label className="inline-flex items-center cursor-pointer">
               <input
-                id="allCars"
                 type="checkbox"
                 value=""
                 checked={selectAll}
@@ -515,14 +511,9 @@ export function Register_account_distribuitor() {
               type="checkbox"
               required
             ></input>
-            <label
-              id="label-terms"
-              htmlFor="terms"
-              className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0"
-            >
+            <label className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0">
               <p className="inline text-sm">Declara aceptar nuestros</p>
               <a
-                id="terms"
                 href="/terminos"
                 target="_blank"
                 className="no-underline hover:underline text-blue-700 inline text-sm "
