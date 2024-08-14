@@ -57,7 +57,6 @@ export function AccordionItem({
   return (
     <li className="border-b" {...props}>
       <header
-        role="listitem"
         onClick={() => setSelected(open ? null : value)}
         className="flex justify-between items-center p-4 font-medium text-black dark:text-black text-sm sm:text-base"
       >

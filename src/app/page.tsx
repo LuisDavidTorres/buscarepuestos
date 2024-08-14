@@ -49,6 +49,7 @@ async function Home() {
             ></img>
             <section className="mt-8">
               <a href="#usageSteps">
+                <span className="sr-only">Ver los pasos de uso</span>
                 <TfiArrowCircleDown className="animate-bounce text-white text-3xl hover:cursor-pointer" />
               </a>
             </section>
@@ -118,11 +119,15 @@ async function Home() {
               Preguntas Frecuentes
             </h2>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-10">
-              <h2 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Buscadores</h2>
+              <h2 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">
+                Para Buscadores
+              </h2>
               <AccordionClientFaq />
             </div>
             <div className="w-4/5 sm:w-3/5 mt-10 mb-16">
-              <h2 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">Para Distribuidores</h2>
+              <h2 className="text-lg p-4 underline underline-offset-8 decoration-2 decoration-gray-400/50 dark:decoration-gray-400/50 font-sans">
+                Para Distribuidores
+              </h2>
               <AccordionDistributorFaq />
             </div>
           </section>
