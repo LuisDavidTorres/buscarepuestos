@@ -80,6 +80,7 @@ export function ModalLoginSupplier() {
                 <div className="space-y-6">
                   <div>
                     <label
+                      id="label-email"
                       htmlFor="email"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
@@ -104,6 +105,7 @@ export function ModalLoginSupplier() {
                   <div>
                     <div className="flex items-center justify-between ">
                       <label
+                        id="label-password"
                         htmlFor="password"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
