@@ -8,7 +8,7 @@ export function UsageSteps({
   descrition: string;
 }) {
   return (
-    <div className="border-2 p-4 flex flex-col max-[340px]:w-full w-4/5 sm:2/5 md:4/5 lg:w-2/5 xl:w-1/5 2xl:w-72 h-96 shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-md">
+    <div className="border-2 p-4 flex flex-col max-[340px]:w-full w-4/5 max-w-80 sm:2/5 md:4/5 lg:w-2/5 xl:w-1/5 2xl:w-72 h-96 shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-md">
       <h1 className="text-center dark:text-black font-bold text-7xl items-center">
         {numberStep}
       </h1>
