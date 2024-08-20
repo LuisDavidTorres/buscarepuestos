@@ -27,7 +27,7 @@ async function Home() {
                 <p>
                   BuscaRepuestos.cl es una plataforma que conecta a clientes que
                   buscan repuestos con Distribuidores confiables que ofrecen una
-                  amplia variedad de estos.
+                  amplia variedad de estos
                 </p>
                 <p>
                   Nuestro objetivo es facilitar el proceso de encontrar y
