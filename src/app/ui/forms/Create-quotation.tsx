@@ -23,7 +23,7 @@ export function Create_quotation() {
   const [contactName, setContactName] = useState("");
   const [areaCode, setAreaCode] = useState("+56");
   const [contactNumber, setContactNumber] = useState("");
-  const [carBrand, setCarBrand] = useState<number>(1);
+  const [carBrand, setCarBrand] = useState<number>(14);
   const [carModel, setCarModel] = useState("");
   const [vehicleYear, setVehicleYear] = useState<number>(
     new Date().getFullYear()
@@ -238,9 +238,9 @@ export function Create_quotation() {
               >
                 <option value="original">Original</option>
                 <option value="alternative">Alternativo</option>
-                <option value="originalandalternative">
+                {/*<option value="originalandalternative">
                   Orignal o Alternativo
-                </option>
+                </option>*/}
               </select>
               <h1 className="font-bold text-base text-gray-600">
                 INFORMACIÓN DE VEHÍCULO

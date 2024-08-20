@@ -99,7 +99,7 @@ export function ModalLoginSupplier() {
                         autoComplete="email"
                         className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
                       />
-                      {errors.email && <p>{errors.email.message}</p>}
+                      {errors.email && <p className="text-sm mt-1 text-red-600">{errors.email.message}</p>}
                     </div>
                   </div>
 
@@ -144,7 +144,7 @@ export function ModalLoginSupplier() {
                           {showPassword ? <FaRegEye /> : <RxEyeClosed />}
                         </button>
                       </div>
-                      {errors.password && <p>{errors.password.message}</p>}
+                      {errors.password && <p className="text-sm mt-1 text-red-600">{errors.password.message}</p>}
                     </div>
                   </div>
 

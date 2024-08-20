@@ -10,8 +10,21 @@ interface PageProps {
   };
 }
 
-export default function Page({ searchParams }: PageProps) {
+async function LoadPLan({ plan }: { plan: string }) {
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/api/subscriptions/" + plan,
+    {
+      method: "GET",
+    }
+  );
+  const data = await res.json();
+  console.log(data.subscription)
+  return data;
+}
+
+async function Page({ searchParams }: PageProps) {
   const { plan } = searchParams;
+  const planSelected = await LoadPLan({ plan });
 
   return (
     <div className="min-h-screen bg-white">
@@ -26,7 +39,7 @@ export default function Page({ searchParams }: PageProps) {
             </section>
             <section>
               <h1 className="font-bold mt-5 mb-2 text-base">Tu plan</h1>
-              <CardPlanHorizontal planId={plan} />
+              <CardPlanHorizontal plan={planSelected} />
             </section>
             <h1 className="text-lg mt-14 mb-6">Métodos de pago disponibles</h1>
             <section className="flex justify-center">
@@ -57,3 +70,5 @@ export default function Page({ searchParams }: PageProps) {
     </div>
   );
 }
+
+export default Page;

@@ -25,12 +25,18 @@ export async function POST(request: Request) {
       },
     });
 
+    const plan = await prisma.subscription.findFirst({
+      where: {
+        id: Number(planInfo.idPlan)
+      }
+    })
+
     if (!userSubscription) {
       const assignPlan = await prisma.userSubscription.create({
         data: {
           idUser: Number(user?.id),
-          idSubscription: Number(planInfo.idPlan),
-          clicks: Number(planInfo.clicks),
+          idSubscription: Number(plan?.id),
+          clicks: Number(plan?.clicks),
         },
       });
 
@@ -52,8 +58,8 @@ export async function POST(request: Request) {
           id: userSubscription.id,
         },
         data: {
-          idSubscription: Number(planInfo.idPlan),
-          clicks: userSubscription.clicks + Number(planInfo.clicks),
+          idSubscription: Number(plan?.id),
+          clicks: userSubscription.clicks + Number(plan?.clicks),
         },
       });
 

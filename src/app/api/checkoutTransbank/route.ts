@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/libs/authOptions";
 import { WebpayPlus } from 'transbank-sdk';
 import { Options, Environment} from 'transbank-sdk';
+import { calculateDiscount } from "@/libs/mathematicalFunctions";
 
 export async function PUT(request: Request, res: NextApiResponse) {
   try{
@@ -79,15 +80,39 @@ export async function POST(request: Request) {
 
         const requestBody = await request.json();
         const planInfo = requestBody.planInfo;
-        const PriceDiscount = planInfo.finalDiscount;
-        let amount = planInfo.pricePlan;
+
+        //const PriceDiscount = planInfo.finalDiscount;
+        //let amount = planInfo.pricePlan;
+        let PriceDiscount;
+
+        const subscription = await prisma.subscription.findUnique({
+          where: {
+            id: parseInt(planInfo.idPlan, 10),
+          },
+        });
+
+        if (!subscription)
+          return NextResponse.json(
+            { message: "Suscripción no existe" },
+            { status: 404 }
+          );
     
+        if (subscription.discountActive === true) {
+          PriceDiscount = calculateDiscount(
+            subscription.price.toNumber(),
+            subscription.discountPrice.toNumber()
+          );
+        }
+
+        let amount = Number(subscription.price);
+
+
         if (PriceDiscount) {
-          amount = parseFloat(PriceDiscount);
+          amount = parseFloat(PriceDiscount.toString());
         }
     
         if(!PriceDiscount){
-          amount = parseFloat(amount);
+          amount = parseFloat(amount.toString());
         }
 
         const ivaAmount = amount * 0.19;

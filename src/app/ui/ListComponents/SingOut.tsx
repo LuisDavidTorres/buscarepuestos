@@ -14,7 +14,7 @@ export function LinkSingOut() {
   return (
     <>
       <li className="list-none">
-        <Link href={"/"} onClick={handleCloseSession} className={`${pathname === '/crear-cotizacion' ? ' text-white' : 'text-black'}`}>
+        <Link href={"/"} onClick={handleCloseSession} className={`${pathname === '/crear-cotizacion' || '/crear-cuenta-distribuidor/verificar-email' ? ' text-white' : 'text-black'}`}>
           Cerrar sesión
         </Link>
       </li>

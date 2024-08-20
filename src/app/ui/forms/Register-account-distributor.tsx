@@ -14,6 +14,7 @@ import { LoadButton } from "../buttons/Load-button";
 import toast, { Toaster } from "react-hot-toast";
 import { RxEyeClosed } from "react-icons/rx";
 import { FaRegEye } from "react-icons/fa";
+import { PasswordValidator } from "./Password-validator";
 
 export function Register_account_distribuitor() {
   const {
@@ -290,7 +291,7 @@ export function Register_account_distribuitor() {
                 <p className="text-red-600 ">*</p>
                 <p>Nombre de Contacto</p>
               </label>
-              <p className="text-xs">(Representante Legal)</p>
+              <p className="text-xs">(Representante Legal o Responsable)</p>
             </div>
 
             <input
@@ -321,7 +322,7 @@ export function Register_account_distribuitor() {
                 <p className="text-red-600 ">*</p>
                 <p>Teléfono</p>
               </label>
-              <p className="text-xs">(Representante Legal)</p>
+              <p className="text-xs">(Representante Legal o Responsable)</p>
             </div>
 
             <div className="flex flex-row">
@@ -500,18 +501,21 @@ export function Register_account_distribuitor() {
                 {errors.password.message?.toString()}
               </span>
             )}
+            <PasswordValidator password={watch('password')}/>
+
           </div>
         </div>
 
         <section className="mt-10 2xl:mx-14 flex flex-col md:flex-row md:justify-end space-x-5 items-center">
           <div className="flex space-x-2 items-start">
             <input
+              name="terminos"
               className="mt-1"
               id="terminos"
               type="checkbox"
               required
             ></input>
-            <label className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0">
+            <label id="label-terminos" htmlFor="terminos" className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0">
               <p className="inline text-sm">Declara aceptar nuestros</p>
               <a
                 href="/terminos"

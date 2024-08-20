@@ -3,8 +3,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MenuIndex } from "../Dropdown/Menu-index";
+import { usePathname } from "next/navigation";
+import { useAppContext } from "@/context";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export function HeaderOut() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { toogleModal } = useAppContext();
+  const { data: session, status } = useSession();
+
+  const redirectTo = () => {
+    if (status === "authenticated") {
+      router.push("/home");
+    } else {
+      toogleModal();
+    }
+  };
+
   return (
     <div className="h-full sticky top-0 z-10">
       <header className="bg-white p-2 flex justify-between xl:justify-start gap-x-6 items-center">
@@ -26,17 +43,34 @@ export function HeaderOut() {
             quality={100}
           />
         </Link>
-        <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold">
-          <ul className="flex gap-x-4 text-sm">
-            <li className="hover:text-slate-600">
-              <a href="#usageSteps">Funcionamiento</a>
-            </li>
-            <li className="hover:text-slate-600">
-              <a href="#frequentQuestions">Preguntas Frecuentes</a>
-            </li>
-          </ul>
-        </nav>
-        <MenuIndex/>
+        {pathname === "/" && (
+          <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold justify-between w-11/12">
+            <ul className="flex gap-x-4 text-sm">
+              <li className="hover:text-slate-600">
+                <a href="#usageSteps">Funcionamiento</a>
+              </li>
+              <li className="hover:text-slate-600">
+                <a href="#frequentQuestions">Preguntas Frecuentes</a>
+              </li>
+            </ul>
+            {/*<button
+              onClick={redirectTo}
+              aria-label="login"
+              name="login"
+              className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-custom-green group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+            >
+              <span className="relative p-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                {status === "authenticated" ? (
+                  <p>Ir a mi cuenta</p>
+                ) : (
+                  <p>Ingreso Distribuidor</p>
+                )}
+              </span>
+            </button>*/}
+          </nav>
+        )}
+
+        <MenuIndex />
       </header>
     </div>
   );

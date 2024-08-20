@@ -16,12 +16,13 @@ async function loadHistory() {
 
 async function Page() {
   const paymentDetails = await loadHistory();
+  console.log(`Pago: ${paymentDetails}`)
 
   return (
     <div className="min-h-screen bg-white p-6 rounded-md dark:text-black">
       <h1 className="font-bold text-3xl flex justify-center">Historial de Pagos</h1>
       <div className="mt-10">
-        {paymentDetails.length === undefined && paymentDetails ? (
+        {paymentDetails.length === 0 ? (
           <p className=" text-gray-500 text-base">Aun no hay pagos registrados</p>
         ) : (
           <PaymentHistorial detailPayment={paymentDetails} />

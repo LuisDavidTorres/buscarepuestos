@@ -1,23 +1,18 @@
 import { formatMoneyString } from "@/libs/moneyutils";
-import { cookies } from "next/headers";
 
-async function LoadPLan({ planId }: { planId: string }) {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/api/subscriptions/" + planId,
-    {
-      method: "GET",
-    }
-  );
-  const data = await res.json();
-  console.log(data.subscription)
-  return data;
+interface Plan {
+  plan: {
+    finaldiscount: number
+    subscription: {
+      id: number;
+      name: string;
+      clicks: number;
+      price: number;
+    };
+  };
 }
 
-export async function CardPlanHorizontal({ planId }: { planId: string }) {
-  const plan = await LoadPLan({ planId });
-
-  const cookieStore = cookies();
-
+export async function CardPlanHorizontal({ plan }: Plan) {
   const namePlan = plan.subscription.name;
   const discountPlan = plan.finaldiscount.toString();
   const pricePlan = plan.subscription.price.toString();
@@ -33,7 +28,7 @@ export async function CardPlanHorizontal({ planId }: { planId: string }) {
   const ivaAmount = finalPrice * 0.19;
   finalPrice = finalPrice + ivaAmount;
   finalPrice = Math.round(finalPrice);
-  
+
   return (
     <div className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="bg-slate-400 rounded-t-lg p-3 tex font-bold">
