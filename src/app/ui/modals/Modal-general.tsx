@@ -5,15 +5,24 @@ import { useMemo } from "react";
 import { useAppContext } from "@/context";
 import { useRouter } from "next/navigation";
 import { FaCheckDouble } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export function ModalGeneral() {
   const { toggleModalGeneral, modalGeneralOpen, messageModalGeneral } =
     useAppContext();
   const router = useRouter();
+  const pathname = usePathname();
 
   const onClick = () => {
     router.push("/cambiar-plan");
     toggleModalGeneral();
+  };
+
+  const reloadPageQuote = () => {
+    toggleModalGeneral();
+    if (pathname === "/crear-cotizacion") {
+      window.location.reload();
+    }
   };
 
   const modalContent = useMemo(() => {
@@ -24,7 +33,7 @@ export function ModalGeneral() {
             <section className="flex md:justify-end justify-start mb-1">
               <div
                 className="cursor-pointer p-2 hover:bg-slate-400 rounded-full"
-                onClick={toggleModalGeneral}
+                onClick={reloadPageQuote}
               >
                 <TfiClose className="text-black" />
               </div>

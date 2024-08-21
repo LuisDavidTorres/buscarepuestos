@@ -15,26 +15,37 @@ import { GrGallery } from "react-icons/gr";
 import { IoCameraOutline } from "react-icons/io5";
 import CreatableSelect from "react-select/creatable";
 import dataCarsMakeAndModel from "@/app/data/dataCarsMakeAndModel";
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
+import dataSparePartsType from "../../data/dataSparePartsType";
+
+type OptionType = {
+  value: string;
+  label: string;
+};
 
 export function Create_quotation() {
   const [idCar, setIdcar] = useState("");
   const [spareName, setSpareName] = useState("");
-  const [spareType, setspareType] = useState("original");
+  const [spareType, setSpareType] = useState("original");
   const [contactName, setContactName] = useState("");
   const [areaCode, setAreaCode] = useState("+56");
   const [contactNumber, setContactNumber] = useState("");
-  const [carBrand, setCarBrand] = useState<number>(14);
+  const [carBrand, setCarBrand] = useState<number>();
+  const [filteredOptions, setFilteredOptions] = useState<OptionType[]>([]);
   const [carModel, setCarModel] = useState("");
   const [vehicleYear, setVehicleYear] = useState<number>(
     new Date().getFullYear()
   );
-  const [idCity, setCity] = useState<number>(1);
+  const [idCity, setCity] = useState<number>();
   const [details, setDetails] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
-  const { toggleModalGeneral, setMessageModalGeneral } = useAppContext();
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [errors, setErrors] = useState({ contactNumber: "" });
+  const animatedComponents = makeAnimated();
+  const { toggleModalGeneral, setMessageModalGeneral } = useAppContext();
+
 
   const MAX_FILES = 5;
 
@@ -83,9 +94,13 @@ export function Create_quotation() {
     }
   };
 
-  const filteredOptions = carBrand
-    ? dataCarsMakeAndModel.find((item) => item.id === carBrand)?.options || []
-    : dataCarsMakeAndModel.flatMap((item) => item.options);
+  useEffect(() => {
+    const options: OptionType[] = carBrand
+      ? dataCarsMakeAndModel.find((item) => item.id === carBrand)?.options || []
+      : [];
+    setFilteredOptions(options);
+    setCarModel("");
+  }, [carBrand]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const filesList = event.target.files;
@@ -154,6 +169,7 @@ export function Create_quotation() {
       if (response.ok) {
         setMessageModalGeneral(quoteCreated);
         toggleModalGeneral();
+        scrollTo(0,0)
       } else {
         console.error("Error al enviar datos");
       }
@@ -230,18 +246,30 @@ export function Create_quotation() {
                 <p className="text-red-600 ">*</p>
                 <p>Tipo</p>
               </label>
-              <select
+              {/*<select
                 name="replacement-type"
                 id="replacement-type"
-                onChange={(e) => setspareType(e.target.value)}
+                onChange={(e) => setSpareType(e.target.value)}
                 className="border-2 rounded-md h-9"
               >
                 <option value="original">Original</option>
                 <option value="alternative">Alternativo</option>
-                {/*<option value="originalandalternative">
+                <option value="originalandalternative">
                   Orignal o Alternativo
-                </option>*/}
-              </select>
+                </option>
+              </select>*/}
+              <Select
+                instanceId={"replacement-type"}
+                className="rounded-md h-9"
+                closeMenuOnSelect={true}
+                components={animatedComponents}
+                defaultValue={[]}
+                options={dataSparePartsType}
+                isSearchable={false}
+                placeholder="Tipo"
+                required
+                onChange={(e) => setSpareType((e as { value: string }).value)}
+              />
               <h1 className="font-bold text-base text-gray-600">
                 INFORMACIÓN DE VEHÍCULO
               </h1>
@@ -250,7 +278,10 @@ export function Create_quotation() {
                 <p className="text-red-600 ">*</p>
                 <p>Marca</p>
               </label>
-              <SelecCarBrand setCar={setCarBrand} />
+              <SelecCarBrand
+                setCar={setCarBrand}
+                animatedComponents={animatedComponents}
+              />
 
               <label id="label-car-model" className="flex flex-col space-x-1">
                 <div className="flex items-center space-x-2">
@@ -268,6 +299,7 @@ export function Create_quotation() {
                 formatCreateLabel={(inputValue) => `Registrar "${inputValue}"`}
                 noOptionsMessage={() => "Modelo no encontrado"}
                 options={filteredOptions}
+                value={carModel ? { value: carModel, label: carModel } : null}
                 onChange={(e) => setCarModel((e as { value: string }).value)}
               />
 
@@ -275,7 +307,19 @@ export function Create_quotation() {
                 <p className="text-red-600 ">*</p>
                 <p>Año</p>
               </label>
-              <select
+              <Select
+                instanceId={"vehicle-year"}
+                className="rounded-md h-9"
+                closeMenuOnSelect={true}
+                components={animatedComponents}
+                defaultValue={[]}
+                options={dataYears}
+                noOptionsMessage={() => "Año no encontrado"} 
+                placeholder="Año"
+                required
+                onChange={(e) => setVehicleYear((e as { value: number }).value)}
+              />
+              {/*<select
                 name="vehicle-year"
                 id="vehicle-year"
                 onChange={(e) => setVehicleYear(parseInt(e.target.value))}
@@ -286,7 +330,7 @@ export function Create_quotation() {
                     {option.label}
                   </option>
                 ))}
-              </select>
+              </select>*/}
 
               <div className="flex flex-row space-x-4 items-center">
                 <label
@@ -393,7 +437,10 @@ export function Create_quotation() {
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
               ></input>
 
-              <label id="label-contact-numer" className="flex flex-row space-x-1">
+              <label
+                id="label-contact-numer"
+                className="flex flex-row space-x-1"
+              >
                 {" "}
                 <p className="text-red-600 ">*</p>
                 <p>N° Teléfono</p>
@@ -476,20 +523,38 @@ export function Create_quotation() {
       </div>
 
       <div className="p-1 py-5 min-[1384px]:px-10 min-[1384px]:w-2/4 xl:px-16 min-[1384px]:py-0">
-        <Details_help></Details_help>
+        <Details_help />
       </div>
     </menu>
   );
 }
 
-function SelecCarBrand({ setCar }: { setCar: (code: number) => void }) {
+function SelecCarBrand({
+  setCar,
+  animatedComponents,
+}: {
+  setCar: (code: number) => void;
+  animatedComponents: any;
+}) {
   const sortedDataCars = [...dataCars];
 
   sortedDataCars.sort((a, b) => (a.label > b.label ? 1 : -1));
 
   return (
     <>
-      <select
+      <Select
+        className="rounded-md h-9 w-full"
+        instanceId={"car-brand"}
+        closeMenuOnSelect={true}
+        components={animatedComponents}
+        options={sortedDataCars}
+        noOptionsMessage={() => "Marca no encontrada"} 
+        placeholder="Marca"
+        required
+        onChange={(e) => setCar((e as { value: number }).value)}
+      />
+
+      {/*<select
         name="car-brand"
         id="car-brand"
         onChange={(e) => setCar(parseInt(e.target.value))}
@@ -501,7 +566,7 @@ function SelecCarBrand({ setCar }: { setCar: (code: number) => void }) {
             {option.label}
           </option>
         ))}
-      </select>
+      </select>*/}
     </>
   );
 }
