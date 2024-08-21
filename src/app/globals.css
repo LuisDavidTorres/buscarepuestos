@@ -35,3 +35,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.select-dropdown {
+  max-height: 200px; /* Asegúrate de que haya un límite de altura */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Asegura un scrolling suave en iOS */
+}
+

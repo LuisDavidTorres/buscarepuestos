@@ -9,7 +9,7 @@ function SelectCity({ setCity }: { setCity: (code: number) => void }) {
     <div>
       <Select
         instanceId={"Region"}
-        className="rounded-md h-9 w-full"
+        className="rounded-md h-9 w-full select-dropdown"
         closeMenuOnSelect={true}
         components={animatedComponents}
         defaultValue={[]}
