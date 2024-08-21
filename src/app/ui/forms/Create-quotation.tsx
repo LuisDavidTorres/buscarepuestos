@@ -292,7 +292,7 @@ export function Create_quotation() {
               </label>
               <CreatableSelect
                 instanceId={"select-car-model"}
-                className="w-full select-dropdown"
+                className="w-full"
                 isClearable
                 required
                 placeholder="Modelo"
@@ -309,7 +309,7 @@ export function Create_quotation() {
               </label>
               <Select
                 instanceId={"vehicle-year"}
-                className="rounded-md h-9 select-dropdown"
+                className="rounded-md h-9"
                 closeMenuOnSelect={true}
                 components={animatedComponents}
                 defaultValue={[]}
@@ -543,7 +543,7 @@ function SelecCarBrand({
   return (
     <>
       <Select
-        className="rounded-md h-9 w-full select-dropdown"
+        className="rounded-md h-9 w-full"
         instanceId={"car-brand"}
         closeMenuOnSelect={true}
         components={animatedComponents}
