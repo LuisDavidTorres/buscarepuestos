@@ -10,6 +10,8 @@ import { formatMoneyString } from "@/libs/moneyutils";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { useState } from "react";
 import { formatNameIdCar } from "@/libs/formatName";
+import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 
 interface QuotationFull extends UserQuotation {
   quotation: {
@@ -30,6 +32,10 @@ interface QuotationFull extends UserQuotation {
   };
 }
 
+const customToasterProps = {
+  duration: 2000,
+};
+
 export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   const carBrandName = dataCars.find(
     (car) => car.value === quoteUser.quotation.carBrand
@@ -48,6 +54,8 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   const [errors, setErrors] = useState({ sellerPhone: "", price: "" });
 
   const [isSending, setIsSending] = useState(false);
+  const router = useRouter()
+
 
   const formatPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValueSimpleFormat = e.target.value.replace(/[^0-9]/g, "");
@@ -112,7 +120,6 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   const habdleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    //ver si hay errores en array de errores
     if (errors.sellerPhone || errors.price) {
       alert("por favor corrija los errores en el formulario");
       return;
@@ -140,6 +147,8 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
       if (res.status === 200) {
         setSentButton(true);
         setSent(true);
+        toast.success("Cotización enviada con éxito", customToasterProps);
+        router.push("/home")
       }
     } catch (e) {
       console.error("Ha ocurrido un error al enviar la cotización");

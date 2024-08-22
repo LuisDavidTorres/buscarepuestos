@@ -15,7 +15,7 @@ async function Header() {
             src="/logo-images/logo-center-header.png"
             alt="Busca Repuestos"
             width={260}
-            height={500}
+            height={56}
             className="hidden sm:block"
             quality={100}
           />
