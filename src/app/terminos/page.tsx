@@ -9,7 +9,7 @@ export default function PrivacyPolicies() {
       <Header />
       <DesingHeaderDown titulo="TÉRMINOS Y CONDICIONES - POLÍTICAS DE PRIVACIDAD" />
       <div className="bg-white min-h-screen dark:text-black">
-        <div className="flex flex-row items-center mb-5 space-x-2 px-5 py-5 md:px-36 md:py-10">
+        <div className="flex flex-row items-center mb-2 sm:mb-4 space-x-2 py-9 w-10/12 mx-auto">
           <FaArrowLeft />
           <Link href="/" className="no-underline hover:underline">
             Volver a la pagina de inicio
@@ -119,7 +119,7 @@ export default function PrivacyPolicies() {
               en la plataforma BuscaRepuestos.cl, proporcionando la siguiente
               información:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Rut de la Empresa</li>
               <li>Nombre completo del Representante Legal o Responsable</li>
               <li>
@@ -137,7 +137,7 @@ export default function PrivacyPolicies() {
               creado por la plataforma BuscaRepuestos.cl, incluyendo los
               siguientes datos relevantes:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Nombre completo</li>
               <li>Información del vehículo</li>
               <li>Tipo de repuesto solicitado</li>
@@ -153,7 +153,7 @@ export default function PrivacyPolicies() {
               y confiabilidad de la plataforma. Este proceso de verificación
               puede incluir:
             </p>
-            <ul className="list-disc list-inside space-y-1 pl-5">
+            <ul className="list-disc list-outside space-y-1 pl-9">
               <li>Confirmación de correo electrónico</li>
               <li>Código Verificador</li>
               <li>Validación de número de teléfono celular</li>
@@ -169,7 +169,7 @@ export default function PrivacyPolicies() {
               Al utilizar la plataforma BuscaRepuestos.cl, todos los usuarios
               (Distribuidores y Clientes Buscadores) se comprometen a:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Proporcionar información precisa y actualizada.</li>
               <li>
                 Utilizar la plataforma de manera responsable, ética y
@@ -191,7 +191,7 @@ export default function PrivacyPolicies() {
                 específicas:
               </strong>
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Proporcionar información precisa sobre los repuestos que
                 ofrecen.
@@ -212,7 +212,7 @@ export default function PrivacyPolicies() {
                 de:
               </strong>
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Utilizar la plataforma para fines lícitos y legítimos.</li>
               <li>
                 Brindar información precisa sobre sus necesidades de repuestos..
@@ -231,7 +231,7 @@ export default function PrivacyPolicies() {
               bolsas virtuales de cotizaciones a los Distribuidores. Estas
               bolsas virtuales se ofrecen en diferentes opciones:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Bolsa Virtual 1</li>
               <li>Bolsa Virtual 2</li>
               <li>Bolsa Virtual 3</li>
@@ -255,7 +255,7 @@ export default function PrivacyPolicies() {
               pagos segura Webpay, la cual permite diversos métodos de pago en
               línea, como:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Tarjetas de crédito</li>
               <li>Tarjetas de débito</li>
               <li>Tarjetas prepago</li>
@@ -308,7 +308,7 @@ export default function PrivacyPolicies() {
               confidencialidad de la información personal de nuestros usuarios.
               Únicamente divulgaremos información cuando:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Sea requerido por ley o por orden judicial competente.</li>
               <li>
                 Sea necesario para proteger los derechos, la propiedad y la
@@ -323,7 +323,7 @@ export default function PrivacyPolicies() {
               información personal contra pérdida, robo o acceso no autorizado,
               incluyendo:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Cifrado de datos</li>
               <li>Controles de acceso estrictos</li>
               <li>Monitoreo y detección de actividades sospechosas</li>
@@ -432,7 +432,7 @@ export default function PrivacyPolicies() {
               dañar la integridad del sitio web o la plataforma
               BuscaRepuestos.cl. Estas actividades prohibidas incluyen:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Enviar spam o contenido malicioso</li>
               <li>Realizar ataques cibernéticos</li>
               <li>Utilizar software malicioso</li>
@@ -504,7 +504,7 @@ export default function PrivacyPolicies() {
             <p className="mb-4 font-bold">
               En ese sentido, BuscaRepuestos.cl no se responsabiliza por:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Errores u omisiones en las cotizaciones proporcionadas por los
                 Distribuidores. Los Clientes Buscadores deben verificar la
@@ -592,7 +592,7 @@ export default function PrivacyPolicies() {
               Para que BuscaRepuestos.cl acepte y reconozca una cesión, se
               requiere:
             </p>
-            <ol className="list-decimal list-inside mb-4 space-y-1 pl-5">
+            <ol className="list-decimal list-outside mb-4 space-y-1 pl-9">
               <li>
                 Autorización previa y por escrito del Distribuidor que
                 originalmente adquirió el acceso.
@@ -701,7 +701,7 @@ export default function PrivacyPolicies() {
               durante el proceso de registro de Clientes Buscadores y
               Distribuidores:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Nombre completo</li>
               <li>Número de teléfono celular</li>
               <li>Correo electrónico</li>
@@ -711,7 +711,7 @@ export default function PrivacyPolicies() {
               Adicionalmente, la plataforma recopila información no personal
               sobre el uso, como:
             </p>
-            <ul className="list-disc list-inside space-y-1 pl-5">
+            <ul className="list-disc list-outside space-y-1 pl-9">
               <li>Dirección IP</li>
               <li>Páginas visitadas en el sitio web</li>
               <li>Tiempo de permanencia en el sitio</li>
@@ -727,7 +727,7 @@ export default function PrivacyPolicies() {
               los siguientes propósitos:
             </p>
             <h2 className="font-bold mb-2">Comunicación entre Usuarios</h2>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Facilitar la comunicación entre Distribuidores y Clientes
                 Buscadores dentro de la plataforma.
@@ -738,21 +738,21 @@ export default function PrivacyPolicies() {
               </li>
             </ul>
             <h2 className="font-bold mb-2">Mejora Continua del Servicio</h2>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Realizar análisis internos para mejorar continuamente nuestros
                 servicios.
               </li>
             </ul>
             <h2 className="font-bold mb-2">Comunicaciones de Marketing</h2>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Enviar comunicaciones de marketing a los usuarios, pero
                 únicamente con su consentimiento previo.
               </li>
             </ul>
             <h2 className="font-bold mb-2">Prevención de Fraudes</h2>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Prevenir y detectar posibles fraudes o actividades sospechosas.
               </li>
@@ -763,7 +763,7 @@ export default function PrivacyPolicies() {
               usuarios con terceros, salvo en los siguientes casos
               excepcionales:
             </p>
-            <ul className="list-disc list-inside space-y-1 pl-5">
+            <ul className="list-disc list-outside space-y-1 pl-9">
               <li>
                 Cuando el usuario haya otorgado su consentimiento expreso para
                 compartir sus datos.
@@ -791,7 +791,7 @@ export default function PrivacyPolicies() {
               transacción. La información compartida se limita a lo necesario
               para completar la transacción, como:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Nombre</li>
               <li>Dirección de correo electrónico</li>
               <li>Número de teléfono</li>
@@ -804,7 +804,7 @@ export default function PrivacyPolicies() {
               terceros proveedores de servicios que ayudan a BuscaRepuestos.cl a
               operar, tales como:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Proveedores de servicios de pago</li>
               <li>Proveedores de alojamiento web</li>
               <li>Proveedores de análisis de datos</li>
@@ -824,7 +824,7 @@ export default function PrivacyPolicies() {
               plataforma, salvo en los casos excepcionales mencionados en la
               sección anterior, es decir:
             </p>
-            <ul className="list-disc list-inside space-y-1 pl-5">
+            <ul className="list-disc list-outside space-y-1 pl-9">
               <li>Cuando el usuario haya otorgado su consentimiento expreso</li>
               <li>Cuando sea requerido por ley o autoridad competente</li>
               <li>
@@ -846,7 +846,7 @@ export default function PrivacyPolicies() {
               proteger la información personal de los usuarios contra pérdida,
               robo o acceso no autorizado, tales como:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Cifrado de datos</li>
               <li>Controles de acceso estrictos</li>
               <li>Monitoreo constante de seguridad</li>
@@ -888,7 +888,7 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl utiliza cookies y tecnologías similares para los
               siguientes propósitos:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Mejorar la experiencia del usuario en el sitio web.</li>
               <li>
                 Recopilar información sobre el uso y navegación en el sitio.
@@ -929,7 +929,7 @@ export default function PrivacyPolicies() {
               Los usuarios registrados en BuscaRepuestos.cl tienen los
               siguientes derechos:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Acceder a su información personal almacenada en la plataforma.
               </li>
@@ -970,7 +970,7 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl podrá denegar o limitar el acceso a cierta
               información personal cuando:
             </p>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>Pueda afectar los derechos de terceros.</li>
               <li>
                 Implique revelar información confidencial o de propiedad
@@ -1007,14 +1007,14 @@ export default function PrivacyPolicies() {
               excepcionales:
             </p>
             <h3 className="font-semibold mb-1">Cumplimiento Legal</h3>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Cuando sea necesario para cumplir con obligaciones legales o
                 requerimientos de autoridades competentes.
               </li>
             </ul>
             <h3 className="font-semibold mb-1">Resolución de Disputas</h3>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Cuando sea necesario para la resolución de disputas o la defensa
                 de derechos legales de la plataforma.
@@ -1023,7 +1023,7 @@ export default function PrivacyPolicies() {
             <h3 className="font-semibold mb-1">
               Seguridad y Prevención de Fraudes
             </h3>
-            <ul className="list-disc list-inside mb-4 space-y-1 pl-5">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
               <li>
                 Cuando sea necesario para fines de seguridad, prevención de
                 fraudes o investigaciones internas.
@@ -1123,7 +1123,7 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl notificará a los usuarios sobre cualquier cambio
               en la Política de Privacidad a través de los siguientes medios:
             </p>
-            <ul className="list-disc list-inside mb-4 pl-5">
+            <ul className="list-disc list-outside mb-4 pl-9">
               <li>
                 Envío de un correo electrónico a la dirección de correo
                 registrada.
@@ -1172,7 +1172,7 @@ export default function PrivacyPolicies() {
               Al utilizar la plataforma de BuscaRepuestos.cl, usted acepta
               cumplir con los siguientes términos y políticas:
             </p>
-            <ul className="list-disc list-inside mb-4 pl-5">
+            <ul className="list-disc list-outside mb-4 pl-9">
               <li>Términos y Condiciones de Uso</li>
               <li>Política de Privacidad expuesta en este documento</li>
             </ul>
