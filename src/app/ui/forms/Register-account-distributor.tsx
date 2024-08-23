@@ -184,7 +184,7 @@ export function Register_account_distribuitor() {
             <h1 className="font-bold text-base text-gray-600">DATOS EMPRESA</h1>
             <div>
               <h1 className="text-red-600 text-xs mb-5">
-                (*) Campos obligatorios
+                Campos obligatorios (*)
               </h1>
             </div>
 
@@ -193,8 +193,8 @@ export function Register_account_distribuitor() {
               htmlFor="companyName"
               className="flex flex-row space-x-1"
             >
-              <p className="text-red-600 ">*</p>
               <p>Nombre de Empresa</p>
+              <p className="text-red-600 ">*</p>
             </label>
 
             <input
@@ -221,8 +221,8 @@ export function Register_account_distribuitor() {
               className="flex flex-row space-x-1"
             >
               {" "}
-              <p className="text-red-600 ">*</p>
               <p>Rut</p>
+              <p className="text-red-600 ">*</p>
             </label>
             <input
               id="rutCompany"
@@ -260,8 +260,8 @@ export function Register_account_distribuitor() {
               htmlFor="businessLine"
               className="flex flex-row space-x-1"
             >
-              <p className="text-red-600 ">*</p>
               <p>Giro</p>
+              <p className="text-red-600 ">*</p>
             </label>
             <input
               id="businessLine"
@@ -281,17 +281,17 @@ export function Register_account_distribuitor() {
               </span>
             )}
 
-            <div className="flex items-center space-x-1">
+            <div className="flex flex-col sm:flex-row sm:items-center space-x-1">
               {" "}
               <label
                 id="label-contact-name"
                 htmlFor="contactName"
                 className="flex flex-row space-x-1"
               >
-                <p className="text-red-600 ">*</p>
                 <p>Nombre de Contacto</p>
+                <p className="text-red-600 ">*</p>
               </label>
-              <p className="text-xs">(Representante Legal o Responsable)</p>
+              <p className="text-xs text-gray-500 italic ml-2">(Representante Legal o Responsable)</p>
             </div>
 
             <input
@@ -312,17 +312,17 @@ export function Register_account_distribuitor() {
               </span>
             )}
 
-            <div className="flex items-center space-x-1">
+            <div className="flex flex-col sm:flex-row sm:items-center space-x-1">
               {" "}
               <label
                 id="label-contact-phone"
                 htmlFor="contacPhone"
                 className="flex flex-row space-x-1"
               >
-                <p className="text-red-600 ">*</p>
                 <p>Teléfono</p>
+                <p className="text-red-600 ">*</p>
               </label>
-              <p className="text-xs">(Representante Legal o Responsable)</p>
+              <p  className="text-xs text-gray-500 italic ml-2">(Representante Legal o Responsable)</p>
             </div>
 
             <div className="flex flex-row">
@@ -358,8 +358,8 @@ export function Register_account_distribuitor() {
               className="flex flex-row space-x-1"
             >
               {" "}
-              <p className="text-red-600 ">*</p>
               <p>Tipo de Repuestos</p>
+              <p className="text-red-600 ">*</p>
             </label>
             <select
               id="rubric"
@@ -387,8 +387,8 @@ export function Register_account_distribuitor() {
               className="flex flex-row space-x-1"
             >
               {" "}
-              <p className="text-red-600 ">*</p>
               <p>Marcas que Comercializa</p>
+              <p className="text-red-600 ">*</p>
             </label>
             <div>
               <Select
@@ -425,7 +425,7 @@ export function Register_account_distribuitor() {
             <h1 className="font-bold text-base text-gray-600">
               DATOS DE AUTENTICACIÓN
             </h1>
-            <p className="text-xs">(Crea tu Cuenta BR)</p>
+            <p className="text-xs text-gray-500">(Crea tu Cuenta BR)</p>
             <div className="flex items-center space-x-1">
               <label
                 id="label-email"
@@ -435,7 +435,7 @@ export function Register_account_distribuitor() {
                 <p className="text-red-600 ">*</p>
                 <p>Email</p>
               </label>
-              <p className="text-xs">(Empresa)</p>
+              <p className="text-xs text-gray-500 italic ml-2">(Empresa)</p>
             </div>
             <input
               id="email"
@@ -450,7 +450,7 @@ export function Register_account_distribuitor() {
                 },
                 pattern: {
                   value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-                  message: "Correo no valido",
+                  message: "Email no valido",
                 },
               })}
             ></input>
@@ -501,8 +501,7 @@ export function Register_account_distribuitor() {
                 {errors.password.message?.toString()}
               </span>
             )}
-            <PasswordValidator password={watch('password')}/>
-
+            <PasswordValidator password={watch("password")} />
           </div>
         </div>
 
@@ -515,14 +514,18 @@ export function Register_account_distribuitor() {
               type="checkbox"
               required
             ></input>
-            <label id="label-terminos" htmlFor="terminos" className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0">
-              <p className="inline text-sm">Declara aceptar nuestros</p>
+            <label
+              id="label-terminos"
+              htmlFor="terminos"
+              className="flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0"
+            >
+              <p className="inline text-sm">Estoy de acuerdo con los</p>
               <a
                 href="/terminos"
                 target="_blank"
                 className="no-underline hover:underline text-blue-700 inline text-sm "
               >
-                Términos y Política de Privacidad
+                Términos y Condiciones
               </a>
             </label>
           </div>

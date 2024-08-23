@@ -101,6 +101,7 @@ model Quotation{
     spareType String
     contactName String
     contactNumber String
+    contactEmail String ?
     carBrand Int
     carModel String
     details String

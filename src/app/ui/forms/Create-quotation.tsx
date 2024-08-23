@@ -31,6 +31,7 @@ export function Create_quotation() {
   const [contactName, setContactName] = useState("");
   const [areaCode, setAreaCode] = useState("+56");
   const [contactNumber, setContactNumber] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
   const [carBrand, setCarBrand] = useState<number>();
   const [filteredOptions, setFilteredOptions] = useState<OptionType[]>([]);
   const [carModel, setCarModel] = useState("");
@@ -42,10 +43,9 @@ export function Create_quotation() {
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
   const [buttonDisabled, setButtonDisabled] = useState(false);
-  const [errors, setErrors] = useState({ contactNumber: "" });
+  const [errors, setErrors] = useState({ contactNumber: "", contactEmail: "" });
   const animatedComponents = makeAnimated();
   const { toggleModalGeneral, setMessageModalGeneral } = useAppContext();
-
 
   const MAX_FILES = 5;
 
@@ -57,7 +57,7 @@ export function Create_quotation() {
   const validatePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     setContactNumber(e.target.value);
     const Phone = areaCode + e.target.value;
-    console.log(Phone);
+
     try {
       const phoneNumber = parsePhoneNumberFromString(
         Phone,
@@ -94,6 +94,23 @@ export function Create_quotation() {
     }
   };
 
+  const validateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setContactEmail(e.target.value);
+  
+    const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    if (!emailPattern.test(e.target.value)) { 
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        contactEmail: "Email no valido",
+      }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        contactEmail: "",
+      }));
+    }
+  };  
+
   useEffect(() => {
     const options: OptionType[] = carBrand
       ? dataCarsMakeAndModel.find((item) => item.id === carBrand)?.options || []
@@ -129,7 +146,7 @@ export function Create_quotation() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (errors.contactNumber) {
+    if (errors.contactNumber || errors.contactEmail) {
       return;
     }
 
@@ -143,6 +160,7 @@ export function Create_quotation() {
       spareType,
       contactName,
       contactNumber: areaCode + contactNumber,
+      contactEmail,
       carBrand,
       carModel,
       vehicleYear,
@@ -169,7 +187,7 @@ export function Create_quotation() {
       if (response.ok) {
         setMessageModalGeneral(quoteCreated);
         toggleModalGeneral();
-        scrollTo(0,0)
+        scrollTo(0, 0);
       } else {
         console.error("Error al enviar datos");
       }
@@ -212,7 +230,7 @@ export function Create_quotation() {
           </div>
           <div>
             <h1 className="text-red-600 text-xs mb-5">
-              (*) Campos obligatorios
+              Campos obligatorios (*)
             </h1>
           </div>
 
@@ -224,8 +242,8 @@ export function Create_quotation() {
                 className="flex flex-row space-x-1"
               >
                 {" "}
-                <p className="text-red-600 ">*</p>
                 <p>Nombre del Repuesto</p>
+                <p className="text-red-600 ">*</p>
               </label>
               <input
                 id="replacement"
@@ -243,8 +261,8 @@ export function Create_quotation() {
                 className="flex flex-row space-x-1"
               >
                 {" "}
-                <p className="text-red-600 ">*</p>
                 <p>Tipo</p>
+                <p className="text-red-600 ">*</p>
               </label>
               {/*<select
                 name="replacement-type"
@@ -275,8 +293,8 @@ export function Create_quotation() {
               </h1>
 
               <label id="label-car-brand" className="flex flex-row space-x-1">
-                <p className="text-red-600 ">*</p>
                 <p>Marca</p>
+                <p className="text-red-600 ">*</p>
               </label>
               <SelecCarBrand
                 setCar={setCarBrand}
@@ -285,9 +303,11 @@ export function Create_quotation() {
 
               <label id="label-car-model" className="flex flex-col space-x-1">
                 <div className="flex items-center space-x-2">
-                  <p className="text-red-600 ">*</p>
                   <p>Modelo</p>
-                  <p className="text-xs">(Si no aparece, puede escribirlo)</p>
+                  <p className="text-red-600 ">*</p>
+                  <p className="text-xs text-gray-500 italic ml-2">
+                    (Si no aparece, puede escribirlo)
+                  </p>
                 </div>
               </label>
               <CreatableSelect
@@ -304,8 +324,8 @@ export function Create_quotation() {
               />
 
               <label id="label-car-year" className="flex flex-row space-x-1">
-                <p className="text-red-600 ">*</p>
                 <p>Año</p>
+                <p className="text-red-600 ">*</p>
               </label>
               <Select
                 instanceId={"vehicle-year"}
@@ -314,7 +334,7 @@ export function Create_quotation() {
                 components={animatedComponents}
                 defaultValue={[]}
                 options={dataYears}
-                noOptionsMessage={() => "Año no encontrado"} 
+                noOptionsMessage={() => "Año no encontrado"}
                 placeholder="Año"
                 required
                 onChange={(e) => setVehicleYear((e as { value: number }).value)}
@@ -335,11 +355,13 @@ export function Create_quotation() {
               <div className="flex flex-row space-x-4 items-center">
                 <label
                   id="label-car-id"
-                  className="flex items-center ms-3"
+                  className="flex items-center"
                   htmlFor="id-car"
                 >
                   <p>VIN</p>
-                  <p className="mx-2 text-xs">(Opcional)</p>
+                  <p className="mx-2 text-xs text-gray-500 italic">
+                    (Opcional)
+                  </p>
                 </label>
                 <section className="min-[1384px]:hidden">
                   <Link href="/crear-cotizacion#infoVni">
@@ -364,7 +386,9 @@ export function Create_quotation() {
               <div className="border-2 p-2 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300">
                 <label className="flex items-center" htmlFor="fileimg">
                   <p className="font-bold">Adjuntar Imagenes</p>
-                  <p className="mx-2 text-xs">(Opcional)</p>{" "}
+                  <p className="mx-2 text-xs text-gray-500 italic">
+                    (Opcional)
+                  </p>{" "}
                 </label>
                 <div className="flex items-center justify-center w-full mt-4">
                   <label className="flex flex-col items-center justify-center w-full h-44 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-white hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:to-white">
@@ -425,8 +449,8 @@ export function Create_quotation() {
                 className="flex flex-row space-x-1"
               >
                 {" "}
-                <p className="text-red-600 ">*</p>
                 <p>Nombre</p>
+                <p className="text-red-600 ">*</p>
               </label>
               <input
                 id="contact-name"
@@ -442,8 +466,8 @@ export function Create_quotation() {
                 className="flex flex-row space-x-1"
               >
                 {" "}
-                <p className="text-red-600 ">*</p>
                 <p>N° Teléfono</p>
+                <p className="text-red-600 ">*</p>
               </label>
               <div className="flex flex-row space-x-2">
                 <SelecTelArea
@@ -465,26 +489,58 @@ export function Create_quotation() {
                 </p>
               )}
 
+              <label
+                id="label-contact-email"
+                htmlFor="contact-email"
+                className="flex flex-row space-x-1"
+              >
+                <p>Email</p>
+              </label>
+              <input
+                id="contact-email"
+                name="contact-email"
+                type="email"
+                placeholder="Email"
+                onChange={validateEmail}
+                autoComplete="email"
+                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
+              ></input>
+              {errors.contactEmail && (
+                <p className="text-red-500 text-xs md:text-sm">
+                  {errors.contactEmail}
+                </p>
+              )}
+
               <label id="label-zona" className="flex flex-row space-x-1">
                 {" "}
-                <p className="text-red-600 ">*</p>
                 <p>Región</p>
+                <p className="text-red-600 ">*</p>
               </label>
               <SelecCity setCity={setCity} />
             </section>
           </div>
-          <div className="flex flex-row mt-10 mb-10 space-x-2">
-            <label id="label-terms" className="flex flex-row space-x-1">
-              <p>Acepto</p>
+          <div className="flex flex-row mt-10 mb-10 space-x-2 text-sm items-start">
+            <input
+              id="terminos"
+              name="terminos"
+              type="checkbox"
+              required
+              className="mt-1"
+            />
+            <label
+              id="label-terms"
+              htmlFor="terminos"
+              className="space-x-1 flex flex-col space-y-1 sm:flex-row sm:space-x-1 sm:space-y-0"
+            >
+              <p className="inline">Estoy de acuerdo con los</p>
               <Link
                 href="/terminos"
                 target="_blank"
-                className="no-underline hover:underline text-blue-700"
+                className="no-underline hover:underline text-blue-700 inline"
               >
                 Términos y Condiciones
               </Link>
             </label>
-            <input type="checkbox" required />
           </div>
 
           <section className="mt-3 flex justify-center">
@@ -548,7 +604,7 @@ function SelecCarBrand({
         closeMenuOnSelect={true}
         components={animatedComponents}
         options={sortedDataCars}
-        noOptionsMessage={() => "Marca no encontrada"} 
+        noOptionsMessage={() => "Marca no encontrada"}
         placeholder="Marca"
         required
         onChange={(e) => setCar((e as { value: number }).value)}
