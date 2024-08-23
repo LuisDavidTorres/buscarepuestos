@@ -352,7 +352,7 @@ export function Create_quotation() {
                 ))}
               </select>*/}
 
-              <div className="flex flex-row space-x-4 items-center">
+              <div className="flex flex-row items-center">
                 <label
                   id="label-car-id"
                   className="flex items-center"
@@ -519,7 +519,7 @@ export function Create_quotation() {
               <SelecCity setCity={setCity} />
             </section>
           </div>
-          <div className="flex flex-row mt-10 mb-10 space-x-2 text-sm items-start">
+          <div className="flex flex-row mt-10 mb-10 space-x-2 text-sm items-start justify-center sm:justify-start">
             <input
               id="terminos"
               name="terminos"
