@@ -20,7 +20,7 @@ async function Home() {
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
             <div className="flex flex-col justify-center items-center gap-4 sm:gap-9 w-full">
-              <h1 className="text-wrap font-bold text-white opacity-90 text-2xl w-full md:w-auto">
+              <h1 className="text-wrap font-bold text-white opacity-90 max-[320px]:text-xl text-2xl w-full md:w-auto">
                 Encuentra los Repuestos que Necesitas{" "}
               </h1>
               <div className="text-white opacity-90 lg:px-40 xl:px-72 2xl:px-96 space-y-4 text-start md:text-center borde-2">

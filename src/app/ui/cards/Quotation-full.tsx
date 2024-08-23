@@ -160,11 +160,11 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
   return (
     <div className="flex flex-col max-[360px]:px-4 px-10 py-5 w-auto h-auto shadow-2xl justify-start rounded-md text-neutral-900">
       <div className="space-y-3 overflow-x-auto">
-        <div className="flex flex-row">
-          <label className="flex mr-1 whitespace-nowrap">
-            Fecha de Solicitud:
+        <div className="flex flex-col">
+          <label className="flex mr-1 whitespace-nowrap font-bold text-base text-gray-600">
+            FECHA DE SOLICITUD
           </label>
-          <p className="whitespace-nowrap flex-shrink-0 font-bold">
+          <p className="whitespace-nowrap flex-shrink-0">
             {formatDate(quoteUser.quotation.dateQuotation)}
           </p>
         </div>

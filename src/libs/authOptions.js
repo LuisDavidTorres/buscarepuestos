@@ -17,7 +17,7 @@ export const authOptions = {
           },
         });
 
-        if (!userFound) throw new Error("usuario o contraseña incorrecta");
+        if (!userFound) throw new Error("email o contraseña incorrecta");
 
 
         const matchPassword = await bcrypt.compare(
@@ -25,7 +25,7 @@ export const authOptions = {
           userFound.password
         );
 
-        if (!matchPassword) throw new Error("usuario o contraseña incorrecta");
+        if (!matchPassword) throw new Error("email o contraseña incorrecta");
 
         return {
           id: userFound.id,
