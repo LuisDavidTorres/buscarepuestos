@@ -44,7 +44,7 @@ export function HeaderOut() {
           />
         </Link>
         {pathname === "/" && (
-          <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold justify-between w-11/12">
+          <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold justify-between w-9/12">
             <ul className="flex gap-x-4 text-sm">
               <li className="hover:text-slate-600">
                 <a href="#usageSteps">Funcionamiento</a>

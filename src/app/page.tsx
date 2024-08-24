@@ -39,7 +39,7 @@ async function Home() {
               </section>
             </div>
           </section>
-          <div className="flex flex-col justify-center items-center py-9 select-none">
+          <div className="flex flex-col justify-center items-center max-[320px]:py-6 py-9 select-none">
             <img
               className="drop-shadow-[7px_10px_5px_rgba(0,0,0,0.5)]"
               alt="br-logo"
@@ -47,7 +47,7 @@ async function Home() {
               height={60}
               src={"/logo-images/br-logo.webp"}
             ></img>
-            <section className="mt-8">
+            <section className="max-[320px]:mt-6 mt-8">
               <a href="#usageSteps">
                 <span className="sr-only">Ver los pasos de uso</span>
                 <TfiArrowCircleDown className="animate-bounce text-white text-3xl hover:cursor-pointer" />
