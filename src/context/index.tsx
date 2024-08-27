@@ -10,6 +10,9 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
   const [modalacceptquotation, setModalAcceptQuotation] = useState(false);
   const [messageModalGeneral, setMessageModalGeneral] = useState([]);
   const [filter, setFilter] = useState(false);
+  const [filterCars, setFilterCars] = useState([]);
+  const [filterCity, setFilterCity] = useState([]);
+  const [filterRubric, setFilterRubric] = useState("");
 
   const [themeButton, setThemeButton] = useState(
     "bg-custom-green p-2 rounded-md text-white w-28 hover:bg-green-700 text-center text-sm"
@@ -57,6 +60,12 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
         modalacceptquotation,
         messageModalGeneral,
         setMessageModalGeneral,
+        filterRubric,
+        setFilterRubric,
+        filterCars, 
+        setFilterCars,
+        filterCity,
+        setFilterCity
       }}
     >
       {children}

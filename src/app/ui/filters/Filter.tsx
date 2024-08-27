@@ -23,10 +23,13 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
   
   const animatedComponents = makeAnimated();
   const patch = usePathname();
+  const router = useRouter();
 
-  const [selectedCars, setSelectedCars] = useState<number[]>([]);
-  const [selectedCity, setSelectedCity] = useState<number[]>([]);
-  const [selectedRubric, setSelectedRubric] = useState("");
+  const { viewFilter, filterRubric, setFilterRubric, filterCars, setFilterCars, filterCity, setFilterCity} = useAppContext();
+
+  const [selectedCars, setSelectedCars] = useState<number[]>([...filterCars]);
+  const [selectedCity, setSelectedCity] = useState<number[]>([...filterCity]);
+  const [selectedRubric, setSelectedRubric] = useState(filterRubric);
 
 
   carBrands = carBrands.map((carBrand) => {
@@ -43,14 +46,17 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
     }
   });
 
-  const { viewFilter } = useAppContext();
-
-  const router = useRouter();
+  const cars = carBrands.filter((element) => filterCars.includes(element.value));
+  const cities = dataCity.filter((element) => filterCity.includes(element.value));
+  const rubric = dataRubric.find((element) => element.value === filterRubric);
 
   function applyFilters() {
     setCookie("selectedCars", selectedCars);
     setCookie("selectedCity", selectedCity);
     setCookie("selectedRubric", selectedRubric);
+    setFilterCars(selectedCars)
+    setFilterCity(selectedCity)
+    setFilterRubric(selectedRubric)
     
     router.refresh();
   }
@@ -71,7 +77,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           instanceId={"select-marca"}
           closeMenuOnSelect={false}
           components={animatedComponents}
-          defaultValue={[]}
+          defaultValue={cars}
           isMulti
           options={carBrands}
           placeholder="Por Marca"
@@ -84,7 +90,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           className="mt-10"
           closeMenuOnSelect={false}
           components={animatedComponents}
-          defaultValue={[]}
+          defaultValue={cities}
           isMulti
           options={dataCity}
           placeholder="Por Región"
@@ -95,9 +101,9 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
         <Select
           instanceId={"select-tipo"}
           className="mt-10"
-          closeMenuOnSelect={false}
+          closeMenuOnSelect={true}
           components={animatedComponents}
-          defaultValue={[]}
+          defaultValue={[rubric]}
           options={dataRubric}
           placeholder="Por Tipo"
           onChange={(e) => setSelectedRubric((e as { value: string }).value)}

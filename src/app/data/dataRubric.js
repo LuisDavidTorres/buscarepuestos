@@ -1,7 +1,7 @@
 const dataRubric = [
   { value: "original", label: "Repuestos Originales" },
   { value: "alternative", label: "Repuestos Alternativos" },
-  { value: "originalandalternative", label: "Originales o Alternativos" },
+  { value: "", label: "Originales / Alternativos" },
 ];
 
 export default dataRubric;
