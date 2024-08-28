@@ -1,10 +1,12 @@
 "use client";
 
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const AppContext = createContext<any>(undefined);
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   const [ModalLoginOpen, setModalLogin] = useState(false);
   const [modalGeneralOpen, setModalGeneralOpen] = useState(false);
   const [modalacceptquotation, setModalAcceptQuotation] = useState(false);
@@ -26,6 +28,12 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
     name: null,
     price: null,
   });
+
+  useEffect(() => {
+    setFilterRubric("");
+    setFilterCars([]);
+    setFilterCity([]);
+  }, [pathname]);
 
   const toogleModal = () => {
     setModalLogin(!ModalLoginOpen);
