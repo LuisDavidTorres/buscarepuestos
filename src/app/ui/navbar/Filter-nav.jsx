@@ -1,6 +1,6 @@
 "use client";
 
-import { Filter } from "../filters/Filter";
+import { FilterNav } from "../filters/FilterNav";
 import { useAppContext } from "@/context";
 import { TfiClose } from "react-icons/tfi";
 
@@ -20,7 +20,7 @@ export function NavBarFilter({carBrands}) {
         </section>
         <nav role="navigation" className="p-6 w-64">
           <section>
-            <Filter
+            <FilterNav
               className="flex flex-row items-center text-black"
               carBrands={carBrands}
             />
