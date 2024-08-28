@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "./ui/footer/Footer";
 import { AppWrapper } from "@/context";
 import Provider from "@/context/Provider";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-M3DBB38G" />
+
       <body className={inter.className}>
         <Provider>
           <AppWrapper>
