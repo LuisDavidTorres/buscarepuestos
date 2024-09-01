@@ -74,6 +74,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           defaultValue={[]}
           isMulti
           options={carBrands}
+          noOptionsMessage={() => "Marca no encontrada"}
           placeholder="Por Marca"
           onChange={(e) =>
             setSelectedCars(e.map((e) => (e as { value: number }).value))
@@ -87,6 +88,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           defaultValue={[]}
           isMulti
           options={dataCity}
+          noOptionsMessage={() => "Región no encontrada"}
           placeholder="Por Región"
           onChange={(e) =>
             setSelectedCity(e.map((e) => (e as { value: number }).value))
@@ -99,6 +101,7 @@ export function Filter({ className, carBrands }: { className: string, carBrands:
           components={animatedComponents}
           defaultValue={[]}
           options={dataRubric}
+          noOptionsMessage={() => "Tipo no encontrado"}
           placeholder="Por Tipo"
           onChange={(e) => setSelectedRubric((e as { value: string }).value)}
         />

@@ -57,8 +57,6 @@ export function FilterNav({ className, carBrands }: { className: string, carBran
     setFilterCars(selectedCars)
     setFilterCity(selectedCity)
     setFilterRubric(selectedRubric)
-
-    console.log("Estos son los autos: "+filterCars)
     
     router.refresh();
   }
@@ -82,6 +80,7 @@ export function FilterNav({ className, carBrands }: { className: string, carBran
           defaultValue={cars}
           isMulti
           options={carBrands}
+          noOptionsMessage={() => "Marca no encontrada"}
           placeholder="Por Marca"
           onChange={(e) =>
             setSelectedCars(e.map((e) => (e as { value: number }).value))
@@ -95,6 +94,7 @@ export function FilterNav({ className, carBrands }: { className: string, carBran
           defaultValue={cities}
           isMulti
           options={dataCity}
+          noOptionsMessage={() => "Región no encontrada"}
           placeholder="Por Región"
           onChange={(e) =>
             setSelectedCity(e.map((e) => (e as { value: number }).value))
@@ -107,6 +107,7 @@ export function FilterNav({ className, carBrands }: { className: string, carBran
           components={animatedComponents}
           defaultValue={[rubric]}
           options={dataRubric}
+          noOptionsMessage={() => "Tipo no encontrado"}
           placeholder="Por Tipo"
           onChange={(e) => setSelectedRubric((e as { value: string }).value)}
         />
