@@ -26,7 +26,7 @@ async function Home() {
               <div className="text-white opacity-90 lg:px-40 xl:px-72 2xl:px-96 space-y-4 text-start md:text-center borde-2">
                 <p>
                   BuscaRepuestos.cl es una plataforma que conecta a clientes que
-                  buscan repuestos con Distribuidores confiables que ofrecen una
+                  buscan repuestos con Distribuidores verificados que ofrecen una
                   amplia variedad de estos
                 </p>
                 <p>
