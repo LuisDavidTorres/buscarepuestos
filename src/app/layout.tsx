@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <GoogleTagManager gtmId="GTM-M3DBB38G" />
 
-      <body className={inter.className}>
+      <body style={{ fontFamily: 'Arial, sans-serif' }}>
         <Provider>
           <AppWrapper>
             {children}

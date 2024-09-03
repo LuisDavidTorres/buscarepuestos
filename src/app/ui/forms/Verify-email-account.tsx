@@ -56,9 +56,9 @@ export function VerifyEmailAccountForm(){
       });
 
       if(response.ok){
-        toast.success("Cuenta verificada con éxito", customToasterProps);
+        toast.success("Email verificada con éxito", customToasterProps);
         await verifyEmail();
-        router.push("/crear-cuenta-distribuidor/planes");
+        router.push("/crear-cuenta-distribuidor/verificar-empresa");
       }
       
       if(response.status === 400){

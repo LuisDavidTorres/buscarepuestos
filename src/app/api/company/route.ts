@@ -115,10 +115,9 @@ export async function PATCH(request: Request) {
         },
         data: {
           rubric: newSpareType,
-        }
+        },
       });
     }
-
 
     return NextResponse.json(
       {

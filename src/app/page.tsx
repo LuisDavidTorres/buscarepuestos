@@ -59,7 +59,6 @@ async function Home() {
             <Parallax />
           </div>
           <div className="bg-gradient-to-br from-zinc-700 via-zinc-700 to-zinc-800 flex justify-center p-12 flex-col items-center space-y-5">
-            <h1 className="text-gray-400">PLATAFORMA SEGURA</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"

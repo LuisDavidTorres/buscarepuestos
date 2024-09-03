@@ -96,9 +96,9 @@ export function Create_quotation() {
 
   const validateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setContactEmail(e.target.value);
-  
+
     const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-    if (!emailPattern.test(e.target.value)) { 
+    if (!emailPattern.test(e.target.value)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         contactEmail: "Email no valido",
@@ -109,7 +109,7 @@ export function Create_quotation() {
         contactEmail: "",
       }));
     }
-  };  
+  };
 
   useEffect(() => {
     const options: OptionType[] = carBrand
@@ -220,7 +220,7 @@ export function Create_quotation() {
     <menu className="flex flex-col min-[1384px]:flex-row w-full dark:text-black">
       <div className="flex justify-center border-2 h-auto w-auto p-5 shadow-md rounded-md">
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-row sm:space-x-20 md:space-x-36 mb-5 space-x-9 font-bold text-lg">
+          <div className="flex flex-row sm:space-x-9 md:space-x-28 lg:space-x-32 2xl:space-x-32 mb-5 space-x-9 font-bold text-lg">
             <h1 className="font-bold text-base text-gray-600">
               INFORMACIÓN DEL REPUESTO
             </h1>
@@ -306,11 +306,11 @@ export function Create_quotation() {
                   <p>Modelo</p>
                   <p className="text-red-600 ">*</p>
                   <p className="text-xs text-gray-500 italic ml-2">
-                    (Si no aparece, puede escribirlo)
+                    (Escriba el Modelo)
                   </p>
                 </div>
               </label>
-              <CreatableSelect
+              {/*<CreatableSelect
                 instanceId={"select-car-model"}
                 className="w-full"
                 isClearable
@@ -321,6 +321,15 @@ export function Create_quotation() {
                 options={filteredOptions}
                 value={carModel ? { value: carModel, label: carModel } : null}
                 onChange={(e) => setCarModel((e as { value: string }).value)}
+              />*/}
+              <input
+                id="replacement"
+                name="replacement"
+                type="text"
+                placeholder="Modelo"
+                required
+                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
+                onChange={(e) => {setCarModel(e.target.value)}}
               />
 
               <label id="label-car-year" className="flex flex-row space-x-1">

@@ -3,6 +3,7 @@ import { CardPlanHorizontal } from "@/app/ui/cards/Plan-horizontal";
 import { SupportInformation } from "@/app/ui/ListComponents/Support-information";
 import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import Link from "next/link";
+import PageRedirect from "@/app/ui/buttons/Page-redirect";
 
 interface PageProps {
   searchParams: {
@@ -25,9 +26,38 @@ async function LoadPLan({ plan }: { plan: string }) {
 async function Page({ searchParams }: PageProps) {
   const { plan } = searchParams;
   const planSelected = await LoadPLan({ plan });
-  
 
   return (
+    <>
+      <div>
+        <Header />
+      </div>
+      <main className="min-h-screen h-auto bg-white dark:text-black">
+        <div className="flex justify-center p-8">
+          <div className="max-w-md text-center bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
+            <section>
+              <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
+                ¡Próximamente disponible!
+              </h1>
+              <p className="mt-6 text-lg text-gray-700 dark:text-gray-300">
+                Muy pronto podrás adquirir bolsas virtuales de clics en nuestra
+                plataforma.
+              </p>
+              <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+                Anunciaremos la fecha de lanzamiento en breve. ¡Mantente atento!
+              </p>
+              <section className="mt-4">
+                <PageRedirect text="Ir al Home" url="/home" />
+              </section>
+            </section>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+  
+
+  {/*return (
     <>
       <div>
         <Header />
@@ -38,9 +68,9 @@ async function Page({ searchParams }: PageProps) {
             <div>
               <label>
                 <span>Paso </span>
-                <span className="font-bold">4 </span>
+                <span className="font-bold">5 </span>
                 <span>de </span>
-                <span className="font-bold">4</span>
+                <span className="font-bold">5</span>
               </label>
               <section className="mt-2">
                 <h1 className="font-bold text-xl">
@@ -81,7 +111,7 @@ async function Page({ searchParams }: PageProps) {
         </section>
       </main>
     </>
-  );
+  );*/}
 }
 
 export default Page;

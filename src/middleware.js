@@ -9,6 +9,8 @@ export const config = {
     "/crear-cuenta-distribuidor/planes",
     "/crear-cuenta-distribuidor/seleccionar-tipo-pago",
     "/crear-cuenta-distribuidor/verificar-email",
+    "/crear-cuenta-distribuidor/verificar-empresa",
+    "/verificar-empresa",
     "/cuenta/:path*",
     "/cambiar-contrasena",
     "/cambiar-correo",

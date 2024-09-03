@@ -50,9 +50,9 @@ async function PlansSignup() {
             <div className="flex flex-col space-y-2">
               <label>
                 <span>Paso </span>
-                <span className="font-bold">3 </span>
+                <span className="font-bold">4 </span>
                 <span>de </span>
-                <span className="font-bold">4</span>
+                <span className="font-bold">5</span>
               </label>
               <div className="flex justify-between xl:items-center flex-col xl:flex-row space-y-4 xl:space-y-0">
                 {" "}

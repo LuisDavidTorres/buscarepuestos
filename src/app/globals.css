@@ -37,8 +37,8 @@ html {
 }
 
 .select-dropdown {
-  max-height: 200px; /* Asegúrate de que haya un límite de altura */
+  max-height: 200px;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* Asegura un scrolling suave en iOS */
+  -webkit-overflow-scrolling: touch;
 }
 

@@ -44,8 +44,7 @@ async function resizeImageWithPadding(file: File, width: number, height: number)
         canvas.width = width;
         canvas.height = height;
 
-        // Agregar el color de los bordes
-        const paddingColor = "rgba(244, 241, 241, 0.5)"; // Color blanco semitransparente
+        const paddingColor = "rgba(244, 241, 241, 0.5)";
         ctx.fillStyle = paddingColor;
         ctx.fillRect(0, 0, width, height);
 
@@ -82,7 +81,7 @@ export async function uploadFile(files: File[]) {
   const downloadUrls = [];
   
   for (const uploadPromise of uploadPromises) {
-    const snapshot = await uploadPromise; // Get snapshot from each promise
+    const snapshot = await uploadPromise;
     const url = await getDownloadURL(snapshot.ref);
     downloadUrls.push(url);
   }
@@ -90,4 +89,23 @@ export async function uploadFile(files: File[]) {
   return { downloadUrls };
 }
 
+export async function UploadDocuemnts(files: File[]) {
+  const uploadPromisesDocuments = []
+
+  for (const file of files){
+    const storageRef = ref(storage, `documents/${file.name}` + Date.now())
+    uploadPromisesDocuments.push(uploadBytes(storageRef, file))
+  }
+
+  await Promise.all(uploadPromisesDocuments);
+  const downloadUrlsDocuments = [];
+
+  for(const uploadPromisesDocument of uploadPromisesDocuments){
+    const snapshot = await uploadPromisesDocument;
+    const url = await getDownloadURL(snapshot.ref);
+    downloadUrlsDocuments.push(url)
+  }
+  
+  return { downloadUrlsDocuments }
+}
 

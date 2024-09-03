@@ -21,8 +21,17 @@ model Company {
     contactName String
     phoneNumber String
     rubric String
+    verified Int @default(1)
     user UserAccount ?
     carsBrand CompanyCarBrand []
+    documents Document [] 
+}
+
+model Document {
+    id Int @id @default(autoincrement())
+    url String
+    company Company @relation(fields: [companyID], references: [id])
+    companyID Int
 }
 
 model CarBrand {

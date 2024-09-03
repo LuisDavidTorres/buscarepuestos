@@ -13,7 +13,7 @@ export default function Page() {
                 <span>Paso </span>
                 <span className="font-bold">2 </span>
                 <span>de </span>
-                <span className="font-bold">4</span>
+                <span className="font-bold">5</span>
               </label>
               <h1 className="text-xl font-bold">
                 Ingresar código de verificación
