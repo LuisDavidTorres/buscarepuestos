@@ -39,11 +39,11 @@ async function Page({ searchParams }: PageProps) {
             <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
               ¡Próximamente disponible!
             </h1>
-            <p className="mt-6 text-lg">
+            <p className="mt-6 text-base">
               Muy pronto podrás adquirir bolsas virtuales de clics en nuestra
               plataforma.
             </p>
-            <p className="mt-4 text-lg">
+            <p className="mt-4 text-base">
               Anunciaremos la fecha de lanzamiento en breve. Mantente atento a nuestras redes sociales
             </p>
             <section className="text-3xl flex justify-center mt-4 space-x-4">
