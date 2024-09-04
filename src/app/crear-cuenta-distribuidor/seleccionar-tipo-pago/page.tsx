@@ -34,7 +34,7 @@ async function Page({ searchParams }: PageProps) {
       </div>
       <main className="min-h-screen h-auto bg-white">
         <div className="flex justify-center p-8">
-          <div className="max-w-md text-center bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
+          <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
             <section>
               <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
                 ¡Próximamente disponible!

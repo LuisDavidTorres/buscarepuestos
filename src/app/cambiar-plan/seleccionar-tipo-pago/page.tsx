@@ -31,7 +31,7 @@ async function Page({ searchParams }: PageProps) {
     <div className="min-h-screen bg-white">
       <DashboardHeader />
       <div className="flex justify-center items-center p-8 dark:text-black bg-white">
-        <div className="max-w-md text-center bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
+        <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
           <section>
             <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
               ¡Próximamente disponible!
