@@ -4,6 +4,8 @@ import { SupportInformation } from "@/app/ui/ListComponents/Support-information"
 import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import Link from "next/link";
 import PageRedirect from "@/app/ui/buttons/Page-redirect";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
 
 interface PageProps {
   searchParams: {
@@ -32,7 +34,7 @@ async function Page({ searchParams }: PageProps) {
       <div>
         <Header />
       </div>
-      <main className="min-h-screen h-auto bg-white text-black dark:text-black">
+      <main className="min-h-screen h-auto bg-white text-black/60 dark:text-black/60">
         <div className="flex justify-center p-8">
           <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
             <section>
@@ -46,7 +48,11 @@ async function Page({ searchParams }: PageProps) {
               <p className="mt-4 text-lg">
                 Anunciaremos la fecha de lanzamiento en breve. ¡Mantente atento!
               </p>
-              <section className="mt-4">
+              <section className="text-3xl flex justify-center mt-4 space-x-4">
+                <a href="https://www.instagram.com/buscarepuestos.cl" target="_blank"><FaInstagram className="hover:cursor-pointer hover:text-black/50"/></a>
+                <a href="https://www.facebook.com/buscarepuestos.cl" target="_blank"><FaFacebookSquare className="hover:cursor-pointer hover:text-black/50"/></a>
+              </section>
+              <section className="mt-6">
                 <PageRedirect text="Ir al Home" url="/home" />
               </section>
             </section>

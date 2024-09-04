@@ -4,6 +4,9 @@ import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import { SupportInformation } from "@/app/ui/ListComponents/Support-information";
 import Link from "next/link";
 import PageRedirect from "@/app/ui/buttons/Page-redirect";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
+
 
 interface PageProps {
   searchParams: {
@@ -19,7 +22,7 @@ async function LoadPLan({ plan }: { plan: string }) {
     }
   );
   const data = await res.json();
-  console.log(data.subscription)
+  console.log(data.subscription);
   return data;
 }
 
@@ -30,20 +33,24 @@ async function Page({ searchParams }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       <DashboardHeader />
-      <div className="flex justify-center items-center p-8 text-black dark:text-black bg-white">
+      <div className="flex justify-center items-center p-8 text-black/60 dark:text-black/60 bg-white">
         <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
           <section>
             <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
               ¡Próximamente disponible!
             </h1>
-            <p className="mt-6 text-lg">
+            <p className="mt-6 text-base">
               Muy pronto podrás adquirir bolsas virtuales de clics en nuestra
               plataforma.
             </p>
-            <p className="mt-4 text-lg">
-              Anunciaremos la fecha de lanzamiento en breve. ¡Mantente atento!
+            <p className="mt-4 text-base">
+              Anunciaremos la fecha de lanzamiento en breve. Mantente atento a nuestras redes sociales
             </p>
-            <section className="mt-4">
+            <section className="text-3xl flex justify-center mt-4 space-x-4">
+              <a href="https://www.instagram.com/buscarepuestos.cl" target="_blank"><FaInstagram className="hover:cursor-pointer hover:text-black/50"/></a>
+              <a href="https://www.facebook.com/buscarepuestos.cl" target="_blank"><FaFacebookSquare className="hover:cursor-pointer hover:text-black/50"/></a>
+            </section>
+            <section className="mt-6">
               <PageRedirect text="Ir al Home" url="/home" />
             </section>
           </section>
@@ -52,7 +59,8 @@ async function Page({ searchParams }: PageProps) {
     </div>
   );
 
-  {/*return (
+  {
+    /*return (
     <div className="min-h-screen bg-white">
       <DashboardHeader />
       <div className="flex justify-center p-8 dark:text-black">
@@ -94,7 +102,8 @@ async function Page({ searchParams }: PageProps) {
         <SupportInformation />
       </section>
     </div>
-  );*/}
+  );*/
+  }
 }
 
 export default Page;
