@@ -22,7 +22,7 @@ export function DashboardHeader() {
               src="/logo-images/logo-start-header.png"
               alt="Busca Repuestos"
               width={63}
-              height={40}
+              height={63}
               className="sm:hidden"
               quality={100}
             />
