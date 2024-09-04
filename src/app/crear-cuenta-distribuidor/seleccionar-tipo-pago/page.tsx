@@ -32,18 +32,18 @@ async function Page({ searchParams }: PageProps) {
       <div>
         <Header />
       </div>
-      <main className="min-h-screen h-auto bg-white">
+      <main className="min-h-screen h-auto bg-white text-black dark:text-black">
         <div className="flex justify-center p-8">
           <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
             <section>
               <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
                 ¡Próximamente disponible!
               </h1>
-              <p className="mt-6 text-lg text-gray-700 dark:text-gray-300">
+              <p className="mt-6 text-lg dark:text-gray-300">
                 Muy pronto podrás adquirir bolsas virtuales de clics en nuestra
                 plataforma.
               </p>
-              <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+              <p className="mt-4 text-lg dark:text-gray-300">
                 Anunciaremos la fecha de lanzamiento en breve. ¡Mantente atento!
               </p>
               <section className="mt-4">
