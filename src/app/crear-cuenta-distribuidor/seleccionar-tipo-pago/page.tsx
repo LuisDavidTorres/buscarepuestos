@@ -32,7 +32,7 @@ async function Page({ searchParams }: PageProps) {
       <div>
         <Header />
       </div>
-      <main className="min-h-screen h-auto bg-white dark:text-black">
+      <main className="min-h-screen h-auto bg-white">
         <div className="flex justify-center p-8">
           <div className="max-w-md text-center bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
             <section>

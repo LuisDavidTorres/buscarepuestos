@@ -142,7 +142,7 @@ async function Page() {
       <>
         <DesingHeaderDown titulo="MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES" />
 
-        <div className="min-h-screen bg-white p-6 md:p-10">
+        <div className="min-h-screen bg-white p-6 md:p-10 text-black dark:text-black">
           <div className="flex flex-row w-full justify-center">
             <div className="md:mx-10 p-6 text-center w-full md:w-2/5 bg-white shadow-md rounded-lg">
               <div className="flex justify-center mb-4">
