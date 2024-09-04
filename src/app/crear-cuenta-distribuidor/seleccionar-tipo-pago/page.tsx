@@ -46,7 +46,7 @@ async function Page({ searchParams }: PageProps) {
                 plataforma.
               </p>
               <p className="mt-4 text-base">
-                Anunciaremos la fecha de lanzamiento en breve. ¡Mantente atento!
+               Anunciaremos la fecha de lanzamiento en breve. Mantente atento a nuestras redes sociales
               </p>
               <section className="text-3xl flex justify-center mt-4 space-x-4">
                 <a href="https://www.instagram.com/buscarepuestos.cl" target="_blank"><FaInstagram className="hover:cursor-pointer hover:text-black/50"/></a>
