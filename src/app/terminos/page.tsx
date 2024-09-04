@@ -18,7 +18,7 @@ export default function PrivacyPolicies() {
         <div className="w-full flex justify-center">
           <div className="w-10/12 shadow-xl p-10 rounded-md mb-5">
             <h1 className="text-2xl sm:text-3xl mb-4 font-bold">
-              Términos y Condiciones de Uso y Política de Privacidad
+              Términos, Condiciones de Uso y Política de Privacidad
               BuscaRepuestos.cl
             </h1>
             <p className="text-base leading-normal mt-10">
@@ -50,7 +50,7 @@ export default function PrivacyPolicies() {
             <div className="space-y-4 pl-5">
               <p>
                 <strong>
-                  1. Conexión entre Distribuidores y Clientes Buscadores:
+                  1.1. Conexión entre Distribuidores y Clientes Buscadores:
                 </strong>{" "}
                 Los Clientes Buscadores llenan solicitudes de cotización en la
                 plataforma, las cuales se almacenan para que los Distribuidores
@@ -60,7 +60,7 @@ export default function PrivacyPolicies() {
                 directamente con el Cliente Buscador.
               </p>
               <p>
-                <strong>2. Búsqueda y Generación de Cotizaciones:</strong> Los
+                <strong>1.2. Búsqueda y Generación de Cotizaciones:</strong> Los
                 Clientes Buscadores ingresan los datos de su vehículo y el tipo
                 de repuesto que requieren (Original, Alternativo o Ambos) en un
                 formulario. La plataforma genera y almacena cotizaciones para
@@ -69,13 +69,13 @@ export default function PrivacyPolicies() {
                 generadas para las marcas que ellos comercializan.
               </p>
               <p>
-                <strong>3. Notificaciones:</strong> Cuando se genera una
+                <strong>1.3. Notificaciones:</strong> Cuando se genera una
                 cotización, la plataforma envía un mensaje al Cliente Buscador
                 notificando que su solicitud ha sido recibida.
               </p>
               <p>
                 <strong>
-                  4. Acceso a Cotizaciones para Distribuidores Registrados:
+                  1.4. Acceso a Cotizaciones para Distribuidores Registrados:
                 </strong>{" "}
                 Los Distribuidores registrados en la plataforma, que hayan
                 ingresado sus datos y el tipo de repuestos que comercializan
@@ -85,20 +85,20 @@ export default function PrivacyPolicies() {
                 acceso a este conjunto de cotizaciones.
               </p>
               <p>
-                <strong>5. Descuento de Cotizaciones:</strong> Cuando un
+                <strong>1.5. Descuento de Cotizaciones:</strong> Cuando un
                 Distribuidor hace &quot;match&quot; con una cotización, se le
                 descuenta automáticamente una cotización de la bolsa virtual
                 comprada.
               </p>
               <p>
-                <strong>6. Coincidencia de Cotizaciones:</strong> La plataforma
-                detecta automáticamente cuando un Distribuidor hace
+                <strong>1.6. Coincidencia de Cotizaciones:</strong> La
+                plataforma detecta automáticamente cuando un Distribuidor hace
                 &quot;match&quot; con una cotización. En ese momento, la
                 cotización se elimina del sistema y el Cliente Buscador recibe
                 hasta 3 cotizaciones de diferentes Distribuidores.
               </p>
               <p>
-                <strong>7. Posicionamiento en Buscadores:</strong>{" "}
+                <strong>1.7. Posicionamiento en Buscadores:</strong>{" "}
                 BuscaRepuestos.cl está diseñada para estar bien posicionada en
                 los motores de búsqueda, brindando una solución efectiva para
                 que los Clientes Buscadores encuentren los repuestos que
@@ -114,50 +114,45 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               2. Registro y Verificación de Usuarios
             </h1>
-            <p className="mb-4">
-              Los usuarios Distribuidores deben registrarse y crear una cuenta
-              en la plataforma BuscaRepuestos.cl, proporcionando la siguiente
-              información:
+            <p className="mb-4 pl-5 font-bold">
+              2.1. Los usuarios Distribuidores deben registrarse y crear una
+              cuenta en la plataforma BuscaRepuestos.cl, proporcionando la
+              siguiente información:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Rut de la Empresa</li>
-              <li>Nombre completo del Representante Legal o Responsable</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Rut de la Empresa.</li>
+              <li>Nombre completo del Representante Legal o Responsable.</li>
               <li>
-                Número de teléfono celular del Representante Legal o Responsable
+                Número de teléfono celular del Representante Legal o Responsable.
               </li>
-              <li>Correo electrónico del Representante Legal o Responsable</li>
-              <li>Contraseña</li>
-              <li>Información sobre los repuestos que ofrecen</li>
+              <li>Correo electrónico del Representante Legal o Responsable.</li>
+              <li>Contraseña.</li>
+              <li>Información sobre los repuestos que ofrecen.</li>
             </ul>
-            <p className="mb-4">
-              <strong>Registro de Usuarios Buscadores</strong>
+            <p className="mb-4 pl-5 font-bold">
+              2.2. Los usuarios buscadores deben llenar un formulario
+              proporcionado y creado por la plataforma BuscaRepuestos.cl,
+              incluyendo los siguientes datos relevantes:
             </p>
-            <p className="mb-4">
-              Los usuarios buscadores deben llenar un formulario proporcionado y
-              creado por la plataforma BuscaRepuestos.cl, incluyendo los
-              siguientes datos relevantes:
-            </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Nombre completo</li>
-              <li>Información del vehículo</li>
-              <li>Tipo de repuesto solicitado</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Nombre completo.</li>
+              <li>Información del vehículo.</li>
+              <li>Tipo de repuesto solicitado.</li>
             </ul>
-            <p className="mb-4">
-              <strong>
-                Verificación de Identidad para Usuarios Distribuidores
-              </strong>
+            <p className="mb-4 pl-5 font-bold">
+              2.3. Verificación de Identidad para Usuarios Distribuidores:
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Luego del registro, los datos proporcionados por los usuarios
               Distribuidores deben ser verificados para garantizar la seguridad
               y confiabilidad de la plataforma. Este proceso de verificación
               puede incluir:
             </p>
-            <ul className="list-disc list-outside space-y-1 pl-9">
-              <li>Confirmación de correo electrónico</li>
-              <li>Código Verificador</li>
-              <li>Validación de número de teléfono celular</li>
-              <li>Envío de documentos si fuese necesario</li>
+            <ul className="list-disc list-outside space-y-1 pl-14">
+              <li>Confirmación de correo electrónico.</li>
+              <li>Código Verificador.</li>
+              <li>Validación de número de teléfono celular.</li>
+              <li>Envío de documentos si fuese necesario.</li>
             </ul>
 
             {/*Policitcas*/}
@@ -165,11 +160,11 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               3. Responsabilidades del Usuario
             </h1>
-            <p className="mb-4">
-              Al utilizar la plataforma BuscaRepuestos.cl, todos los usuarios
-              (Distribuidores y Clientes Buscadores) se comprometen a:
+            <p className="mb-4 pl-5 font-bold">
+              3.1. Al utilizar la plataforma BuscaRepuestos.cl, todos los
+              usuarios (Distribuidores y Clientes Buscadores) se comprometen a:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>Proporcionar información precisa y actualizada.</li>
               <li>
                 Utilizar la plataforma de manera responsable, ética y
@@ -185,13 +180,13 @@ export default function PrivacyPolicies() {
               </li>
               <li>Cumplir con todas las leyes y regulaciones aplicables.</li>
             </ul>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               <strong>
                 Adicionalmente, los Distribuidores tienen responsabilidades
                 específicas:
               </strong>
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>
                 Proporcionar información precisa sobre los repuestos que
                 ofrecen.
@@ -206,16 +201,16 @@ export default function PrivacyPolicies() {
               <li>Garantizar la calidad de los repuestos que comercializan.</li>
               <li>Realizar los pagos de manera oportuna y segura.</li>
             </ul>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               <strong>
                 Por su parte, los Clientes Buscadores tienen la responsabilidad
                 de:
               </strong>
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>Utilizar la plataforma para fines lícitos y legítimos.</li>
               <li>
-                Brindar información precisa sobre sus necesidades de repuestos..
+                Brindar información precisa sobre sus necesidades de repuestos.
               </li>
               <li>Comunicarse de manera respetuosa con el Distribuidor.</li>
             </ul>
@@ -223,23 +218,25 @@ export default function PrivacyPolicies() {
             {/*Policitcas*/}
 
             <h1 className="text-2xl font-bold mb-4">4. Modelo Económico</h1>
-            <p className="mb-4">
-              <strong>Venta de Bolsas Virtuales de Cotizaciones</strong>
+            <p className="mb-4 pl-5">
+              <strong>4.1. Venta de Bolsas Virtuales de Cotizaciones:</strong>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               El modelo económico de BuscaRepuestos.cl se basa en la venta de
               bolsas virtuales de cotizaciones a los Distribuidores. Estas
               bolsas virtuales se ofrecen en diferentes opciones:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Bolsa Virtual 1</li>
-              <li>Bolsa Virtual 2</li>
-              <li>Bolsa Virtual 3</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Bolsa Virtual 1.</li>
+              <li>Bolsa Virtual 2.</li>
+              <li>Bolsa Virtual 3.</li>
             </ul>
-            <p className="mb-4">
-              <strong>Asociación de Pagos a Compra de Bolsas Virtuales</strong>
+            <p className="mb-4 pl-5">
+              <strong>
+                4.2. Asociación de Pagos a Compra de Bolsas Virtuales:
+              </strong>
             </p>
-            <p>
+            <p className="pl-5">
               Los pagos realizados por los distribuidores estarán asociados a la
               compra de estas Bolsas Virtuales de Cotizaciones.
             </p>
@@ -247,36 +244,36 @@ export default function PrivacyPolicies() {
             {/*Policitcas*/}
 
             <h1 className="text-2xl font-bold mb-4 mt-5">5. Pagos</h1>
-            <p className="mb-4">
-              <strong>Plataforma de Pagos Segura Webpay</strong>
+            <p className="mb-4 pl-5">
+              <strong>5.1. Plataforma de Pagos Segura Webpay:</strong>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl ofrece a los distribuidores la plataforma de
               pagos segura Webpay, la cual permite diversos métodos de pago en
               línea, como:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Tarjetas de crédito</li>
-              <li>Tarjetas de débito</li>
-              <li>Tarjetas prepago</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Tarjetas de crédito.</li>
+              <li>Tarjetas de débito.</li>
+              <li>Tarjetas prepago.</li>
             </ul>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               <strong>
-                Asociación de Pagos a Compra de Bolsas de Cotizaciones
+                5.2. Asociación de Pagos a Compra de Bolsas de Cotizaciones:
               </strong>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Los pagos realizados a través de Webpay estarán asociados a la
               compra de bolsas virtuales de cotizaciones por parte de los
               Distribuidores. El Distribuidor deberá efectuar el pago en el
               momento de la compra de la bolsa de cotizaciones seleccionada.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               <strong>
-                Elección del Método de Pago por Parte del Distribuidor
+                5.3. Elección del Método de Pago por Parte del Distribuidor:
               </strong>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               No obstante, la decisión final sobre el método de pago a utilizar
               será del propio Distribuidor. BuscaRepuestos.cl pone a disposición
               la plataforma Webpay, pero no impone un método de pago específico.
@@ -284,12 +281,12 @@ export default function PrivacyPolicies() {
               definidos en la propia plataforma de pago Webpay, y no por
               BuscaRepuestos.cl.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               <strong>
-                Responsabilidad del Distribuidor en el Proceso de Pago
+                5.4. Responsabilidad del Distribuidor en el Proceso de Pago:
               </strong>
             </p>
-            <p>
+            <p className="pl-5">
               Si bien BuscaRepuestos.cl facilita Webpay como solución de pago,
               la elección del método de pago queda a criterio exclusivo del
               Distribuidor, de acuerdo a los términos y condiciones establecidos
@@ -315,29 +312,29 @@ export default function PrivacyPolicies() {
                 seguridad de nuestra plataforma y nuestros usuarios.
               </li>
             </ul>
-            <p className="mb-4">
-              <strong>Medidas de Seguridad</strong>
+            <p className="mb-4 pl-5">
+              <strong>6.1. Medidas de Seguridad</strong>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Implementamos sólidas medidas de seguridad para salvaguardar la
               información personal contra pérdida, robo o acceso no autorizado,
               incluyendo:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Cifrado de datos</li>
-              <li>Controles de acceso estrictos</li>
-              <li>Monitoreo y detección de actividades sospechosas</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Cifrado de datos.</li>
+              <li>Controles de acceso estrictos.</li>
+              <li>Monitoreo y detección de actividades sospechosas.</li>
+              <li>
+                Nuestro personal autorizado está sujeto a obligaciones de
+                confidencialidad y nuestras medidas de seguridad se revisan y
+                actualizan periódicamente.
+              </li>
+              <li>
+                En caso de que ocurra una brecha de seguridad que pueda
+                comprometer los datos personales de nuestros usuarios,
+                BuscaRepuestos.cl notificará de manera oportuna.
+              </li>
             </ul>
-            <p className="mb-4">
-              Nuestro personal autorizado está sujeto a obligaciones de
-              confidencialidad y nuestras medidas de seguridad se revisan y
-              actualizan periódicamente.
-            </p>
-            <p className="mb-4">
-              En caso de que ocurra una brecha de seguridad que pueda
-              comprometer los datos personales de nuestros usuarios,
-              BuscaRepuestos.cl notificará de manera oportuna.
-            </p>
             <p>
               Si tienes alguna pregunta o inquietud sobre nuestra política de
               privacidad y seguridad, no dudes en contactarnos a través de{" "}
@@ -412,14 +409,12 @@ export default function PrivacyPolicies() {
             <p className="mb-4">
               En caso de que surjan disputas entre BuscaRepuestos.cl y los
               usuarios Distribuidores, las partes acuerdan intentar resolverlas
-              de manera colaborativa a través de la mediación.
-            </p>
-            <p>
-              Si la mediación no tiene éxito, las disputas se resolverán
-              mediante un proceso de arbitraje de conformidad con las reglas
-              establecidas por el Centro de Arbitraje y Mediación de la Cámara
-              de Comercio de Santiago. La decisión arbitral será definitiva y de
-              obligatorio cumplimiento para ambas partes.
+              de manera colaborativa a través de la mediación. Sí la mediación
+              no tiene éxito, las disputas se resolverán mediante un proceso de
+              arbitraje de conformidad con las reglas establecidas por el Centro
+              de Arbitraje y Mediación de la Cámara de Comercio de Santiago. La
+              decisión arbitral será definitiva y de obligatorio cumplimiento
+              para ambas partes.
             </p>
 
             {/*Policitcas*/}
@@ -433,10 +428,10 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl. Estas actividades prohibidas incluyen:
             </p>
             <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Enviar spam o contenido malicioso</li>
-              <li>Realizar ataques cibernéticos</li>
-              <li>Utilizar software malicioso</li>
-              <li>Infringir derechos de propiedad intelectual</li>
+              <li>Enviar spam o contenido malicioso.</li>
+              <li>Realizar ataques cibernéticos.</li>
+              <li>Utilizar software malicioso.</li>
+              <li>Infringir derechos de propiedad intelectual.</li>
             </ul>
             <p>
               BuscaRepuestos.cl se reserva el derecho de suspender o cancelar la
@@ -520,6 +515,12 @@ export default function PrivacyPolicies() {
                 La calidad, estado, funcionalidad o idoneidad de los repuestos
                 ofrecidos por los Distribuidores. Esto es responsabilidad
                 exclusiva de cada Distribuidor.
+              </li>
+              <li>
+                En caso de dudas o inquietudes, se sugiere utilizar video
+                llamada para ver el repuesto o al Distribuidor. Además, en caso
+                de obtener alguna objeción de la otra parte, se recomienda
+                terminar la negociación e informar a BuscaRepuestos.cl.
               </li>
             </ul>
             <p className="mb-4">
@@ -642,7 +643,7 @@ export default function PrivacyPolicies() {
               18. Ley Aplicable y Jurisdicción
             </h1>
             <h2 className="font-bold mb-2 pl-5">
-              1. Jurisdicción y Competencia
+              18.1. Jurisdicción y Competencia
             </h2>
             <p className="mb-4 pl-5">
               Cualquier disputa, controversia o reclamación que surja de o en
@@ -657,7 +658,7 @@ export default function PrivacyPolicies() {
               aplicación, interpretación, cumplimiento o ejecución del presente
               Acuerdo.
             </p>
-            <h2 className="font-bold mb-2 pl-5">2. Ley Aplicable</h2>
+            <h2 className="font-bold mb-2 pl-5">18.2. Ley Aplicable</h2>
             <p className="pl-5">
               Este Acuerdo se rige e interpreta de conformidad con las leyes
               vigentes de la República de Chile.
@@ -669,7 +670,7 @@ export default function PrivacyPolicies() {
               19. Preguntas y Contacto
             </h1>
             <p className="mb-4">
-              Si tiene alguna pregunta o inquietud sobre los &quot;Términos y
+              Si tiene alguna pregunta o inquietud sobre los &quot;Términos,
               Condiciones de Uso&quot; y &quot;Política de Privacidad&quot; aquí
               expuestos, puede contactarnos por correo electrónico a{" "}
               <a
@@ -680,7 +681,7 @@ export default function PrivacyPolicies() {
               </a>
               .
             </p>
-            <p>
+            <p className="mt-12 text-gray-700 leading-relaxed">
               Al utilizar nuestra plataforma BuscaRepuestos.cl, usted acepta
               cumplir con estos términos y políticas.
             </p>
@@ -702,19 +703,19 @@ export default function PrivacyPolicies() {
               Distribuidores:
             </p>
             <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Nombre completo</li>
-              <li>Número de teléfono celular</li>
-              <li>Correo electrónico</li>
-              <li>Contraseña</li>
+              <li>Nombre completo.</li>
+              <li>Número de teléfono celular.</li>
+              <li>Correo electrónico.</li>
+              <li>Contraseña.</li>
             </ul>
             <p className="mb-4">
               Adicionalmente, la plataforma recopila información no personal
               sobre el uso, como:
             </p>
             <ul className="list-disc list-outside space-y-1 pl-9">
-              <li>Dirección IP</li>
-              <li>Páginas visitadas en el sitio web</li>
-              <li>Tiempo de permanencia en el sitio</li>
+              <li>Dirección IP.</li>
+              <li>Páginas visitadas en el sitio web.</li>
+              <li>Tiempo de permanencia en el sitio.</li>
             </ul>
 
             {/*Policitcas*/}
@@ -726,44 +727,52 @@ export default function PrivacyPolicies() {
               BuscaRepuestos.cl utiliza la información personal recopilada para
               los siguientes propósitos:
             </p>
-            <h2 className="font-bold mb-2">Comunicación entre Usuarios</h2>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <h2 className="font-bold mb-2 pl-5">
+              2.1. Comunicación entre Usuarios
+            </h2>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>
                 Facilitar la comunicación entre Distribuidores y Clientes
                 Buscadores dentro de la plataforma.
               </li>
-              <li>Procesamiento de Transacciones</li>
+              <li>Procesamiento de Transacciones.</li>
               <li>
                 Procesar transacciones y pagos relacionados con el servicio.
               </li>
             </ul>
-            <h2 className="font-bold mb-2">Mejora Continua del Servicio</h2>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <h2 className="font-bold mb-2 pl-5">
+              2.2. Mejora Continua del Servicio
+            </h2>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>
                 Realizar análisis internos para mejorar continuamente nuestros
                 servicios.
               </li>
             </ul>
-            <h2 className="font-bold mb-2">Comunicaciones de Marketing</h2>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <h2 className="font-bold mb-2 pl-5">
+              2.3. Comunicaciones de Marketing
+            </h2>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>
                 Enviar comunicaciones de marketing a los usuarios, pero
                 únicamente con su consentimiento previo.
               </li>
             </ul>
-            <h2 className="font-bold mb-2">Prevención de Fraudes</h2>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <h2 className="font-bold mb-2 pl-5">2.4. Prevención de Fraudes</h2>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>
                 Prevenir y detectar posibles fraudes o actividades sospechosas.
               </li>
             </ul>
-            <h2 className="font-bold mb-2">Excepciones en el Uso de Datos</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">
+              2.5. Excepciones en el Uso de Datos
+            </h2>
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl no compartirá la información personal de los
               usuarios con terceros, salvo en los siguientes casos
               excepcionales:
             </p>
-            <ul className="list-disc list-outside space-y-1 pl-9">
+            <ul className="list-disc list-outside space-y-1 pl-14">
               <li>
                 Cuando el usuario haya otorgado su consentimiento expreso para
                 compartir sus datos.
@@ -782,54 +791,54 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               3. Compartir Información
             </h1>
-            <h2 className="font-bold mb-2">
-              Compartición de Datos entre Usuarios
+            <h2 className="font-bold mb-2 pl-5">
+              3.1. Compartición de Datos entre Usuarios
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl comparte información personal limitada entre
               Distribuidores y Clientes Buscadores involucrados en una
               transacción. La información compartida se limita a lo necesario
               para completar la transacción, como:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Nombre</li>
-              <li>Dirección de correo electrónico</li>
-              <li>Número de teléfono</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Nombre.</li>
+              <li>Dirección de correo electrónico.</li>
+              <li>Número de teléfono.</li>
             </ul>
-            <h2 className="font-bold mb-2">
-              Compartición con Proveedores de Servicios
+            <h2 className="font-bold mb-2 pl-5">
+              3.2. Compartición con Proveedores de Servicios
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               La plataforma también puede compartir información personal con
               terceros proveedores de servicios que ayudan a BuscaRepuestos.cl a
               operar, tales como:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Proveedores de servicios de pago</li>
-              <li>Proveedores de alojamiento web</li>
-              <li>Proveedores de análisis de datos</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Proveedores de servicios de pago.</li>
+              <li>Proveedores de alojamiento web.</li>
+              <li>Proveedores de análisis de datos.</li>
             </ul>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Estos proveedores de servicios tienen acceso a la información
               personal solo en la medida necesaria para realizar sus funciones,
               y están obligados contractualmente a proteger dicha información de
               acuerdo a la política de privacidad de BuscaRepuestos.cl.
             </p>
-            <h2 className="font-bold mb-2">
-              Excepciones a la Compartición de Datos
+            <h2 className="font-bold mb-2 pl-5">
+              3.3. Excepciones a la Compartición de Datos
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               En ningún caso BuscaRepuestos.cl compartirá información personal
               de los usuarios con terceros ajenos a la operación de la
               plataforma, salvo en los casos excepcionales mencionados en la
               sección anterior, es decir:
             </p>
-            <ul className="list-disc list-outside space-y-1 pl-9">
-              <li>Cuando el usuario haya otorgado su consentimiento expreso</li>
-              <li>Cuando sea requerido por ley o autoridad competente</li>
+            <ul className="list-disc list-outside space-y-1 pl-14">
+              <li>Cuando el usuario haya otorgado su consentimiento expreso.</li>
+              <li>Cuando sea requerido por ley o autoridad competente.</li>
               <li>
                 Para proteger los derechos y seguridad de la plataforma y
-                usuarios
+                usuarios.
               </li>
             </ul>
 
@@ -838,37 +847,39 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               4. Seguridad de la Información
             </h1>
-            <h2 className="font-bold mb-2">
-              Medidas de Seguridad Implementadas
+            <h2 className="font-bold mb-2 pl-5">
+              4.1. Medidas de Seguridad Implementadas
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl implementa diversas medidas de seguridad para
               proteger la información personal de los usuarios contra pérdida,
               robo o acceso no autorizado, tales como:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>Cifrado de datos</li>
-              <li>Controles de acceso estrictos</li>
-              <li>Monitoreo constante de seguridad</li>
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
+              <li>Cifrado de datos.</li>
+              <li>Controles de acceso estrictos.</li>
+              <li>Monitoreo constante de seguridad.</li>
+              <li>Responsabilidad de los Usuarios.</li>
             </ul>
-            <h2 className="font-bold mb-2">Responsabilidad de los Usuarios</h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Adicionalmente, la plataforma requiere que sus usuarios elijan
               contraseñas seguras al momento del registro y se comprometen a
               mantenerlas en secreto, sin compartirlas con terceros.
             </p>
-            <h2 className="font-bold mb-2">Limitaciones de Seguridad</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">
+              4.2. Limitaciones de Seguridad
+            </h2>
+            <p className="mb-4 pl-5">
               Pese a estas medidas, los usuarios deben tener en cuenta que
               ningún método de transmisión por Internet o método de
               almacenamiento electrónico es 100% seguro. Por lo tanto,
               BuscaRepuestos.cl no puede garantizar una seguridad absoluta de la
               información.
             </p>
-            <h2 className="font-bold mb-2">
-              Notificación de Brechas de Seguridad
+            <h2 className="font-bold mb-2 pl-5">
+              4.3. Notificación de Brechas de Seguridad
             </h2>
-            <p>
+            <p className="pl-5">
               En caso de que se produzca una brecha de seguridad que comprometa
               la información personal de los usuarios, BuscaRepuestos.cl
               notificará a las autoridades pertinentes y a los usuarios
@@ -881,39 +892,39 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               5. Cookies y Tecnologías Similares
             </h1>
-            <h2 className="font-bold mb-2">
-              Uso de Cookies por BuscaRepuestos.cl
+            <h2 className="font-bold mb-2 pl-5">
+              5.1. Uso de Cookies por BuscaRepuestos.cl
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl utiliza cookies y tecnologías similares para los
               siguientes propósitos:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>Mejorar la experiencia del usuario en el sitio web.</li>
               <li>
                 Recopilar información sobre el uso y navegación en el sitio.
               </li>
             </ul>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Las cookies son pequeños archivos de texto que se almacenan en el
               navegador del usuario cuando este visita el sitio web. Permiten
               recordar las acciones y preferencias del usuario, como nombre de
               usuario, idioma y configuración de visualización.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Esto evita que el usuario tenga que volver a introducir esta
               información cada vez que vuelve al sitio web o navega de una
               página a otra.
             </p>
-            <h2 className="font-bold mb-2">
-              Gestión de Preferencias de Cookies por Usuarios
+            <h2 className="font-bold mb-2 pl-5">
+              5.2. Gestión de Preferencias de Cookies por Usuarios
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Los usuarios pueden gestionar sus preferencias de cookies a través
               de la configuración de su navegador. La mayoría de los navegadores
               permiten bloquear o eliminar las cookies.
             </p>
-            <p>
+            <p className="pl-5">
               Sin embargo, es importante tener en cuenta que bloquear o eliminar
               las cookies puede afectar negativamente la funcionalidad y la
               experiencia del usuario en el sitio web de BuscaRepuestos.cl.
@@ -924,12 +935,14 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               6. Acceso y Corrección de Información Personal
             </h1>
-            <h2 className="font-bold mb-2">Derechos de los Usuarios</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">
+              6.1. Derechos de los Usuarios
+            </h2>
+            <p className="mb-4 pl-5">
               Los usuarios registrados en BuscaRepuestos.cl tienen los
               siguientes derechos:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>
                 Acceder a su información personal almacenada en la plataforma.
               </li>
@@ -938,10 +951,10 @@ export default function PrivacyPolicies() {
                 dichos datos.
               </li>
             </ul>
-            <h2 className="font-bold mb-2">
-              Procedimiento para Ejercer estos Derechos
+            <h2 className="font-bold mb-2 pl-5">
+              6.2. Procedimiento para Ejercer estos Derechos
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Para ejercer estos derechos, el usuario deberá enviar una
               solicitud por escrito a{" "}
               <a
@@ -952,25 +965,25 @@ export default function PrivacyPolicies() {
               </a>
               , indicando claramente los datos que desea acceder o corregir.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl responderá a la solicitud en un plazo máximo de
               10 días hábiles, confirmando la recepción y dando trámite a la
               petición del usuario.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               En caso de que la información personal sea incorrecta, incompleta
               o inexacta, BuscaRepuestos.cl procederá a realizar las
               modificaciones pertinentes en un plazo razonable.
             </p>
-            <h2 className="font-bold mb-2">
-              Limitaciones al Derecho de Acceso
+            <h2 className="font-bold mb-2 pl-5">
+              6.3. Limitaciones al Derecho de Acceso
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               No obstante, este derecho de acceso y corrección no es absoluto.
               BuscaRepuestos.cl podrá denegar o limitar el acceso a cierta
               información personal cuando:
             </p>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
+            <ul className="list-disc list-outside mb-4 space-y-1 pl-14">
               <li>Pueda afectar los derechos de terceros.</li>
               <li>
                 Implique revelar información confidencial o de propiedad
@@ -985,51 +998,47 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               7. Duración del Almacenamiento de Datos
             </h1>
-            <h2 className="font-bold mb-2">
-              Período de Retención de Datos Personales
+            <h2 className="font-bold mb-2 pl-5">
+              7.1. Período de Retención de Datos Personales
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl retendrá la información personal de los usuarios
               únicamente durante el tiempo necesario para cumplir con los fines
               para los cuales fue recopilada originalmente.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Una vez que la información personal ya no sea necesaria para
               dichos fines, BuscaRepuestos.cl procederá a eliminarla de forma
               segura de sus sistemas y registros.
             </p>
-            <h2 className="font-bold mb-2">
-              Excepciones al Período de Retención
+            <h2 className="font-bold mb-2 pl-5">
+              7.2. Excepciones al Período de Retención
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               No obstante, BuscaRepuestos.cl podrá conservar cierta información
               personal por un período más prolongado en los siguientes casos
               excepcionales:
             </p>
-            <h3 className="font-semibold mb-1">Cumplimiento Legal</h3>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>
-                Cuando sea necesario para cumplir con obligaciones legales o
-                requerimientos de autoridades competentes.
-              </li>
-            </ul>
-            <h3 className="font-semibold mb-1">Resolución de Disputas</h3>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>
-                Cuando sea necesario para la resolución de disputas o la defensa
-                de derechos legales de la plataforma.
-              </li>
-            </ul>
-            <h3 className="font-semibold mb-1">
-              Seguridad y Prevención de Fraudes
+            <h3 className="font-semibold mb-1 pl-5">7.3. Cumplimiento Legal</h3>
+            <p className="mb-4 pl-5">
+              Cuando sea necesario para cumplir con obligaciones legales o
+              requerimientos de autoridades competentes.
+            </p>
+            <h3 className="font-semibold mb-1 pl-5">
+              7.4. Resolución de Disputas
             </h3>
-            <ul className="list-disc list-outside mb-4 space-y-1 pl-9">
-              <li>
-                Cuando sea necesario para fines de seguridad, prevención de
-                fraudes o investigaciones internas.
-              </li>
-            </ul>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
+              Cuando sea necesario para la resolución de disputas o la defensa
+              de derechos legales de la plataforma.
+            </p>
+            <h3 className="font-semibold mb-1 pl-5">
+              7.5. Seguridad y Prevención de Fraudes
+            </h3>
+            <p className="mb-4 pl-5">
+              Cuando sea necesario para fines de seguridad, prevención de
+              fraudes o investigaciones internas.
+            </p>
+            <p className="mb-4 pl-5">
               En cualquier caso, BuscaRepuestos.cl se asegurará de que la
               información personal se mantenga debidamente protegida y se
               utilice únicamente para los fines permitidos durante el tiempo que
@@ -1041,30 +1050,30 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               8. Enlaces a Otros Sitios Web
             </h1>
-            <h2 className="font-bold mb-2">Enlaces a Sitios Web Externos</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">8.1. Enlaces a Sitios Web Externos</h2>
+            <p className="mb-4 pl-5">
               El sitio web de BuscaRepuestos.cl puede contener enlaces que
               redirigen a los usuarios a otros sitios web de terceros. Estos
               enlaces se proporcionan únicamente para conveniencia y facilidad
               de acceso a información relacionada.
             </p>
-            <h2 className="font-bold mb-2">
-              Limitación de Responsabilidad de BuscaRepuestos.cl
+            <h2 className="font-bold mb-2 pl-5">
+              8.2. Limitación de Responsabilidad de BuscaRepuestos.cl
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Es importante tener en cuenta que esta Política de Privacidad de
               BuscaRepuestos.cl no se aplica ni tiene injerencia sobre esos
               sitios web de terceros vinculados. Cada uno de esos sitios
               externos tiene su propia política de privacidad independiente.
             </p>
-            <h2 className="font-bold mb-2">Recomendación a Usuarios</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">8.3. Recomendación a Usuarios</h2>
+            <p className="mb-4 pl-5">
               Por lo tanto, se recomienda encarecidamente a los usuarios que
               revisen detenidamente las políticas de privacidad individuales de
               cada uno de los sitios web a los que accedan a través de los
               enlaces proporcionados en BuscaRepuestos.cl.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl no se hace responsable del contenido, prácticas
               de privacidad, disponibilidad o seguridad de esos sitios web
               externos, ni garantiza que estén libres de virus u otros elementos
@@ -1074,26 +1083,26 @@ export default function PrivacyPolicies() {
             {/*Policitcas*/}
 
             <h1 className="text-2xl font-bold mb-4 mt-5">9. Menores de Edad</h1>
-            <h2 className="font-bold mb-2">
-              Restricción de Edad para Usar la Plataforma
+            <h2 className="font-bold mb-2 pl-5">
+              9.1. Restricción de Edad para Usar la Plataforma
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl no está destinada al uso por parte de menores de
               18 años. Por lo tanto, la plataforma no recopila intencionalmente
               información personal de personas menores de edad.
             </p>
-            <h2 className="font-bold mb-2">
-              Responsabilidad de Padres y Tutores
+            <h2 className="font-bold mb-2 pl-5">
+              9.2. Responsabilidad de Padres y Tutores
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Los padres o tutores legales son los responsables de supervisar y
               regular el uso de internet y servicios en línea por parte de los
               menores bajo su cuidado.
             </p>
-            <h2 className="font-bold mb-2">
-              Acción ante Posible Recopilación de Datos de Menores
+            <h2 className="font-bold mb-2 pl-5">
+              9.3. Acción ante Posible Recopilación de Datos de Menores
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               En caso de que BuscaRepuestos.cl tome conocimiento de que ha
               recopilado información personal de un menor de edad sin el
               consentimiento de los padres, la plataforma tomará las medidas
@@ -1105,38 +1114,38 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               10. Cambios en la Política de Privacidad
             </h1>
-            <h2 className="font-bold mb-2">
-              Derecho de BuscaRepuestos.cl a Modificar la Política
+            <h2 className="font-bold mb-2 pl-5">
+              10.1. Derecho de BuscaRepuestos.cl a Modificar la Política
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl se reserva el derecho de modificar esta Política
               de Privacidad en cualquier momento según lo considere necesario.
             </p>
-            <h2 className="font-bold mb-2">Entrada en Vigor de los Cambios</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">10.2. Entrada en Vigor de los Cambios</h2>
+            <p className="mb-4 pl-5">
               Las modificaciones realizadas a esta política serán efectivas
               inmediatamente después de su publicación en el sitio web de
               BuscaRepuestos.cl.
             </p>
-            <h2 className="font-bold mb-2">Notificación a los Usuarios</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">10.3. Notificación a los Usuarios</h2>
+            <p className="mb-4 pl-5">
               BuscaRepuestos.cl notificará a los usuarios sobre cualquier cambio
               en la Política de Privacidad a través de los siguientes medios:
             </p>
-            <ul className="list-disc list-outside mb-4 pl-9">
+            <ul className="list-disc list-outside mb-4 pl-14">
               <li>
                 Envío de un correo electrónico a la dirección de correo
                 registrada.
               </li>
               <li>Publicación de un aviso destacado en el sitio web.</li>
             </ul>
-            <h2 className="font-bold mb-2">Responsabilidad de los Usuarios</h2>
-            <p className="mb-4">
+            <h2 className="font-bold mb-2 pl-5">10.4. Responsabilidad de los Usuarios</h2>
+            <p className="mb-4 pl-5">
               Es responsabilidad de los usuarios revisar periódicamente esta
               Política de Privacidad para estar informados sobre cualquier
               actualización o modificación.
             </p>
-            <p>
+            <p className="pl-5">
               Al continuar utilizando los servicios de BuscaRepuestos.cl después
               de la publicación de cambios en esta política, los usuarios
               aceptan y consienten dichas modificaciones.
@@ -1147,10 +1156,10 @@ export default function PrivacyPolicies() {
             <h1 className="text-2xl font-bold mb-4 mt-5">
               11. Preguntas y Contacto
             </h1>
-            <h2 className="font-bold mb-2">
-              Consultas sobre la Política de Privacidad
+            <h2 className="font-bold mb-2 pl-5">
+              11.1. Consultas sobre la Política de Privacidad
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Si tiene alguna pregunta o inquietud sobre esta Política de
               Privacidad, puede contactarnos por correo electrónico a la
               siguiente dirección:
@@ -1165,18 +1174,18 @@ export default function PrivacyPolicies() {
 
             {/*Policitcas*/}
 
-            <h2 className="font-bold mb-2 mt-16">
-              Aceptación de Términos y Política al Usar la Plataforma
+            <h2 className="font-bold mb-2 pl-5">
+              11.2. Aceptación de Términos y Política al Usar la Plataforma
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 pl-5">
               Al utilizar la plataforma de BuscaRepuestos.cl, usted acepta
               cumplir con los siguientes términos y políticas:
             </p>
-            <ul className="list-disc list-outside mb-4 pl-9">
-              <li>Términos y Condiciones de Uso</li>
-              <li>Política de Privacidad expuesta en este documento</li>
+            <ul className="list-disc list-outside mb-4 pl-14">
+              <li>Términos y Condiciones de Uso.</li>
+              <li>Política de Privacidad expuesta en este documento.</li>
             </ul>
-            <p>
+            <p className="pl-5">
               Esta aceptación se entiende al momento de acceder y usar los
               servicios ofrecidos por BuscaRepuestos.cl.
             </p>
@@ -1185,7 +1194,7 @@ export default function PrivacyPolicies() {
 
             <div className="mt-16 mb-8 flex max-[400px]:text-sm flex-row space-x-1">
               <p className="font-semibold">Última Actualización:</p>
-              <p>08/07/2024</p>
+              <p>20/08/2024</p>
             </div>
           </div>
         </div>
