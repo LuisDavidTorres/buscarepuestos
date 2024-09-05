@@ -23,6 +23,27 @@ export async function POST(request: Request) {
       );
     }
 
+    const userToken = await prisma.userAccount.findFirst({
+      where: {
+        id: Number(user?.id),
+        token: {
+          some: {
+            createdAt: { gt: new Date(Date.now() - 1000 * 60 * 5) },
+          },
+        },
+      },
+    });
+    
+    if(userToken){
+      return NextResponse.json(
+        {
+          message: "Aun no puedes solicitar otro token"
+        },{
+          status: 429
+        }
+      )
+    }
+
     const token = await prisma.token.create({
       data: {
         idUser: Number(user?.id),
@@ -36,6 +57,17 @@ export async function POST(request: Request) {
       },
     });
 
+    if(!company){
+      return NextResponse.json(
+        {
+          message: "Empresa no encontrada"
+        },
+        {
+          status: 404
+        }
+      )
+    }
+    
     const templeEmail = `
 <!DOCTYPE html>
 <html lang="es">
@@ -205,7 +237,7 @@ export async function PATCH(request: Request) {
       );
     }
 
-    const userToken = await prisma.userAccount.findFirst({
+    const userToken = await prisma.userAccount.findMany({
       where: {
         id: Number(user?.id),
         token: {
