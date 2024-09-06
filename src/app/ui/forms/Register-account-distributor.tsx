@@ -288,7 +288,7 @@ export function Register_account_distribuitor() {
                 htmlFor="contactName"
                 className="flex flex-row space-x-1"
               >
-                <p>Nombre de Contacto</p>
+                <p>Nombre y Apellido</p>
                 <p className="text-red-600 ">*</p>
               </label>
               <p className="text-xs text-gray-500 italic ml-2">(Representante Legal o Responsable)</p>

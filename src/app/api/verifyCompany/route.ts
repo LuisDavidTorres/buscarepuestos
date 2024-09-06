@@ -126,7 +126,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Busca Repuestos <soporte@buscarepuestos.cl>",
-      to: "luisdavid2016@live.com",
+      to: "soporte@buscarepuestos.cl",
       subject: "Solicitud verificación de empresa",
       html: `<p><strong>Información de la empresa:</strong></p>
             <ul style="list-style-type: none; padding: 0;">
@@ -134,6 +134,8 @@ export async function POST(request: Request) {
               <li><strong>Rut:</strong> ${company.rut}</li>
               <li><strong>Giro:</strong> ${company.businessLine}</li>
               <li><strong>Contacto:</strong> ${company.contactName}</li>
+              <li><strong>Email:</strong> ${user.email}</li>
+              <li><strong>Teléfono:</strong> ${company.phoneNumber}</li>
             </ul>
             <p><strong>Documentos:</strong></p>
             <ul style="list-style-type: none; padding: 0;">

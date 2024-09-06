@@ -79,9 +79,10 @@ async function Page() {
                     </span>
                   </div>
                   <p className="text-sm text-gray-700 mt-2">
-                    Tu cuenta está en proceso de verificación. Este proceso
-                    puede tardar entre 10 minutos a 1 día hábil. Por favor, ten
-                    paciencia mientras verificamos tu información.
+                    Tu empresa está en proceso de verificación, lo cual puede tardar hasta 1 día hábil. Agradecemos tu paciencia mientras revisamos tu información.
+                  </p>
+                  <p className="text-sm text-center text-gray-700 mt-2">
+                    ¡Pronto estarás activo!
                   </p>
                 </div>
               </section>

@@ -57,7 +57,7 @@ export function ResetPasswordForm() {
       ) : (
         <form onSubmit={onSubmit}>
           <input
-            className="border-2 p-1 rounded-md w-72"
+            className="border-2 p-1 rounded-md w-full"
             type="email"
             placeholder="Correo"
             {...register("email", {
@@ -74,9 +74,9 @@ export function ResetPasswordForm() {
               </span>
             )}
           </div>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-end">
             <button
-              className="bg-custom-green hover:bg-green-500 text-white rounded-md p-2 w-36"
+              className="bg-custom-green hover:bg-green-600 text-white rounded-md p-2 w-36"
               type="submit"
             >
               Enviar un email

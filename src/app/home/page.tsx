@@ -149,13 +149,15 @@ async function Page() {
                 <IoTimeOutline className="text-4xl text-blue-500" />
               </div>
               <h2 className="text-2xl font-semibold mb-3">
-                Empresa en proceso de verificación
+                Proceso de Verificaión de la Empresa
               </h2>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Estamos revisando los documentos que nos has enviado de tu
-                empresa para asegurarnos de que todo esté en orden. Este proceso
-                puede tardar hasta 24 horas. Una vez que tu empresa esté
-                verificada, podrás acceder a todas las funcionalidades.
+                Estamos revisando los documentos de tu empresa. 
+                Esto puede tardar hasta 24 horas. En cuanto esté verificada,
+                podrás usar todas nuestras funcionalidades.
+              </p>
+              <p className="text-sm text-gray-600 text-center leading-relaxed mt-2">
+                Gracias por tu paciencia
               </p>
             </div>
           </div>

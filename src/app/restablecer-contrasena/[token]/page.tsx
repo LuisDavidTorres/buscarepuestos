@@ -25,17 +25,16 @@ async function page({ params }: { params: { token: string } }) {
       <Header />
 
       {tokenIsValid ? (
-        <div className="p-10 md:p-10 flex justify-center xl:justify-start">
-          <div>
+        <div className="p-10 md:p-10 flex justify-center mx-auto text-black dark:text-black">
+          <div className="border p-10 shadow-md rounded-md">
             <h1 className="font-bold text-3xl mb-8">Restablecer Contraseña</h1>
-            <p>Ingresa tu nueva contraseña</p>
             <div className="mt-5">
               <ResetPasswordTokenForm token={token} />
             </div>
           </div>
         </div>
       ) : (
-        <div className="p-10 bg-white shadow-md rounded-md max-w-md w-full mx-auto mt-36">
+        <div className="p-10 bg-white shadow-md rounded-md max-w-md w-full mx-auto mt-36 text-black dark:text-black">
           <div className="flex justify-center mb-4">
             <svg
               className="w-6 h-6 text-red-600"
