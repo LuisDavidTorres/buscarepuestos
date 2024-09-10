@@ -73,9 +73,9 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
       <hr></hr>
       <section className="flex flex-col space-y-4 mt-4 mb-5">
         <div className="overflow-x-auto space-y-4 scrollbar-thin scrollbar-webkit">
-          <div className="flex flex-row justify-between space-x-2">
-            <label className="whitespace-nowrap">Repuesto:</label>
-            <p className="font-bold whitespace-nowrap flex-shrink-0">{quote.spareName}</p>
+          <div className="flex flex-row justify-between space-x-2 bg-gray-100 rounded-md">
+            <label className="whitespace-nowrap bg-gray-100 rounded-md">Repuesto:</label>
+            <p className="font-bold whitespace-nowrap flex-shrink-0 bg-gray-100 rounded-md">{quote.spareName}</p>
           </div>
           <div className="flex flex-row justify-between space-x-6">
             <label className="whitespace-nowrap">Tipo de Repuesto:</label>
