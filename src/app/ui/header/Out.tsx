@@ -24,36 +24,37 @@ export function HeaderOut() {
 
   return (
     <div className="h-full sticky top-0 z-10">
-      <header className="bg-white p-2 flex justify-between xl:justify-start gap-x-6 items-center">
-        <Link href="/">
-          <Image
-            src="/logo-images/logo-center-header.png"
-            alt="Busca Repuestos"
-            width={260}
-            height={56}
-            className="hidden sm:block"
-            quality={100}
-          />
-          <Image
-            src="/logo-images/logo-start-header.png"
-            alt="Busca Repuestos"
-            width={63}
-            height={63}
-            className="sm:hidden"
-            quality={100}
-          />
-        </Link>
-        {pathname === "/" && (
-          <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold justify-between w-9/12">
-            <ul className="flex gap-x-4 text-sm">
-              <li className="hover:text-slate-600">
-                <a href="#usageSteps">Funcionamiento</a>
-              </li>
-              <li className="hover:text-slate-600">
-                <a href="#frequentQuestions">Preguntas Frecuentes</a>
-              </li>
-            </ul>
-            {/*<button
+      <header className="bg-white p-2">
+        <div className="w-full flex justify-between xl:justify-start gap-x-6 items-center">
+          <Link href="/">
+            <Image
+              src="/logo-images/logo-center-header.png"
+              alt="Busca Repuestos"
+              width={260}
+              height={56}
+              className="hidden sm:block"
+              quality={100}
+            />
+            <Image
+              src="/logo-images/logo-start-header.png"
+              alt="Busca Repuestos"
+              width={63}
+              height={63}
+              className="sm:hidden"
+              quality={100}
+            />
+          </Link>
+          {pathname === "/" && (
+            <nav className="hidden xl:flex gap-x-4 items-center dark:text-black text-black font-semibold justify-between w-9/12">
+              <ul className="flex gap-x-4 text-sm">
+                <li className="hover:text-slate-600">
+                  <a href="#usageSteps">Funcionamiento</a>
+                </li>
+                <li className="hover:text-slate-600">
+                  <a href="#frequentQuestions">Preguntas Frecuentes</a>
+                </li>
+              </ul>
+              {/*<button
               onClick={redirectTo}
               aria-label="login"
               name="login"
@@ -67,10 +68,16 @@ export function HeaderOut() {
                 )}
               </span>
             </button>*/}
-          </nav>
-        )}
+            </nav>
+          )}
 
-        <MenuIndex />
+          <MenuIndex />
+        </div>
+        <div className="px-3 -mt-3">
+          <span className="bg-gray-400 text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">
+            Beta
+          </span>
+        </div>
       </header>
     </div>
   );
