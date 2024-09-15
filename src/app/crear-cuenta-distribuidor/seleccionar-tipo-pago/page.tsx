@@ -4,8 +4,7 @@ import { SupportInformation } from "@/app/ui/ListComponents/Support-information"
 import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import Link from "next/link";
 import PageRedirect from "@/app/ui/buttons/Page-redirect";
-import { FaInstagram } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
+import { IoTimeOutline } from "react-icons/io5";
 
 interface PageProps {
   searchParams: {
@@ -21,7 +20,6 @@ async function LoadPLan({ plan }: { plan: string }) {
     }
   );
   const data = await res.json();
-  console.log(data.subscription)
   return data;
 }
 
@@ -36,34 +34,32 @@ async function Page({ searchParams }: PageProps) {
       </div>
       <main className="min-h-screen h-auto bg-white text-black/60 dark:text-black/60">
         <div className="flex justify-center p-8">
-          <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
-            <section>
-              <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
-                ¡Próximamente disponible!
-              </h1>
-              <p className="mt-6 text-base">
-                Muy pronto podrás adquirir bolsas virtuales de clics en nuestra
-                plataforma.
-              </p>
-              <p className="mt-4 text-base">
-               Anunciaremos la fecha de lanzamiento en breve. Mantente atento a nuestras redes sociales
-              </p>
-              <section className="text-3xl flex justify-center mt-4 space-x-4">
-                <a href="https://www.instagram.com/buscarepuestos.cl" target="_blank"><FaInstagram className="hover:cursor-pointer hover:text-black/50"/></a>
-                <a href="https://www.facebook.com/buscarepuestos.cl" target="_blank"><FaFacebookSquare className="hover:cursor-pointer hover:text-black/50"/></a>
-              </section>
-              <section className="mt-6">
-                <PageRedirect text="Ir al Home" url="/home" />
-              </section>
+          <div className="md:mx-10 p-6 text-center w-full md:w-2/5 bg-white shadow-md rounded-lg">
+            <div className="flex justify-center mb-4">
+              <IoTimeOutline className="text-4xl text-blue-500" />
+            </div>
+            <h2 className="text-2xl font-semibold mb-3">
+              Proceso de Verificaión de la Empresa
+            </h2>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Estamos revisando los documentos de tu empresa. Esto puede tardar
+              hasta 24 horas. En cuanto esté verificada, podrás usar todas
+              nuestras funcionalidades.
+            </p>
+            <p className="text-sm text-gray-600 text-center leading-relaxed mt-2">
+              Gracias por tu paciencia
+            </p>
+            <section className="mt-4">
+              <PageRedirect text="Ir al mesón Digital" url="/home" />
             </section>
           </div>
         </div>
       </main>
     </>
   );
-  
 
-  {/*return (
+  {
+    /*return (
     <>
       <div>
         <Header />
@@ -117,7 +113,8 @@ async function Page({ searchParams }: PageProps) {
         </section>
       </main>
     </>
-  );*/}
+  );*/
+  }
 }
 
 export default Page;
