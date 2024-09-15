@@ -4,14 +4,31 @@ import { TransbankPayment } from "@/app/ui/transbank/Transbank-payment";
 import { SupportInformation } from "@/app/ui/ListComponents/Support-information";
 import Link from "next/link";
 import PageRedirect from "@/app/ui/buttons/Page-redirect";
-import { FaInstagram } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-
+import { headers } from "next/headers";
+import { IoTimeOutline } from "react-icons/io5";
 
 interface PageProps {
   searchParams: {
     plan: string;
   };
+}
+
+async function loadVerify() {
+  const headersList = headers();
+  const referer = headersList.get("cookie");
+
+  const requestHeaders: HeadersInit = referer ? { Cookie: referer } : {};
+
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/api/verifyCompany",
+    {
+      method: "GET",
+      cache: "no-cache",
+      headers: requestHeaders,
+    }
+  );
+  const data = await res.json();
+  return data;
 }
 
 async function LoadPLan({ plan }: { plan: string }) {
@@ -22,7 +39,6 @@ async function LoadPLan({ plan }: { plan: string }) {
     }
   );
   const data = await res.json();
-  console.log(data.subscription);
   return data;
 }
 
@@ -30,79 +46,119 @@ async function Page({ searchParams }: PageProps) {
   const { plan } = searchParams;
   const planSelected = await LoadPLan({ plan });
 
-  return (
-    <div className="min-h-screen bg-white">
-      <DashboardHeader />
-      <div className="flex justify-center items-center p-8 text-black/60 dark:text-black/60 bg-white">
-        <div className="max-w-md text-center bg-white rounded-lg shadow-lg p-10 transition-transform transform hover:scale-105">
-          <section>
-            <h1 className="font-extrabold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-teal-400">
-              ¡Próximamente disponible!
-            </h1>
-            <p className="mt-6 text-base">
-              Muy pronto podrás adquirir bolsas virtuales de clics en nuestra
-              plataforma.
-            </p>
-            <p className="mt-4 text-base">
-              Anunciaremos la fecha de lanzamiento en breve. Mantente atento a nuestras redes sociales
-            </p>
-            <section className="text-3xl flex justify-center mt-4 space-x-4">
-              <a href="https://www.instagram.com/buscarepuestos.cl" target="_blank"><FaInstagram className="hover:cursor-pointer hover:text-black/50"/></a>
-              <a href="https://www.facebook.com/buscarepuestos.cl" target="_blank"><FaFacebookSquare className="hover:cursor-pointer hover:text-black/50"/></a>
-            </section>
-            <section className="mt-6">
-              <PageRedirect text="Ir al Home" url="/home" />
-            </section>
-          </section>
-        </div>
-      </div>
-    </div>
-  );
+  const company = await loadVerify();
 
-  {
-    /*return (
-    <div className="min-h-screen bg-white">
-      <DashboardHeader />
-      <div className="flex justify-center p-8 dark:text-black">
-        <div>
-          <div>
-            <section className="mt-2">
-              <h1 className="font-bold text-xl">
-                Elige como deseas pagar tu plan
-              </h1>
-            </section>
-            <section>
-              <h1 className="font-bold mt-5 mb-2 text-base">Tu plan</h1>
-              <CardPlanHorizontal plan={planSelected} />
-            </section>
-            <h1 className="text-lg mt-14 mb-6">Métodos de pago disponibles</h1>
-            <section className="flex justify-center">
-              <TransbankPayment />
-            </section>
-            <div className="w-80 text-center text-xs mt-5">
-              <label>
-                <p>
-                  Al enviar sus datos y hacer Clic en Comprar suscripción,
-                  acepta los Terminos y Condiciones.{" "}
-                  <Link
-                    href={"/terminos"}
-                    target="_blank"
-                    className="no-underline hover:underline text-blue-700"
-                  >
-                    Política de Privacidad.{" "}
-                  </Link>
-                  De nuestra Plataforma.
-                </p>
-              </label>
+  if (company.companyStatus === 1) {
+    return (
+      <div className="min-h-screen bg-white">
+        <DashboardHeader />
+        <div className="flex justify-center items-center p-8 text-black/60 dark:text-black/60 bg-white">
+          <div className="flex flex-row w-full justify-center">
+            <div className="md:mx-10 p-6 text-center w-full md:w-2/5 bg-white shadow-md rounded-lg">
+              <h2 className="text-2xl font-semibold mb-4">
+                Verificación de empresa pendiente
+              </h2>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                Aún no hemos recibido los documentos necesarios para verificar
+                tu empresa.
+              </p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                Por favor, envíalos a la brevedad para que podamos comenzar el
+                proceso de revisión.
+              </p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Recuerda que una vez que recibamos y revisemos los documentos,
+                el proceso de verificación puede tardar hasta 24 horas. Te
+                notificaremos cuando tu empresa esté verificada y podrás acceder
+                a todas las funcionalidades.
+              </p>
+              <section className="mt-5">
+                <PageRedirect
+                  text="Verificar Empresa"
+                  url="/verificar-empresa"
+                />
+              </section>
             </div>
           </div>
         </div>
       </div>
-      <section className="px-10 py-16">
-        <SupportInformation />
-      </section>
-    </div>
-  );*/
+    );
+  }
+
+  if (company.companyStatus === 2) {
+    return (
+      <div className="min-h-screen bg-white">
+        <DashboardHeader />
+        <div className="flex justify-center items-center p-8 text-black/60 dark:text-black/60 bg-white">
+          <div className="flex flex-row w-full justify-center">
+            <div className="md:mx-10 p-6 text-center w-full md:w-2/5 bg-white shadow-md rounded-lg">
+              <div className="flex justify-center mb-4">
+                <IoTimeOutline className="text-4xl text-blue-500" />
+              </div>
+              <h2 className="text-2xl font-semibold mb-3">
+                Proceso de Verificaión de la Empresa
+              </h2>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Estamos revisando los documentos de tu empresa. Esto puede
+                tardar hasta 24 horas. En cuanto esté verificada, podrás usar
+                todas nuestras funcionalidades.
+              </p>
+              <p className="text-sm text-gray-600 text-center leading-relaxed mt-2">
+                Gracias por tu paciencia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  {
+    return (
+      <div className="min-h-screen bg-white">
+        <DashboardHeader />
+        <div className="flex justify-center p-8 dark:text-black">
+          <div>
+            <div>
+              <section className="mt-2">
+                <h1 className="font-bold text-xl">
+                  Elige como deseas pagar tu plan
+                </h1>
+              </section>
+              <section>
+                <h1 className="font-bold mt-5 mb-2 text-base">Tu plan</h1>
+                <CardPlanHorizontal plan={planSelected} />
+              </section>
+              <h1 className="text-lg mt-14 mb-6">
+                Métodos de pago disponibles
+              </h1>
+              <section className="flex justify-center">
+                <TransbankPayment />
+              </section>
+              <div className="w-80 text-center text-xs mt-5">
+                <label>
+                  <p>
+                    Al enviar sus datos y hacer Clic en Comprar suscripción,
+                    acepta los Terminos y Condiciones.{" "}
+                    <Link
+                      href={"/terminos"}
+                      target="_blank"
+                      className="no-underline hover:underline text-blue-700"
+                    >
+                      Política de Privacidad.{" "}
+                    </Link>
+                    De nuestra Plataforma.
+                  </p>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section className="px-10 py-16">
+          <SupportInformation />
+        </section>
+      </div>
+    );
   }
 }
 
