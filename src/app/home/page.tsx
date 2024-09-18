@@ -64,7 +64,7 @@ async function loadQuotes() {
   try{
     const headersList = headers();
     const referer = headersList.get("cookie");
-    console.log(referer);
+    //console.log(referer);
   
     const requestHeaders: HeadersInit = referer ? { Cookie: referer } : {};
   
