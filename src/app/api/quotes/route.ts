@@ -24,6 +24,20 @@ export async function GET() {
       },
     });
 
+    if(!user){
+      const quotes = await prisma.quotation.findMany({
+        include: {
+          city: true,
+          images: true,
+        },
+        orderBy: {
+          idQuotation: "desc",
+        },
+      });
+      
+      return NextResponse.json(quotes);
+    }
+
     const CompanyCardBrands = await prisma.companyCarBrand.findMany({
       where: {
         idCompany: user?.idCompany,

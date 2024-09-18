@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { formatNameSpareType } from "@/libs/formatName";
 import { useState } from "react";
 import dataCars from "@/app/data/dataCars";
+import { useSession } from "next-auth/react";
 
 interface QuotationWithCity extends Quotation {
   city: {
@@ -29,10 +30,16 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
   )?.label;
   const idCar = quote.idCar?.length ?? 0;
   const [acceptButton, setAcceptButton] = useState(false);
+  const { data: session, status } = useSession();
 
   const router = useRouter();
 
   const handleClick = async () => {
+    if (status !== "authenticated") {
+      router.push("/crear-cuenta-distribuidor");
+      return
+    }
+
     setAcceptButton(true);
     try {
       const res = await fetch("/api/checkClicks", {

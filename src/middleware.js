@@ -5,7 +5,8 @@ export { default } from "next-auth/middleware";
 
 export const config = {
   matcher: [
-    "/home/:path*",
+    "/home/mis-cotizaciones",
+    "/home/mis-cotizaciones/:path*",
     "/crear-cuenta-distribuidor/planes",
     "/crear-cuenta-distribuidor/seleccionar-tipo-pago",
     "/crear-cuenta-distribuidor/verificar-email",

@@ -1,10 +1,15 @@
-import { ReactNode } from "react"; // Asegúrate de importar ReactNode
+import { ReactNode } from "react";
 import { DashboardHeader } from "../ui/header/Dashboard";
+import { HeaderOut } from "../ui/header/Out";
+import { getServerSession } from "next-auth";
 
-export default function NavBarDashboardLayout({ children }: { children: ReactNode }) {
+export default async function NavBarDashboardLayout({ children }: { children: ReactNode }) {
+
+  const session = await getServerSession();
+
   return (
     <>
-      <DashboardHeader />
+      {session ? <DashboardHeader /> : <HeaderOut/> }
       {children}
     </>
   );

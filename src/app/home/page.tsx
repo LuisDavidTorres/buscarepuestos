@@ -42,33 +42,43 @@ async function loadVerify() {
 }
 
 async function LoadCarBrand({ email }: { email: string }) {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email,
-    {
-      cache: "no-cache",
-      headers: {
-        Pragma: "no-cache",
-      },
-    }
-  );
-  const { CompanyCardBrands } = await res.json();
-  return { CompanyCardBrands };
+  try{
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_API_URL + "/api/user/" + email,
+      {
+        cache: "no-cache",
+        headers: {
+          Pragma: "no-cache",
+        },
+      }
+    );
+    const { CompanyCardBrands } = await res.json();
+    return { CompanyCardBrands };
+
+  }catch{
+    console.log("Error al consultar las marcas de autos")
+  }
 }
 
 async function loadQuotes() {
-  const headersList = headers();
-  const referer = headersList.get("cookie");
-  console.log(referer);
+  try{
+    const headersList = headers();
+    const referer = headersList.get("cookie");
+    console.log(referer);
+  
+    const requestHeaders: HeadersInit = referer ? { Cookie: referer } : {};
+  
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
+      method: "GET",
+      cache: "no-cache",
+      headers: requestHeaders,
+    });
+    const data = await res.json();
+    return data;
 
-  const requestHeaders: HeadersInit = referer ? { Cookie: referer } : {};
-
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/quotes", {
-    method: "GET",
-    cache: "no-cache",
-    headers: requestHeaders,
-  });
-  const data = await res.json();
-  return data;
+  }catch{
+    console.log("Error al consultar las cotizaciones")
+  }
 }
 
 async function Page() {
@@ -78,7 +88,7 @@ async function Page() {
   email = email || "";
 
   const user = await LoadCarBrand({ email });
-  let carBrands = user.CompanyCardBrands;
+  let carBrands = user?.CompanyCardBrands;
 
   const rubric = getCookie("selectedRubric", { cookies });
   const city = getCookie("selectedCity", { cookies });
