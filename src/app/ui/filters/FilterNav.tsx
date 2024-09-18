@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAppContext } from "@/context";
 import { usePathname } from "next/navigation";
+import dataCars from "@/app/data/dataCars";
 
 function limpiarFiltros() {
   setCookie("selectedCars", []);
@@ -32,7 +33,7 @@ export function FilterNav({ className, carBrands }: { className: string, carBran
   const [selectedRubric, setSelectedRubric] = useState(filterRubric);
 
 
-  carBrands = carBrands.map((carBrand) => {
+  carBrands = carBrands?.map((carBrand) => {
     if (patch === "/home") {
       return {
         value: carBrand.car.idCardBrand,
@@ -45,6 +46,10 @@ export function FilterNav({ className, carBrands }: { className: string, carBran
       };
     }
   });
+
+  if(carBrands === undefined){
+    carBrands = dataCars
+  }
 
   const cars = carBrands.filter((element) => filterCars.includes(element.value));
   const cities = dataCity.filter((element) => filterCity.includes(element.value));
