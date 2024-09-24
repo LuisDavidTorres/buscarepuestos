@@ -107,28 +107,27 @@ export function Plans({ plan }: { plan: Plan }) {
           </section>
         </div>
         <div className="bg-white flex flex-col justify-center p-5 h-60 rounded-br-lg rounded-bl-lg border-2">
-          <div>
-            <h2 className="font-bold text-center">Dispositivos compatibles</h2>
-            <p>Computadora, teléfono y tablet</p>
-          </div>
-
-          <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-2">
             <ul className="list-image-[url('/images/icons/check.png')]">
               {plan.characteristics.map((characteristic) => (
                 <li
                   key={characteristic.feature.id}
-                  className="bg-gray-400 px-6 rounded-md w-44 text-center font-bold text-white"
+                  className="bg-custom-gray px-6 rounded-md w-52 text-lg text-center font-bold text-white"
                 >
                   {characteristic.feature.name}
                 </li>
               ))}
             </ul>
           </div>
+          <div>
+            <h2 className="font-bold text-center mt-8">Dispositivos compatibles</h2>
+            <p>Computadora, teléfono y tablet</p>
+          </div>
           <div className="mt-4">
             <hr className="text-red-900"></hr>
           </div>
           <div className="mt-1">
-            <section className="flex justify-center mt-8">
+            <section className="flex justify-center mt-4">
               <button
                 onClick={() => selecPlan(plan.id)}
                 className={`w-28 p-2 rounded-md text-white ${

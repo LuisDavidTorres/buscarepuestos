@@ -329,7 +329,9 @@ export function Create_quotation() {
                 placeholder="Modelo"
                 required
                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
-                onChange={(e) => {setCarModel(e.target.value)}}
+                onChange={(e) => {
+                  setCarModel(e.target.value);
+                }}
               />
 
               <label id="label-car-year" className="flex flex-row space-x-1">
@@ -694,6 +696,17 @@ function Details_help() {
         Para mayor información puedes dirigirte a nuestros Términos, Condiciones
         y Políticas de Privacidad o escribirnos a contacto@buscarepuestos.cl.
       </p>
+      <section className="p-2 border rounded-md mt-5 bg-black/10">
+        <h1 className="font-bold">
+          ¿Cuanto tiempo estara visible mi cotización?
+        </h1>
+
+        <p className="mt-2">
+          Las cotizaciones estarán disponibles por un período de 72 horas en el
+          Mesón Digital. Te invitamos a seguir cotizando.
+        </p>
+      </section>
+
       <p className="mt-5 font-bold flex justify-end">
         Equipo Buscarepuestos.cl
       </p>

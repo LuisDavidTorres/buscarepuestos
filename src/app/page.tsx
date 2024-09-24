@@ -20,18 +20,20 @@ async function Home() {
             style={{ boxShadow: "10px 15px 10px rgba(0, 0, 0, 0.5)" }}
           >
             <div className="flex flex-col justify-center items-center gap-4 sm:gap-9 w-full">
-              <h1 className="text-wrap font-bold text-white opacity-90 max-[320px]:text-xl text-2xl w-full md:w-auto">
-                Encuentra los Repuestos que Necesitas{" "}
+              <h1 className="text-wrap font-bold text-white opacity-90 max-[320px]:text-xl text-xl w-full md:w-auto">
+                MESÓN DIGITAL DE REPUESTOS AUTOMOTRICES{" "}
               </h1>
               <div className="text-white opacity-90 lg:px-40 xl:px-72 2xl:px-96 space-y-4 text-start md:text-center borde-2">
                 <p>
-                  BuscaRepuestos.cl es una plataforma que conecta a clientes que
-                  buscan repuestos con Distribuidores Verificados que ofrecen una
-                  amplia variedad de estos
+                  Bienvenido a Buscarepuestos.cl, la plataforma Digital que
+                  conecta a Distribuidores Verificados con Clientes Buscadores.
+                  Nuestra misión es facilitar la búsqueda y adquisición de
+                  repuestos automotrices, ofreciendo un servicio fácil, rápido y
+                  seguro.
                 </p>
                 <p>
-                  Nuestro objetivo es facilitar el proceso de encontrar y
-                  adquirir los repuestos que necesitas para tu Vehículo.
+                  Aquí encontrarás una amplia variedad de piezas para tu
+                  vehículo, origiales y alternativas.
                 </p>
               </div>
               <section className="sm:space-x-2 flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto">
