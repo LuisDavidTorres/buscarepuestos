@@ -25,7 +25,7 @@ async function Home() {
               </h1>
               <div className="text-white opacity-90 lg:px-40 xl:px-72 2xl:px-96 space-y-4 text-start md:text-center borde-2">
                 <p>
-                  Bienvenido a Buscarepuestos.cl, la plataforma Digital que
+                  Bienvenido a Buscarepuestos.cl, la Plataforma Digital que
                   conecta a Distribuidores Verificados con Clientes Buscadores.
                   Nuestra misión es facilitar la búsqueda y adquisición de
                   repuestos automotrices, ofreciendo un servicio fácil, rápido y
@@ -33,7 +33,7 @@ async function Home() {
                 </p>
                 <p>
                   Aquí encontrarás una amplia variedad de piezas para tu
-                  vehículo, origiales y alternativas.
+                  vehículo, originales y alternativas.
                 </p>
               </div>
               <section className="sm:space-x-2 flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto">
