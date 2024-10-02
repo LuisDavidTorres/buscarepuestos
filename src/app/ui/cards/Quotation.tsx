@@ -12,6 +12,7 @@ import { formatNameSpareType } from "@/libs/formatName";
 import { useState } from "react";
 import dataCars from "@/app/data/dataCars";
 import { useSession } from "next-auth/react";
+import toast, { Toaster } from "react-hot-toast";
 
 interface QuotationWithCity extends Quotation {
   city: {
@@ -31,8 +32,18 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
   const idCar = quote.idCar?.length ?? 0;
   const [acceptButton, setAcceptButton] = useState(false);
   const { data: session, status } = useSession();
+  const [copied, setCopied] = useState(false);
+
 
   const router = useRouter();
+
+  const shareQuote = () =>{
+    navigator.clipboard.writeText(`www.buscarepuestos.cl/home/cotizacion/${quote.idQuotation}`).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      toast.success("Link copiado al portapapeles");
+    });
+  }
 
   const handleClick = async () => {
     if (status !== "authenticated") {
@@ -121,13 +132,14 @@ export function CardQuotation({ quote }: { quote: QuotationWithCity }) {
         </div>
       </section>
 
-      <section className="mt-8 flex justify-center">
+      <section className="mt-8 flex justify-around text-sm sm:text-base">
+        <button onClick={shareQuote} className="p-2 bg-gray-600 hover:bg-custom-gray rounded-md text-white w-2/6">Compartir</button>
         {acceptButton ? (
           <LoadButton text="Aceptar" />
         ) : (
           <button
             onClick={handleClick}
-            className="p-2 bg-custom-green hover:bg-green-700 rounded-md text-white"
+            className="p-2 bg-custom-green hover:bg-green-700 rounded-md text-white w-2/6"
           >
             Aceptar
           </button>

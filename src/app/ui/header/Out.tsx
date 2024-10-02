@@ -24,7 +24,7 @@ export function HeaderOut() {
 
   return (
     <div className="h-full sticky top-0 z-10">
-      <header className="bg-white p-2">
+      <header className="bg-white p-2 border-b-2 border-black/20">
         <div className="w-full flex justify-between xl:justify-start gap-x-6 items-center">
           <Link href="/">
             <Image
@@ -68,7 +68,7 @@ export function HeaderOut() {
                 )}
               </span>
             </button>*/}
-              <button
+              {/*<button
                 onClick={() => {
                   router.push("/home");
                 }}
@@ -79,7 +79,7 @@ export function HeaderOut() {
                 <span className="relative p-2 transition-all ease-in duration-75 bg-custom-gray rounded-md group-hover:bg-opacity-85">
                   <p>IR AL MESÓN</p>
                 </span>
-              </button>
+              </button>*/}
             </nav>
           )}
           {pathname === "/" && <MenuIndex />}

@@ -50,7 +50,7 @@ export function ToEnter() {
         </span>
       </button>
 
-      <button
+      {/*<button
         onClick={()=>{router.push("/home")}}
         aria-label="cotizaciones"
         name="cotizaciones"
@@ -59,7 +59,7 @@ export function ToEnter() {
         <span className="w-full relative p-2 transition-all ease-in duration-75 bg-white dark:text-black rounded-md group-hover:bg-opacity-0">
           <p>Ir al Mesón</p>
         </span>
-      </button>
+      </button>*/}
     </>
   );
 }
