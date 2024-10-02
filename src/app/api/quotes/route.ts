@@ -69,7 +69,7 @@ export async function GET() {
     const quotes = await prisma.quotation.findMany({
       where: {
         clicks: {
-          lt: 0,
+          lt: 3,
         },
         carBrand: {
           in: includeCardBrands,
