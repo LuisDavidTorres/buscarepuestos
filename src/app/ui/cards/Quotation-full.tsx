@@ -345,7 +345,7 @@ export function QuotationFull({ quoteUser }: { quoteUser: QuotationFull }) {
               ? "Enviando..."
               : sentButton
               ? "Propuesta ya enviada"
-              : "Enviar"}
+              : "Responder"}
           </button>
         </div>
       </form>
