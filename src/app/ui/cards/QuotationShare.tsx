@@ -43,7 +43,7 @@ export default function QuotationShare({ quote }: { quote: quote }) {
     try {
       const response = await fetch("/api/checkClicks", {
         method: "POST",
-        body: JSON.stringify({ idQuote: quote.idQuotation }),
+        body: JSON.stringify({ quoteId: quote.idQuotation }),
       });
 
       if (response.ok) {
