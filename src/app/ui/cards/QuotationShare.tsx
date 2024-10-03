@@ -133,7 +133,7 @@ export default function QuotationShare({ quote }: { quote: quote }) {
           </button>
         ) : (
           <button disabled className="text-white dark:text-white p-2 bg-custom-gray rounded-md w-full cursor-no-drop">
-            Cotización o disponible
+            Cotización no disponible
           </button>
         )}
       </section>
