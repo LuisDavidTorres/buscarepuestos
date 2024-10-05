@@ -1,5 +1,6 @@
 import { ImageContainer } from "@/app/ui/container/Image-container";
 import QuotationShare from "@/app/ui/cards/QuotationShare";
+import { ModalGeneral } from "@/app/ui/modals/Modal-general";
 
 async function LoadQuote({ id }: { id: string }) {
   try {
@@ -66,6 +67,7 @@ async function Page({ params }: { params: { id: string } }) {
             <QuotationShare quote={quoteDatails} />
           </section>
         </div>
+        <ModalGeneral />
       </div>
     </>
   );
