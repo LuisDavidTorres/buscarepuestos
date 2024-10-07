@@ -1,6 +1,6 @@
 export const mesageNoCliks = {
   id: 1, 
-  text: "Sin clics disponibles, puedes obtener más oprimiendo el siguiente botón",
+  text: "Sin clics disponibles. Obtén más presionando el botón a continuación",
 };
 
 export const quoteAlreadyAccepted = {
