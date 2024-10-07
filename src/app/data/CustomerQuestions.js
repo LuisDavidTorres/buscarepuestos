@@ -9,7 +9,7 @@ const QuestionsClients = [
     value: "2",
     question: "2. ¿Es necesario registrarse para buscar un repuesto?",
     answer:
-      "No, no es necesario registrarse para buscar un repuesto, sin embargo, para efectos de cotización y respuesta del distribuidor, se solicitan datos del repuesto, del vehículo y del cliente o buscador.",
+      "No es necesario registrarse, pero sí es necesario proporcionar los datos solicitados para procesar la solicitud de cotización. Si deseas saber cómo tratamos y resguardamos tu información, te invitamos a consultar nuestros Términos, Condiciones y Política de Privacidad.",
   },
   {
     value: "3",

@@ -45,6 +45,13 @@ const QuestionsDistributors = [
     answer:
       'No cobramos comisiones. Nuestro modelo de negocio se basa en la venta de "Bolsas Virtuales" que se pueden adquirir una vez que la empresa se registra en nuestra plataforma.',
   },
+  {
+    value: 8,
+    question:
+      "8. ¿Puedo compartir la Cotización sin aceptarla ni gastar Clics de mi Bolsa Virtual?",
+    answer: 
+      '!Por supuesto!, puedes compartirla con vendedores u otros distribuidores registrados presionando el Botón “Compartir” de la cotización en el Mesón Digital de Repuestos. Arriba centrada, te aparecerá una notificación indicándote “Link copiado al portapapeles” pega el link en un chat de WhatsApp o la red de tu preferencia y envíala al destinatario.'
+  },
 ];
 
 export default QuestionsDistributors;
