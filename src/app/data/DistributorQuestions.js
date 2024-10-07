@@ -46,7 +46,7 @@ const QuestionsDistributors = [
       'No cobramos comisiones. Nuestro modelo de negocio se basa en la venta de "Bolsas Virtuales" que se pueden adquirir una vez que la empresa se registra en nuestra plataforma.',
   },
   {
-    value: 8,
+    value: "8",
     question:
       "8. ¿Puedo compartir la Cotización sin aceptarla ni gastar Clics de mi Bolsa Virtual?",
     answer: 
