@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { RxEyeClosed } from "react-icons/rx";
 import { FaRegEye } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 interface FormValues {
   email: string;
@@ -27,6 +28,7 @@ export function ModalLoginSupplier() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const pathname = usePathname();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -43,9 +45,15 @@ export function ModalLoginSupplier() {
     if (res) {
       if (res.error) {
         setError(res.error);
+        console.log(pathname);
         setLoading(false);
       } else {
-        router.push("/home");
+        if (pathname !== "/home") {
+          router.refresh();
+          toogleModal()
+        } else {
+          router.push("/home");
+        }
       }
     }
   });
@@ -99,7 +107,11 @@ export function ModalLoginSupplier() {
                         autoComplete="email"
                         className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-gray-500 sm:text-sm sm:leading-6"
                       />
-                      {errors.email && <p className="text-sm mt-1 text-red-600">{errors.email.message}</p>}
+                      {errors.email && (
+                        <p className="text-sm mt-1 text-red-600">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -144,7 +156,11 @@ export function ModalLoginSupplier() {
                           {showPassword ? <FaRegEye /> : <RxEyeClosed />}
                         </button>
                       </div>
-                      {errors.password && <p className="text-sm mt-1 text-red-600">{errors.password.message}</p>}
+                      {errors.password && (
+                        <p className="text-sm mt-1 text-red-600">
+                          {errors.password.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -176,7 +192,10 @@ export function ModalLoginSupplier() {
                         Ingresando
                       </button>
                     ) : (
-                      <button aria-label="loginUser" className="flex w-full justify-center rounded-md bg-custom-green px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900">
+                      <button
+                        aria-label="loginUser"
+                        className="flex w-full justify-center rounded-md bg-custom-green px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900"
+                      >
                         Ingresar
                       </button>
                     )}

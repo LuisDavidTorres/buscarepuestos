@@ -27,7 +27,7 @@ interface quote {
 
 export default function QuotationShare({ quote }: { quote: quote }) {
   const Date = formatDate(quote.dateQuotation);
-  const { toggleModalGeneral, setMessageModalGeneral } = useAppContext();
+  const { toggleModalGeneral, setMessageModalGeneral, toogleModal } = useAppContext();
   const carBrandName = dataCars.find(
     (car) => car.value === quote.carBrand
   )?.label;
@@ -36,7 +36,7 @@ export default function QuotationShare({ quote }: { quote: quote }) {
 
   const submitAcceptQuote = async () => {
     if (status != "authenticated") {
-      router.push("/");
+      toogleModal();
       return;
     }
 

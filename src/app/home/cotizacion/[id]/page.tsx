@@ -1,6 +1,7 @@
 import { ImageContainer } from "@/app/ui/container/Image-container";
 import QuotationShare from "@/app/ui/cards/QuotationShare";
 import { ModalGeneral } from "@/app/ui/modals/Modal-general";
+import { ModalLoginSupplier } from "@/app/ui/home/ModalLoginSupplier";
 
 async function LoadQuote({ id }: { id: string }) {
   try {
@@ -68,6 +69,9 @@ async function Page({ params }: { params: { id: string } }) {
           </section>
         </div>
         <ModalGeneral />
+        <div className="flex justify-center absolute my-2 md:my-8">
+          <ModalLoginSupplier />
+        </div>
       </div>
     </>
   );
