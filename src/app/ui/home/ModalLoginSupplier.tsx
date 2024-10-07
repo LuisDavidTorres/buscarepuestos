@@ -48,7 +48,7 @@ export function ModalLoginSupplier() {
         console.log(pathname);
         setLoading(false);
       } else {
-        if (pathname !== "/home") {
+        if (pathname !== "/") {
           router.refresh();
           toogleModal()
         } else {
