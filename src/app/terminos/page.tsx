@@ -1,6 +1,7 @@
 import { FaArrowLeft } from "react-icons/fa6";
 import Header from "../ui/header/Header";
 import { DesingHeaderDown } from "../ui/header/Desing-header-down";
+import ReturnRouter from "../ui/buttons/Return-router";
 import Link from "next/link";
 
 export default function PrivacyPolicies() {
@@ -9,11 +10,8 @@ export default function PrivacyPolicies() {
       <Header />
       <DesingHeaderDown titulo="TÉRMINOS Y CONDICIONES - POLÍTICAS DE PRIVACIDAD" />
       <div className="bg-white min-h-screen dark:text-black">
-        <div className="flex flex-row items-center mb-2 sm:mb-4 space-x-2 py-9 w-10/12 mx-auto">
-          <FaArrowLeft />
-          <Link href="/" className="no-underline hover:underline">
-            Volver a la pagina de inicio
-          </Link>
+        <div className="mx">
+          <ReturnRouter/>
         </div>
         <div className="w-full flex justify-center">
           <div className="w-10/12 shadow-xl p-10 rounded-md mb-5">
